@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questionTextEl  = document.getElementById('question-text');
     const questionHintEl  = document.getElementById('question-hint');
+    const questionMetaEl  = document.getElementById('question-meta');
     const answerOptionsEl = document.getElementById('answer-options');
     const feedbackEl      = document.getElementById('feedback');
     const nextBtn         = document.getElementById('next-btn');
@@ -102,6 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = shuffledQuestions[currentQuestionIndex];
 
         questionTextEl.textContent = q.question;
+        // Show which module / file this question came from
+if (q.module || q.source) {
+    // Example: "Question from module MD9 – MD9 TB Hard.txt"
+    const modulePart = q.module ? `module ${q.module}` : '';
+    const sourcePart = q.source ? ` – ${q.source}` : '';
+    questionMetaEl.textContent = `Question from ${modulePart}${sourcePart}`.trim();
+    questionMetaEl.style.display = 'block';
+} else {
+    questionMetaEl.textContent = '';
+    questionMetaEl.style.display = 'none';
+}
+
 
         if (q.hint && q.hint.trim()) {
             questionHintEl.textContent = `Hint: ${q.hint}`;

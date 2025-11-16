@@ -130,3 +130,8 @@ body {
     border: 1px solid #ccc;
     background-color: #fafafa;
 }
+.question-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 8px;
+}
