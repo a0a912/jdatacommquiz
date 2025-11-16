@@ -1,0 +1,149 @@
+Q1. What is the primary scope of communication managed by the data-link layer?
+   A. Process-to-process communication between applications.
+   B. End-to-end communication between the original source and final destination hosts.
+   C. Node-to-node communication across a single link.
+   D. Signal transmission and bit-level encoding on the physical medium.
+
+Q2. When a router forwards a datagram from one link to another, what happens at the data-link layer?
+   A. The router forwards the original frame without any modifications.
+   B. The router decapsulates the datagram from the incoming frame and re-encapsulates it in a new frame for the outgoing link.
+   C. The router only changes the source and destination IP addresses in the datagram.
+   D. The router strips the frame header and trailer and sends the raw datagram to the next link.
+
+Q3. What is the primary purpose of the Address Resolution Protocol (ARP)?
+   A. To find the IP address of a host when its domain name is known.
+   B. To determine the best route for a packet to travel through the internet.
+   C. To map a known network-layer address (IP address) to its corresponding link-layer address on a local network.
+   D. To assign IP addresses to hosts when they join a network.
+
+Q4. How are the messages in the ARP process typically transmitted?
+   A. The ARP request is unicast, and the ARP reply is broadcast.
+   B. Both the ARP request and the ARP reply are broadcast.
+   C. The ARP request is broadcast, and the ARP reply is unicast.
+   D. Both the ARP request and the ARP reply are unicast.
+
+Q5. Which of the following addresses remain constant in a packet as it travels from a source host to a destination host across multiple networks?
+   A. The source and destination link-layer addresses.
+   B. The source link-layer address and the destination IP address.
+   C. The source and destination IP addresses.
+   D. The destination link-layer address and the source IP address.
+
+Q6. The data-link layer is divided into two sublayers: Data Link Control (DLC) and Media Access Control (MAC). What is the main responsibility of the MAC sublayer?
+   A. Handling framing and error control for all types of links.
+   B. Managing issues specific to broadcast links where the medium is shared.
+   C. Mapping network-layer addresses to link-layer addresses.
+   D. Providing reliable data transfer between end hosts.
+
+Q7. What is the term for encapsulating a network-layer datagram into a data-link layer packet?
+   A. Segmentation
+   B. Framing
+   C. Packetizing
+   D. Addressing
+
+Q8. According to the provided text, why is it more efficient to use ARP rather than broadcasting every data frame to the destination?
+   A. Broadcasting data frames is not supported by most link-layer protocols.
+   B. ARP packets are smaller than data frames, consuming less bandwidth.
+   C. It prevents every node on the link from having to process every single data packet to see if it's the intended recipient.
+   D. ARP provides error correction for the data packets, which broadcasting does not.
+
+Q9. In the context of the data-link layer, what is the difference between a 'node' and a 'link'?
+   A. Nodes are physical cables and links are the devices connected to them.
+   B. Nodes are end hosts only, while links connect routers.
+   C. Nodes are end hosts and routers, while links are the networks connecting them.
+   D. Nodes and links are interchangeable terms for any network device.
+
+Q10. A link that is dedicated to communication between two specific devices is known as a:
+   A. Broadcast link
+   B. Unicast link
+   C. MAC link
+   D. Point-to-point link
+
+Q11. When a host on a LAN needs to send a packet to a host on a different, remote network, what is the destination link-layer address it will place in the first frame?
+   A. The link-layer address of the final destination host.
+   B. A special broadcast address that all routers will recognize.
+   C. The link-layer address of its default router.
+   D. The destination hardware address field is left empty.
+
+Q12. Which data-link layer service is concerned with preventing a fast sender from overwhelming a slow receiver on the same link?
+   A. Error Control
+   B. Framing
+   C. Congestion Control
+   D. Flow Control
+
+Q13. In the example of communication from Alice to Bob, router R1 needs to find the link-layer address of router R2. How does it accomplish this?
+   A. It inspects the original datagram from Alice, which contains R2's link-layer address.
+   B. It uses its forwarding table to find R2's link-layer address directly.
+   C. It uses its forwarding table to find R2's IP address (N3), then uses ARP to find the corresponding link-layer address (L3).
+   D. It sends a query to Alice's computer asking for R2's link-layer address.
+
+Q14. What kind of link-layer address is specifically designed for one-to-all communication on a link?
+   A. Unicast address
+   B. Multicast address
+   C. Broadcast address
+   D. Physical address
+
+Q15. The text explains that a router connected to 'n' links has 'n' IP addresses. What is the reason for this?
+   A. To allow the router to change the source IP address of packets it forwards.
+   B. Each IP address serves as a backup in case another one fails.
+   C. An IP address defines a device's connection point to a specific link, and a router connects to multiple links.
+   D. Each IP address is used to communicate with a different transport-layer protocol.
+
+Q16. Within the TCP/IP protocol suite, where does the ARP protocol reside?
+   A. It is part of the data-link layer because it deals with link-layer addresses.
+   B. It is an auxiliary protocol within the network layer.
+   C. It is part of the transport layer, managing connections between nodes.
+   D. It spans both the network and data-link layers, acting as a bridge.
+
+Q17. In an ARP request packet, what is the value of the 'Destination hardware address' field?
+   A. It is set to the broadcast address (e.g., FF:FF:FF:FF:FF:FF).
+   B. It contains the link-layer address of the sending node.
+   C. It is typically empty or set to all zeros.
+   D. It contains the IP address of the destination node.
+
+Q18. What is the key difference between a link-layer address and a network-layer address?
+   A. Link-layer addresses are logical and change often, while network-layer addresses are physical and permanent.
+   B. Link-layer addresses have local jurisdiction (on one link), while network-layer addresses have universal jurisdiction (across the entire internet).
+   C. Only routers use network-layer addresses; hosts only use link-layer addresses.
+   D. Link-layer addresses are used for wired networks, while network-layer addresses are used for wireless networks.
+
+Q19. According to the text, the Data Link Control (DLC) sublayer deals with issues common to which types of links?
+   A. Only point-to-point links.
+   B. Only broadcast links.
+   C. Both point-to-point and broadcast links.
+   D. Neither; it manages communication between the data-link and network layers.
+
+Q20. The traveler analogy describes a person (the datagram) taking a taxi (frame 1), a train (frame 2), and another taxi (frame 3). What do the intermediate train stations represent?
+   A. The source and destination hosts (Alice and Bob).
+   B. The physical transmission media like cables and airwaves.
+   C. The intermediate nodes (routers).
+   D. The Address Resolution Protocol (ARP).
+
+Q21. Why does a single router need both a link-layer address and an IP address for each of its interfaces?
+   A. The link-layer address is for receiving frames, and the IP address is for sending frames.
+   B. The IP address identifies the router itself, while the link-layer address identifies the specific port on the router.
+   C. The IP address is used by the network layer for routing decisions, and the link-layer address is used by the data-link layer to send the frame to the next physical hop.
+   D. The IP address is a public address, while the link-layer address is a private address for internal use.
+
+Q22. Which of the following services is mentioned in the text as a duty of the data-link layer but is often considered a more critical issue for the network or transport layers?
+   A. Framing
+   B. Error Control
+   C. Congestion Control
+   D. Link-layer addressing
+
+Q23. When Alice's computer sends the first frame towards Bob, what are the source and destination link-layer addresses in the frame header?
+   A. Source: Alice's address (LA), Destination: Bob's address (LB).
+   B. Source: Alice's address (LA), Destination: Router R1's address (L1).
+   C. Source: Router R1's address (L2), Destination: Router R2's address (L3).
+   D. Source: Alice's address (LA), Destination: The broadcast address.
+
+Q24. If a system receives a broadcast ARP request for an IP address that does not belong to it, what should it do?
+   A. Send an ARP reply indicating that the IP address was not found.
+   B. Forward the ARP request to the next router.
+   C. Discard the ARP request packet.
+   D. Store the sender's IP and link-layer address in its cache and wait for another packet.
+
+Q25. A packet at the network layer is called a datagram. What is a packet at the data-link layer normally called?
+   A. A segment
+   B. A message
+   C. A frame
+   D. A cell

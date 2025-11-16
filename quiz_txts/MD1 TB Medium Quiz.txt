@@ -1,0 +1,235 @@
+Q1. According to the Maria and Ann scenario, what core advantage of protocol layering is demonstrated by the ability to replace just the encryption/decryption machine without altering the other machines?
+   A. Logical connection
+   B. Modularity
+   C. Bidirectional communication
+   D. Hierarchical protocol suite
+
+   Answer: B
+   Explanation: The scenario explicitly states that changing only the second layer machine without affecting the others is an example of modularity, where layers are independent.
+
+Q2. In the context of the TCP/IP model, a router connecting three different links (e.g., two LANs and a WAN) is necessarily involved with how many unique sets of data-link and physical layer protocols?
+   A. One set, as the router standardizes the protocols.
+   B. Two sets, one for receiving and one for sending.
+   C. Three sets, one for each connected link.
+   D. Five sets, one corresponding to each layer of the TCP/IP suite.
+
+   Answer: C
+   Explanation: The text states a router is involved in 'n combinations of link and physical layers in which n is the number of links the router is connected to,' as each link may use its own protocols.
+
+Q3. Which statement accurately describes the scope of responsibility for the layers in the TCP/IP protocol suite?
+   A. The transport layer's duty is hop-to-hop, while the network layer is end-to-end.
+   B. The application, transport, and network layers are hop-to-hop.
+   C. The data-link and physical layers have an end-to-end domain of duty.
+   D. The network layer's duty is end-to-end, while the data-link layer's duty is hop-to-hop.
+
+   Answer: D
+   Explanation: The text specifies that the top three layers have an end-to-end domain, while the bottom two layers are hop-to-hop, with each hop being a host or router.
+
+Q4. During encapsulation at a source host, what does the network layer receive as its payload from the layer above it?
+   A. A message from the application layer.
+   B. A frame from the data-link layer.
+   C. A transport-layer packet (segment or user datagram).
+   D. A stream of bits from the physical layer.
+
+   Answer: C
+   Explanation: The transport layer encapsulates the application message into a segment or user datagram, and this entire packet becomes the payload for the network layer.
+
+Q5. What happens to the transport-layer header of a packet as it is processed by a router?
+   A. It is decapsulated, modified with new routing information, and re-encapsulated.
+   B. It is stripped off at the incoming link and a new one is added at the outgoing link.
+   C. It remains untouched as part of the datagram's payload from the network layer's perspective.
+   D. It is used to determine the next hop for the packet.
+
+   Answer: C
+   Explanation: A router decapsulates the frame to inspect the network-layer (IP) header for routing, but it treats the entire transport-layer packet (header and data) as payload that should not be changed.
+
+Q6. The text notes that the logical connection at the network layer is between two hosts, but the 'identical objects' (datagrams) may not be identical between the source and destination. What is the reason for this potential discrepancy?
+   A. The transport layer provides error correction, altering the datagrams in transit.
+   B. A router may fragment a large datagram into multiple smaller ones.
+   C. Link-layer switches can combine multiple datagrams into a single larger frame.
+   D. The application layer can request data compression, changing the datagram size.
+
+   Answer: B
+   Explanation: The text explicitly states that a router may fragment a packet at the network layer, resulting in more packets being sent than were received by that router.
+
+Q7. Which of the following correctly pairs an address type with its layer and scope within the TCP/IP suite?
+   A. Port numbers are used at the network layer and have a global scope.
+   B. Link-layer (MAC) addresses are used at the data-link layer and have a global scope.
+   C. Logical (IP) addresses are used at the network layer and have a global scope.
+   D. Application-specific names (e.g., email addresses) are used at the transport layer and are local.
+
+   Answer: C
+   Explanation: The text specifies that network-layer addresses are global, with the whole Internet as the scope, uniquely defining a device's connection.
+
+Q8. According to the textbook, why was the OSI model ultimately not successful in replacing TCP/IP?
+   A. It was technically inferior and less efficient than the TCP/IP suite.
+   B. It was designed by a single corporation and was not an open standard.
+   C. Its seven-layer structure was considered too simple for modern networking.
+   D. It was finalized after TCP/IP was already established, and some layers were not fully defined.
+
+   Answer: D
+   Explanation: The text cites three reasons: TCP/IP was already in place, some layers like presentation and session were never fully defined, and implementations didn't show superior performance.
+
+Q9. What does the concept of multiplexing at the network layer imply?
+   A. The IP protocol combines several application messages into a single datagram for efficiency.
+   B. The IP protocol can accept packets from various transport-layer protocols like TCP and UDP.
+   C. A single physical link can carry datagrams for multiple different destination hosts simultaneously.
+   D. The IP protocol can create multiple copies of a datagram to send over different routes.
+
+   Answer: B
+   Explanation: The text and Figure 2.10 show multiplexing as a protocol (like IP) encapsulating a packet from several possible next-higher layer protocols (like TCP or UDP).
+
+Q10. The first principle of protocol layering states that each layer must perform two opposite tasks. In the case of the network layer, what are these two conceptual tasks?
+   A. Encapsulating frames and decapsulating datagrams.
+   B. Creating a source-to-destination connection and tearing it down.
+   C. Adding a network header (source) and reading a network header (destination/router).
+   D. Routing packets and managing network congestion.
+
+   Answer: C
+   Explanation: At a source, the network layer adds its header to create a datagram (one task), and at a router or destination, it reads that header to make a forwarding decision (the opposite task).
+
+Q11. The TCP/IP suite is described as a 'hierarchical protocol.' What is the primary meaning of 'hierarchical' in this context?
+   A. Each layer has more authority and control than the layer below it.
+   B. The protocols were developed in a sequential, top-down order.
+   C. Each upper-level protocol is supported by services from one or more lower-level protocols.
+   D. Communication can only be initiated by the highest layer (Application).
+
+   Answer: C
+   Explanation: The text defines hierarchical as meaning that 'each upper level protocol is supported by the services provided by one or more lower level protocols.'
+
+Q12. Which statement accurately reflects the relationship between the physical layer and the transmission medium?
+   A. The physical layer is responsible for selecting the transmission medium (e.g., cable vs. air).
+   B. The physical layer is a logical layer, while the medium provides the actual path for signals.
+   C. The transmission medium encapsulates bits into signals for the physical layer to process.
+   D. The physical layer and the transmission medium are functionally identical in the TCP/IP model.
+
+   Answer: B
+   Explanation: The text describes communication at the physical layer as logical, noting a 'hidden layer, the transmission media,' which carries electrical or optical signals, not bits directly.
+
+Q13. In the TCP/IP protocol suite, why doesn't a link-layer switch require the network layer to perform its primary function?
+   A. Because link-layer switches operate on port numbers, which are at the transport layer.
+   B. Because it forwards data based on link-layer addresses within a single network link.
+   C. Because all routing decisions are handled by the source host's application layer.
+   D. Because link-layer switches only process the physical layer signals without decapsulating frames.
+
+   Answer: B
+   Explanation: A switch's job is to move frames between devices on the same link using MAC addresses. It doesn't need to know about the IP addresses or the path across multiple networks.
+
+Q14. The text states that the OSI model's session and presentation layers are 'missing' from the TCP/IP suite. What is the provided justification for their absence?
+   A. Their functionalities were deemed unnecessary for modern internet communication.
+   B. These layers were proprietary and could not be included in the open TCP/IP suite.
+   C. Their functions are integrated into the TCP/IP transport and application layers.
+   D. They were intentionally omitted to make TCP/IP incompatible with the OSI model.
+
+   Answer: C
+   Explanation: The text explains that some session layer functions are in TCP/IP's transport protocols, and presentation functions can be built into specific application-layer software.
+
+Q15. What key service does the Transmission Control Protocol (TCP) provide that the User Datagram Protocol (UDP) does not?
+   A. Encapsulation of application-layer messages.
+   B. Process-to-process communication using port numbers.
+   C. Flow control and error control.
+   D. Multiplexing services for the application layer.
+
+   Answer: C
+   Explanation: The text explicitly states that TCP provides flow control, error control, and congestion control, while UDP is a simple protocol that does not provide these services.
+
+Q16. What is the primary responsibility of the data-link layer when it receives a datagram from the network layer?
+   A. To determine the best end-to-end route for the datagram.
+   B. To encapsulate the datagram into a frame for transmission across a single link.
+   C. To break the datagram into smaller segments for the transport layer.
+   D. To convert the datagram into electrical signals for the transmission medium.
+
+   Answer: B
+   Explanation: The text states the data-link layer 'takes a datagram and encapsulates it in a packet called a frame' to move it across the link to the next hop.
+
+Q17. The benefit of 'separation of the services from the implementation' in protocol layering implies that:
+   A. Each layer must be implemented using the same programming language.
+   B. A layer's internal workings can be changed without affecting other layers, as long as it provides the same service.
+   C. Services like error control must be implemented at every layer for redundancy.
+   D. The implementation of a protocol must be publicly available as part of its service.
+
+   Answer: B
+   Explanation: The text explains this by saying 'we don’t care about how the layer is implemented' as long as it provides the expected services to the layers above and below it.
+
+Q18. Which of the following application-layer protocols is specifically designed to help other protocols find the network-layer address of a computer?
+   A. Hypertext Transfer Protocol (HTTP)
+   B. Simple Mail Transfer Protocol (SMTP)
+   C. File Transfer Protocol (FTP)
+   D. Domain Name System (DNS)
+
+   Answer: D
+   Explanation: The text states that DNS is 'used by other protocols to find the network-layer address of a computer.'
+
+Q19. Why is the physical layer the only layer in the TCP/IP suite that does not require source and destination addresses?
+   A. Because the physical connection is implicitly between two pre-configured devices.
+   B. Because addressing is handled by the transmission medium itself.
+   C. Because the physical layer broadcasts all bits to every device on the network.
+   D. Because bits are too small to have an address attached to them.
+
+   Answer: A
+   Explanation: The physical layer operates on a direct point-to-point link (wire or wireless channel) between two devices; the connection itself defines the destination, so no address is needed for individual bits.
+
+Q20. During decapsulation at the destination host, what is the first thing a layer typically does after receiving a data unit from the layer below?
+   A. It passes the payload up to the next higher layer immediately.
+   B. It processes the header, performs checks, and then removes the header.
+   C. It adds a new header for return communication.
+   D. It sends an acknowledgment packet back to the source.
+
+   Answer: B
+   Explanation: Each layer reads and processes its corresponding header to perform its functions (like error checking or addressing) before stripping it off and passing the remaining payload to the layer above.
+
+Q21. What distinguishes a router from a link-layer switch in terms of the data units they primarily make decisions on?
+   A. A router makes decisions based on frames, while a switch makes decisions based on datagrams.
+   B. A router makes decisions based on datagrams, while a switch makes decisions based on frames.
+   C. Both devices make decisions based on datagrams, but routers use global addresses.
+   D. A router makes decisions based on segments, while a switch makes decisions based on frames.
+
+   Answer: B
+   Explanation: A router decapsulates the frame to inspect the IP datagram for routing, while a switch only needs to inspect the frame's header for the link-layer address.
+
+Q22. The second principle of protocol layering is that the objects under each layer at both sites should be identical. Which statement best illustrates this principle?
+   A. The encryption algorithm used by Maria must be the same one used by Ann.
+   B. The plaintext message Maria creates must be identical to the plaintext message Ann receives after decryption.
+   C. The object passed from layer 2 to layer 1 at Maria's site (ciphertext) must be a ciphertext letter.
+   D. Maria's layer 3 machine must be from the same manufacturer as Ann's layer 3 machine.
+
+   Answer: C
+   Explanation: The text states: 'The object passed from layer 2 to layer 1 at both sites should be a ciphertext letter.' This exemplifies the principle of identical objects at the same interface point.
+
+Q23. What is the role of an auxiliary protocol like ARP (Address Resolution Protocol) in the network layer?
+   A. It replaces IP for all routing and delivery tasks.
+   B. It reports errors encountered during packet routing back to the source.
+   C. It helps find the link-layer address of a device when its network-layer address is known.
+   D. It manages membership in multicast groups for efficient one-to-many communication.
+
+   Answer: C
+   Explanation: The text mentions that ARP is used to find a host's or router's link-layer address when its network-layer address is given, which is essential for creating a frame.
+
+Q24. When the transport layer at a destination host receives a packet from the IP layer, how does it know which application process (e.g., a web browser or an email client) to deliver the data to?
+   A. By inspecting the source and destination IP addresses in the network-layer header.
+   B. By using the destination port number contained in the transport-layer header.
+   C. By analyzing the application data itself to identify the correct recipient program.
+   D. By using the destination MAC address from the data-link layer frame.
+
+   Answer: B
+   Explanation: The text states that port numbers are local addresses that 'distinguish between several programs running at the same time,' enabling demultiplexing to the correct application.
+
+Q25. The text mentions that if an application requires services like flow control or error control, it should rely on the transport-layer protocol. This implies that the underlying IP protocol at the network layer is what type of service?
+   A. A reliable, connection-oriented service.
+   B. An end-to-end encrypted service.
+   C. A guaranteed low-latency service.
+   D. An unreliable, connectionless service.
+
+   Answer: D
+   Explanation: The text states that IP is a 'connectionless protocol that provides no flow control, no error control, and no congestion control services,' meaning it is unreliable.
+
+Q26. Which layer of the TCP/IP suite is responsible for handling the differences between various media, such as a wired LAN and a wireless WAN, by taking a datagram and moving it across that specific link?
+   A. The Physical Layer
+   B. The Data-Link Layer
+   C. The Network Layer
+   D. The Transport Layer
+
+   Answer: B
+   Explanation: The text states the data-link layer is responsible for taking the datagram and moving it across the link, which can be a wired LAN, wireless LAN, wired WAN, or wireless WAN, each potentially using different protocols.
+debugger eval code:48:11
+

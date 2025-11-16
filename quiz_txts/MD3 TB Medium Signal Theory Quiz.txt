@@ -1,0 +1,226 @@
+Q1. A signal's power is reduced to one-fourth of its original strength as it passes through a medium. What is the attenuation in decibels (dB)?
+   A. $-6$ dB
+   B. $-3$ dB
+   C. $-4$ dB
+   D. $4$ dB
+
+   Answer: A
+   Explanation: Attenuation is calculated as $10 \log_{10}(P_2/P_1)$. Since $P_2 = 0.25 P_1$, this becomes $10 \log_{10}(0.25) \approx 10(-0.6) = -6$ dB.
+
+Q2. What correctly describes the frequency domain representation of a periodic composite signal?
+   A. It consists of a series of discrete spikes at specific frequencies.
+   B. It is a continuous curve representing an infinite number of frequencies.
+   C. It is represented by a single spike at its fundamental frequency.
+   D. It shows a flat line, indicating zero frequency components.
+
+   Answer: A
+   Explanation: A periodic signal, being a repeating pattern, can be decomposed into a fundamental frequency and its integer multiples (harmonics), which appear as discrete frequencies in the frequency domain.
+
+Q3. A noiseless channel has a bandwidth of 20 kHz. How many signal levels are needed to transmit data at a rate of 240 kbps?
+   A. 4 levels
+   B. 8 levels
+   C. 32 levels
+   D. 64 levels
+
+   Answer: D
+   Explanation: Using the Nyquist formula, $240,000 = 2 \times 20,000 \times \log_2(L)$. This simplifies to $6 = \log_2(L)$, so $L = 2^6 = 64$.
+
+Q4. What is the primary characteristic of baseband transmission?
+   A. The digital signal is sent directly over a low-pass channel without modulation.
+   B. The digital signal is converted to an analog signal using a carrier frequency.
+   C. It is only suitable for wireless communication over long distances.
+   D. It combines multiple signals into different frequency bands.
+
+   Answer: A
+   Explanation: Baseband transmission involves sending the digital signal in its original form, which requires a channel with a bandwidth that starts from zero (a low-pass channel).
+
+Q5. If a sine wave completes one full cycle in 25 microseconds (µs), what is its frequency?
+   A. 40 kHz
+   B. 25 MHz
+   C. 400 Hz
+   D. 0.04 Hz
+
+   Answer: A
+   Explanation: Frequency is the inverse of the period ($f = 1/T$). First, convert the period to seconds: $25 \mu s = 25 \times 10^{-6}$ s. Then, $f = 1 / (25 \times 10^{-6}) = 40,000$ Hz, or 40 kHz.
+
+Q6. A network link has a bandwidth of 10 Mbps. It takes 40 ms for a bit to travel from the sender to the receiver. What is the bandwidth-delay product of this link?
+   A. 400,000 bits
+   B. 400 bits
+   C. 250,000 bits
+   D. 1,000,000 bits
+
+   Answer: A
+   Explanation: The product is calculated by multiplying bandwidth by delay. Bandwidth = $10 \times 10^6$ bps. Delay = $40 \times 10^{-3}$ s. The product is $(10 \times 10^6) \times (40 \times 10^{-3}) = 400,000$ bits.
+
+Q7. Which of the following scenarios is primarily limited by the Shannon Capacity formula?
+   A. Determining the maximum data rate of a telephone line with a known signal-to-noise ratio.
+   B. Calculating the number of signal levels needed for a specific bit rate on a perfectly clean, noiseless fiber optic cable.
+   C. Measuring the actual data transfer speed of a file download, which is affected by network congestion.
+   D. Finding the time it takes for a signal to travel across a satellite link.
+
+   Answer: A
+   Explanation: The Shannon capacity formula specifically calculates the theoretical maximum data rate for a noisy channel, making it the appropriate tool for this scenario.
+
+Q8. A digital signal uses 8 distinct voltage levels to represent data. How many bits are sent per level?
+   A. 3 bits
+   B. 8 bits
+   C. 4 bits
+   D. 2 bits
+
+   Answer: A
+   Explanation: The number of bits per level is calculated as $\log_2(L)$, where L is the number of levels. In this case, $\log_2(8) = 3$.
+
+Q9. A composite signal is made of components with frequencies ranging from 1.2 MHz to 1.8 MHz. What is the bandwidth of this signal?
+   A. 600 kHz
+   B. 3.0 MHz
+   C. 1.8 MHz
+   D. 1.5 MHz
+
+   Answer: A
+   Explanation: Bandwidth is the difference between the highest and lowest frequencies in a signal. $1.8$ MHz $- 1.2$ MHz $= 0.6$ MHz, which is equal to 600 kHz.
+
+Q10. In the context of network performance, how does 'throughput' differ from 'bandwidth'?
+   A. Bandwidth is the theoretical maximum data rate, while throughput is the actual measured data rate.
+   B. Bandwidth is measured in Hertz (Hz), while throughput is measured in bits per second (bps).
+   C. Throughput is always higher than bandwidth due to data compression.
+   D. They are identical terms for the speed of a network link.
+
+   Answer: A
+   Explanation: Bandwidth represents the potential capacity of a link, whereas throughput is the actual rate at which data is successfully transmitted, which can be lower due to factors like congestion and device limitations.
+
+Q11. A sine wave is described as having a phase of 90 degrees. What does this mean about its starting position at time t=0?
+   A. It starts at its peak amplitude.
+   B. It starts at zero amplitude and is increasing.
+   C. It starts at its minimum (negative peak) amplitude.
+   D. It starts at zero amplitude and is decreasing.
+
+   Answer: A
+   Explanation: A 90-degree phase shift corresponds to a shift of one-quarter of a cycle to the left, causing the wave to start at its maximum positive value at time zero.
+
+Q12. A 5 MB image file is transmitted over a 4 Mbps network link. What is the transmission time?
+   A. 10 seconds
+   B. 1.25 seconds
+   C. 80 seconds
+   D. 1 second
+
+   Answer: A
+   Explanation: First, convert the file size to bits: $5 \text{ MB} = 5 \times 10^6 \text{ bytes} \times 8 \text{ bits/byte} = 40 \times 10^6$ bits. Then, divide by the bandwidth: $(40 \times 10^6 \text{ bits}) / (4 \times 10^6 \text{ bps}) = 10$ seconds.
+
+Q13. Which type of transmission impairment is caused by the varying propagation speeds of different frequency components within a composite signal?
+   A. Distortion
+   B. Attenuation
+   C. Noise
+   D. Jitter
+
+   Answer: A
+   Explanation: Distortion occurs when a signal's shape changes because its various frequency components travel at slightly different speeds, causing them to arrive out of phase at the destination.
+
+Q14. The signal-to-noise ratio (SNR) for a channel is given as 30 dB. What is the corresponding numerical SNR value?
+   A. 100
+   B. 1000
+   C. 300
+   D. 30
+
+   Answer: B
+   Explanation: The formula is $\text{SNR}_{\text{dB}} = 10 \log_{10}(\text{SNR})$. To find SNR, we calculate $10^{(\text{SNR}_{\text{dB}}/10)}$. So, SNR $= 10^{(30/10)} = 10^3 = 1000$.
+
+Q15. What is the primary reason for using broadband transmission (modulation) to send computer data over a telephone line?
+   A. The telephone line is a bandpass channel and cannot transmit the baseband digital signal directly.
+   B. To increase the physical propagation speed of the signal in the wire.
+   C. To convert the signal from analog to digital at the source.
+   D. To eliminate all noise from the telephone line.
+
+   Answer: A
+   Explanation: Telephone lines are designed for voice and have a limited bandwidth that does not start at 0 Hz (it's a bandpass channel). Modulation is required to shift the digital signal's frequencies into the range the channel can pass.
+
+Q16. A signal travels through a cable with a loss of -0.5 dB/km. If the signal starts with a power of 10 mW, what is its approximate power after traveling 6 km?
+   A. 10 mW
+   B. 5 mW
+   C. 7 mW
+   D. 2.5 mW
+
+   Answer: B
+   Explanation: The total loss is $6 \text{ km} \times -0.5 \text{ dB/km} = -3$ dB. A loss of 3 dB corresponds to a halving of the signal power, so the final power is $10 \text{ mW} / 2 = 5$ mW.
+
+Q17. According to Fourier analysis, what is the fundamental characteristic of a digital signal?
+   A. It has a single, discrete frequency.
+   B. It is a composite analog signal with an infinite bandwidth.
+   C. It is a signal that cannot be represented in the frequency domain.
+   D. It only contains high-frequency components.
+
+   Answer: B
+   Explanation: The sharp vertical and horizontal lines of a digital signal require components from zero frequency (for flat parts) to infinite frequency (for instantaneous changes), making it a composite signal with infinite bandwidth.
+
+Q18. What is the propagation time for a signal to travel over a 6,000 km cable link if the propagation speed in the cable is $2 \times 10^8$ m/s?
+   A. 30 ms
+   B. 3 ms
+   C. 300 ms
+   D. 20 ms
+
+   Answer: A
+   Explanation: Propagation time = Distance / Speed. The distance is $6,000 \text{ km} = 6 \times 10^6$ m. So, time = $(6 \times 10^6 \text{ m}) / (2 \times 10^8 \text{ m/s}) = 0.03$ s, which is 30 ms.
+
+Q19. A sine wave has a frequency of 50 Hz. What is its period?
+   A. 20 ms
+   B. 50 s
+   C. 0.05 s
+   D. 2 ms
+
+   Answer: A
+   Explanation: Period is the inverse of frequency ($T = 1/f$). $T = 1 / 50 \text{ Hz} = 0.02$ seconds. Converting to milliseconds gives $0.02 \times 1000 = 20$ ms.
+
+Q20. Which of the following defines 'jitter' in the context of network performance?
+   A. The variation in delay for packets arriving at the destination.
+   B. The total time it takes for a message to travel from source to destination.
+   C. The loss of signal strength over a distance.
+   D. The number of bits that can fill a network link at any given time.
+
+   Answer: A
+   Explanation: Jitter is the unevenness in packet arrival times, which is problematic for real-time applications like video and audio streaming.
+
+Q21. A telephone line has a bandwidth of 3000 Hz and a signal-to-noise ratio of 3162. What is its theoretical maximum data rate according to Shannon?
+   A. Approximately 34.8 kbps
+   B. Approximately 6000 bps
+   C. Approximately 9.5 Mbps
+   D. Approximately 3.1 kbps
+
+   Answer: A
+   Explanation: Using Shannon's formula: $C = B \log_2(1 + \text{SNR}) = 3000 \times \log_2(1 + 3162) = 3000 \times \log_2(3163) \approx 3000 \times 11.62 \approx 34,860$ bps.
+
+Q22. What is the wavelength of an electromagnetic signal with a frequency of 100 MHz in a vacuum, where the propagation speed is $3 \times 10^8$ m/s?
+   A. 3 meters
+   B. 30 meters
+   C. 0.3 meters
+   D. 300 meters
+
+   Answer: A
+   Explanation: Wavelength ($\lambda$) is calculated as propagation speed (c) divided by frequency (f). $\lambda = c/f = (3 \times 10^8 \text{ m/s}) / (100 \times 10^6 \text{ Hz}) = 3$ meters.
+
+Q23. If we want to approximate a digital signal using baseband transmission over a channel with limited bandwidth, what does using more harmonics (e.g., first, third, and fifth) achieve?
+   A. The resulting analog signal more closely resembles the original digital signal.
+   B. It decreases the required bandwidth for transmission.
+   C. It converts the transmission from baseband to broadband.
+   D. It completely eliminates transmission impairment.
+
+   Answer: A
+   Explanation: Adding more harmonics (higher frequency components) allows the analog signal to better replicate the sharp corners and flat lines of the digital signal, leading to a more accurate representation.
+
+Q24. Which of the following is an example of digital data?
+   A. Text stored in a computer file as a series of 0s and 1s.
+   B. The sound of a human voice captured by a microphone.
+   C. The changing position of the second hand on an analog clock.
+   D. A live broadcast signal from an FM radio station.
+
+   Answer: A
+   Explanation: Digital data refers to information that has discrete states. Data stored in computer memory in binary form is a primary example of this.
+
+Q25. Two signals have the same frequency and phase. What characteristic must be different if one signal has a higher peak amplitude than the other?
+   A. The energy the signal carries.
+   B. The period of the signal.
+   C. The wavelength of the signal.
+   D. The rate of change of the signal.
+
+   Answer: A
+   Explanation: The peak amplitude of a signal is proportional to the energy it carries. A higher amplitude means more energy.
+debugger eval code:48:11
+

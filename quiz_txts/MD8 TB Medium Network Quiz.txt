@@ -1,0 +1,244 @@
+Q1. What is the primary reason that switched networks are preferred over mesh or star topologies for very large networks?
+   A. They provide a dedicated physical link between every pair of devices.
+   B. They are more cost-efficient and practical as they avoid a massive number of mostly idle point-to-point links.
+   C. They centralize all communication through a single, powerful central device.
+   D. They operate exclusively at the application layer, simplifying network infrastructure.
+
+   Answer: B
+   Explanation: Switched networks create temporary connections as needed, which is a more scalable and economical solution for large networks than permanent point-to-point links.
+
+Q2. In a circuit-switched network, what is the significance of the 'setup phase'?
+   A. It is the phase where data is divided into packets and headers are added.
+   B. It is the phase where individual packets are routed independently through the network.
+   C. It is the phase where a dedicated path and resources are reserved from source to destination.
+   D. It is the phase where switches learn the global addresses of all devices on the network.
+
+   Answer: C
+   Explanation: This phase establishes a dedicated circuit by allocating resources like channels and switch capacity, which remain reserved for the entire connection.
+
+Q3. Which of the following best describes a key characteristic of a datagram network?
+   A. All packets from a source to a destination follow the same pre-established path.
+   B. Each packet is treated independently, with the potential to arrive out of order.
+   C. Network resources are reserved for the entire duration of a communication session.
+   D. A connection setup phase is required to create entries in the switching tables.
+
+   Answer: B
+   Explanation: Since switches (routers) make an independent routing decision for each packet, there is no guarantee of path or order of arrival.
+
+Q4. How is addressing handled for a packet during the data transfer phase in a virtual-circuit network?
+   A. The packet carries the full global destination address, which remains unchanged.
+   B. No addressing is needed in the packet header because the path is physical and dedicated.
+   C. The packet carries a small Virtual-Circuit Identifier (VCI) that has local significance and changes at each switch.
+   D. The packet carries only the global source address, which is used by switches to look up the path.
+
+   Answer: C
+   Explanation: The VCI acts as a label for the pre-established path, telling each switch which output port to use for that specific virtual circuit.
+
+Q5. What is the primary drawback of using a single large crossbar switch to connect a high number of inputs and outputs (e.g., 1000x1000)?
+   A. It introduces significant delay due to time-division multiplexing.
+   B. The number of required crosspoints ($n \times m$) becomes impractically large and costly.
+   C. It frequently causes blocking, where an input cannot connect to a free output.
+   D. It can only be used for analog signals, not digital data.
+
+   Answer: B
+   Explanation: A 1000x1000 switch would require 1,000,000 crosspoints, which is inefficient since most are idle at any given time.
+
+Q6. What is the function of a Time-Slot Interchange (TSI) unit within a time-division switch?
+   A. To physically connect input lines to output lines using electronic crosspoints.
+   B. To sort incoming packets based on their destination address before they enter a banyan switch.
+   C. To read time slots from incoming TDM frames into RAM and then write them out to the outgoing frame in a different order.
+   D. To combine multiple low-speed signals into a single high-speed signal.
+
+   Answer: C
+   Explanation: The TSI allows data from an input time slot (e.g., slot A) to be moved to a different output time slot (e.g., slot C), effectively switching the data streams.
+
+Q7. In the context of multistage switches, what does 'blocking' refer to?
+   A. A situation where a packet is dropped because a switch's buffer is full.
+   B. The delay experienced during the connection setup phase.
+   C. A condition where an input cannot be connected to an available output because all possible paths through the switch are already in use.
+   D. A security feature that prevents unauthorized connections from being established.
+
+   Answer: C
+   Explanation: This occurs because the sharing of middle-stage crosspoints in a multistage switch can lead to resource contention during heavy traffic.
+
+Q8. Which component of a packet switch is responsible for looking up the destination address in a routing table to determine the appropriate output port?
+   A. Input Port
+   B. Switching Fabric
+   C. Output Port
+   D. Routing Processor
+
+   Answer: D
+   Explanation: This component performs the network layer functions, including the 'table lookup' to find the next hop and corresponding output port for a packet.
+
+Q9. Why is a Batcher-banyan switch considered an improvement over a standalone banyan switch?
+   A. It requires significantly fewer stages to route the same number of packets.
+   B. It eliminates the need for a routing processor by hard-wiring all the paths.
+   C. It uses time-division multiplexing to handle more connections simultaneously.
+   D. It sorts packets by destination before they enter the banyan switch, which prevents internal collisions.
+
+   Answer: D
+   Explanation: A standard banyan switch can have internal collisions even if packets are headed to different outputs. The Batcher sorting network resolves this issue.
+
+Q10. Which switching method corresponds to the data-link layer in the TCP/IP model?
+   A. Circuit switching
+   B. Packet switching using a virtual-circuit approach
+   C. Packet switching using a datagram approach
+   D. Message switching
+
+   Answer: B
+   Explanation: The source material states that packet switching at the data-link layer is normally done using a virtual-circuit approach, where packets are often called frames or cells.
+
+Q11. A three-stage switch is designed with $N = 200$ inputs/outputs. According to the Clos criteria for a nonblocking switch, if we choose $n = 10$ (inputs per first-stage switch), what is the minimum required number of middle-stage switches ($k$)?
+   A. 10
+   B. 20
+   C. 19
+   D. 9
+
+   Answer: C
+   Explanation: The formula is $k \geq 2n - 1$. With $n=10$, this evaluates to $2(10) - 1 = 19$. Therefore, a minimum of 19 middle-stage switches are needed.
+
+Q12. How does the delay characteristic of a datagram network compare to that of a circuit-switched network for a continuous data stream?
+   A. The datagram network has a lower total delay because it has no setup or teardown phases.
+   B. The circuit-switched network has minimal delay during data transfer, as resources are pre-allocated and there is no per-packet waiting time at switches.
+   C. Both networks have identical delay characteristics because they use the same physical links.
+   D. The datagram network has a more predictable and uniform delay for all packets in a message.
+
+   Answer: B
+   Explanation: Once the circuit is established, data flows continuously with only propagation delay, which is highly efficient for long, continuous transfers.
+
+Q13. What is the key difference in resource allocation between circuit-switched and packet-switched networks?
+   A. Circuit-switched networks allocate resources on demand, while packet-switched networks reserve them in advance.
+   B. Both network types allocate resources on demand to improve efficiency.
+   C. Circuit-switched networks reserve dedicated resources for the entire session, while packet-switched networks allocate resources as needed for each packet.
+   D. Neither network type allocates resources; they are always available to all users.
+
+   Answer: C
+   Explanation: This fundamental difference is why circuit switching is less efficient for bursty traffic but provides guaranteed performance, whereas packet switching is more efficient but offers no guarantees.
+
+Q14. What is a distinguishing feature of a Time-Space-Time (TST) switch?
+   A. It is a type of packet switch that uses a banyan fabric.
+   B. It exclusively uses space-division switching to reduce blocking.
+   C. It combines time-division and space-division switching to optimize for both physical size and delay.
+   D. It is a theoretical model that has not been practically implemented.
+
+   Answer: C
+   Explanation: It uses time-slot interchanges (time stages) and a crossbar switch (space stage) to leverage the benefits of both technologies.
+
+Q15. In a banyan switch with $n$ inputs and $n$ outputs, how are packets routed at each stage?
+   A. Based on the Virtual-Circuit Identifier (VCI) in the packet header.
+   B. Based on a lookup in a dynamic routing table stored in each microswitch.
+   C. Based on a specific bit in the binary representation of the destination output port.
+   D. Randomly to any available path to distribute the load evenly.
+
+   Answer: C
+   Explanation: Each stage corresponds to one bit of the destination address. For example, the first stage routes based on the most significant bit, the second stage on the next bit, and so on.
+
+Q16. What distinguishes message switching from packet switching?
+   A. Message switching sends the entire message as a single unit, which is stored and forwarded at each switch.
+   B. Message switching requires a dedicated physical circuit to be established before sending data.
+   C. Message switching is faster than packet switching because it does not require headers.
+   D. Message switching is implemented at the network layer, while packet switching is at the data-link layer.
+
+   Answer: A
+   Explanation: This store-and-forward mechanism on a whole-message basis is the defining feature of message switching, unlike packet switching which breaks messages into smaller pieces.
+
+Q17. A packet switch's input port performs several functions. Which of the following is NOT typically a function of the input port?
+   A. Constructing bits from the received physical signal.
+   B. Decapsulating the packet from the data-link layer frame.
+   C. Encapsulating outgoing packets into new frames.
+   D. Holding the packet in a buffer (queue) before it can be processed by the switching fabric.
+
+   Answer: C
+   Explanation: Encapsulation is the responsibility of the output port before the data is sent out on the next link.
+
+Q18. Why is a virtual-circuit network considered a compromise between a circuit-switched network and a datagram network?
+   A. It treats every packet independently like a datagram network but is implemented at the physical layer like a circuit-switched network.
+   B. It uses connection setup and teardown phases like a circuit-switched network, but data is packetized and resources can be allocated on demand like a datagram network.
+   C. It offers the guaranteed, non-blocking performance of a circuit-switched network with the low setup delay of a datagram network.
+   D. It uses a global end-to-end address in every packet like a datagram network but reserves a dedicated physical channel like a circuit-switched network.
+
+   Answer: B
+   Explanation: This correctly identifies the key characteristics it borrows from both models: the connection-oriented nature of circuit switching and the packet-based, flexible resource allocation of datagram networks.
+
+Q19. In a virtual-circuit network's setup phase, what is the purpose of the acknowledgment frame sent from the destination back to the source?
+   A. To inform the source that the destination is busy and cannot accept the connection.
+   B. To carry the first packet of data from the destination to the source.
+   C. To establish the routing tables in each switch for datagram-style forwarding.
+   D. To propagate the chosen VCIs back through the switches, completing the entries in their switching tables.
+
+   Answer: D
+   Explanation: This frame travels the reverse path, allowing each switch to fill in the 'outgoing VCI' field in its table, which links the incoming VCI to the next hop's incoming VCI.
+
+Q20. Which of the following statements about the efficiency of circuit-switched networks is true?
+   A. They are highly efficient for all types of data traffic because of the dedicated path.
+   B. They are considered inefficient because resources are allocated for the entire duration of a connection, even if no data is being sent.
+   C. Their efficiency is higher than packet-switched networks because they have no packet headers.
+   D. They are more efficient because they do not require complex routing tables in the switches.
+
+   Answer: B
+   Explanation: This is the primary argument against circuit-switching for bursty computer data, as the allocated channels cannot be used by others during idle periods.
+
+Q21. For a three-stage space-division switch with N inputs, the minimum number of crosspoints is achieved when the number of inputs per first-stage switch, $n$, is approximately equal to $(N/2)^{1/2}$. What is the trade-off for designing a switch this way?
+   A. This design completely eliminates the possibility of blocking under all traffic conditions.
+   B. This design increases the number of crosspoints compared to a single crossbar switch.
+   C. This design may experience blocking during periods of heavy traffic because it prioritizes minimizing crosspoints over guaranteeing a path.
+   D. This design requires the use of time-division multiplexing in the middle stage.
+
+   Answer: C
+   Explanation: Optimizing for the lowest number of crosspoints often involves choosing a number of middle-stage switches ($k$) that is too low to satisfy nonblocking criteria.
+
+Q22. In a datagram network, how does a switch (router) decide where to forward an incoming packet?
+   A. It forwards the packet based on an incoming port number and VCI combination.
+   B. It examines the packet's destination address and looks up this address in its dynamic routing table.
+   C. It sends the packet out on all ports except the one it arrived on.
+   D. It follows a fixed path that was established during a setup phase.
+
+   Answer: B
+   Explanation: Each router maintains a table that maps destination addresses (or prefixes) to an outgoing port, and this decision is made independently for each packet.
+
+Q23. A banyan switch is built to connect 8 inputs to 8 outputs. A packet arrives at input port 1 (binary 001) and needs to be routed to output port 6 (binary 110). What does the first-stage microswitch use to make its routing decision?
+   A. The entire destination address (110).
+   B. The first bit of the input port address (0).
+   C. The first bit of the destination address (1).
+   D. The last bit of the destination address (0).
+
+   Answer: C
+   Explanation: The first stage of an $8 \times 8$ banyan switch routes based on the most significant bit of the destination address. Since the destination is 6 (110), it uses the first bit, '1'.
+
+Q24. What is the primary function of the 'trap module' in a Batcher-banyan switch configuration?
+   A. To sort the incoming packets based on their destination addresses.
+   B. To route the sorted packets to their final destination ports.
+   C. To prevent packets with the same destination from passing to the banyan switch simultaneously.
+   D. To amplify the signal strength of the packets before they are routed.
+
+   Answer: C
+   Explanation: The trap detects duplicate destinations among the sorted packets and allows only one to pass per cycle, preventing contention for the same output.
+
+Q25. During data transfer in a circuit-switched network, addressing information is not present in the continuous data flow. Why is this possible?
+   A. Because the switches have memorized the destination address from the setup phase.
+   B. Because the dedicated physical path itself guides the data, making per-hop addressing unnecessary.
+   C. Because circuit-switched networks are only used for broadcasting to all devices.
+   D. Because the addressing information is sent in a separate, parallel control channel.
+
+   Answer: B
+   Explanation: The path is established once during setup, and data simply follows this reserved circuit. Switches route based on the occupied channel, not an address.
+
+Q26. If a network designer wants to build a large, nonblocking three-stage switch with 200 inputs ($N=200$) and chooses to use first-stage switches with 20 inputs each ($n=20$), what is the minimum number of middle-stage switches ($k$) required?
+   A. 4
+   B. 10
+   C. 20
+   D. 39
+
+   Answer: D
+   Explanation: According to the Clos criterion for nonblocking switches, $k$ must be greater than or equal to $2n - 1$. For $n=20$, this is $2(20) - 1 = 39$.
+
+Q27. Which of the three traditional switching methods has been largely phased out for general communications but remains a conceptual model for applications like email?
+   A. Circuit Switching
+   B. Packet Switching
+   C. Message Switching
+   D. Datagram Switching
+
+   Answer: C
+   Explanation: The store-and-forward nature of message switching is impractical for real-time communication but provides a good analogy for services like email where entire messages are relayed from server to server.
+debugger eval code:48:11
+

@@ -1,0 +1,235 @@
+Q1. In the three-layer communication scenario between Maria and Ann, what is the primary benefit of having a separate encryption/decryption layer (Layer 2)?
+   A. It reduces the overall cost of communication by using standard mailing services.
+   B. It ensures the physical mail is delivered more quickly by the postal service.
+   C. It allows for modularity, meaning the encryption method can be updated without changing the other layers.
+   D. It allows Maria and Ann to speak different languages while still understanding each other.
+
+   Answer: C
+   Explanation: The text explicitly states that if the encryption is broken, only the second-layer machine needs to be changed, which is the definition of modularity.
+
+Q2. What does the 'first principle' of protocol layering state is necessary for bidirectional communication?
+   A. Each layer must perform two opposite tasks, one for each direction.
+   B. The corresponding layers on both ends must use identical objects.
+   C. A physical connection must exist between each corresponding layer.
+   D. All layers must be implemented in software, not hardware.
+
+   Answer: A
+   Explanation: This principle ensures that a layer can both process data for sending (e.g., encrypt) and receiving (e.g., decrypt).
+
+Q3. According to the TCP/IP model described, a link-layer switch is involved with which layers?
+   A. Physical, Data-link, and Network
+   B. Physical and Data-link
+   C. Only the Physical layer
+   D. All five layers
+
+   Answer: B
+   Explanation: A link-layer switch operates within a single link and is concerned with forwarding frames based on data-link addresses, requiring only the two lowest layers.
+
+Q4. In the TCP/IP suite, the duties of the transport layer are described as having what scope?
+   A. Hop-to-hop
+   B. Link-to-link
+   C. End-to-end
+   D. Process-to-network
+
+   Answer: C
+   Explanation: The transport layer establishes a logical connection and manages communication between the source and destination hosts, making its responsibility end-to-end.
+
+Q5. What is the process called when the network layer takes a transport-layer packet and adds its own header?
+   A. Decapsulation
+   B. Multiplexing
+   C. Segmentation
+   D. Encapsulation
+
+   Answer: D
+   Explanation: This term describes the process of wrapping data from a higher layer with a header from a lower layer as it moves down the protocol stack.
+
+Q6. At a router, a received frame is decapsulated. To which layer must the packet be processed before it is re-encapsulated for the next link?
+   A. Transport layer
+   B. Application layer
+   C. Network layer
+   D. Data-link layer
+
+   Answer: C
+   Explanation: The router needs to inspect the network-layer header to find the destination IP address and determine the next hop for forwarding.
+
+Q7. Which address type in the TCP/IP model is used to uniquely define the connection of a device to the entire Internet?
+   A. Port numbers
+   B. Link-layer (MAC) addresses
+   C. Application-specific names
+   D. Network-layer (IP) addresses
+
+   Answer: D
+   Explanation: The network-layer address (IP address) is global in scope and provides the unique identifier needed for routing packets from a source host to a destination host anywhere on the internet.
+
+Q8. Which protocol at the transport layer is described as connectionless and does not provide flow, error, or congestion control?
+   A. TCP (Transmission Control Protocol)
+   B. UDP (User Datagram Protocol)
+   C. IP (Internet Protocol)
+   D. SCTP (Stream Control Transmission Protocol)
+
+   Answer: B
+   Explanation: UDP is a simple, connectionless protocol that sends datagrams without establishing a connection, offering speed at the expense of reliability features.
+
+Q9. What is the primary reason cited for the lack of success of the OSI model compared to the TCP/IP protocol suite?
+   A. The OSI model was technologically inferior and had fewer layers.
+   B. TCP/IP was already well-established when the OSI model was completed.
+   C. The OSI model did not include a network layer for routing.
+   D. The International Organization for Standardization (ISO) did not support its implementation.
+
+   Answer: B
+   Explanation: The text states that OSI was completed when TCP/IP was fully in place, and the cost of switching was a major factor in its lack of adoption.
+
+Q10. What is the correct name for the packet data unit (PDU) at the network layer?
+   A. Frame
+   B. Segment
+   C. Message
+   D. Datagram
+
+   Answer: D
+   Explanation: The network layer takes a transport-layer packet and encapsulates it into a packet called a datagram.
+
+Q11. Which two layers are present in the OSI model but are considered part of the application layer in the TCP/IP suite?
+   A. Physical and Data-link
+   B. Network and Transport
+   C. Session and Presentation
+   D. Application and Session
+
+   Answer: C
+   Explanation: These two layers (Layers 5 and 6) of the OSI model handle functions like dialog control and data formatting, which are left to the application layer in TCP/IP.
+
+Q12. The ability of the TCP protocol at the transport layer to accept messages from multiple application protocols like HTTP and FTP is an example of what process?
+   A. Demultiplexing
+   B. Encapsulation
+   C. Multiplexing
+   D. Fragmentation
+
+   Answer: C
+   Explanation: Multiplexing at the source involves a protocol at one layer taking packets from several different protocols in the layer above it.
+
+Q13. What is the primary responsibility of the physical layer in the TCP/IP model?
+   A. To move frames from one node to the next.
+   B. To determine the best route for a packet across the network.
+   C. To carry individual bits in a frame across a link.
+   D. To provide process-to-process communication.
+
+   Answer: C
+   Explanation: The physical layer deals with the transmission medium and is responsible for transmitting the raw bit stream.
+
+Q14. The Internet Protocol (IP) at the network layer is described as a connectionless protocol. What does this imply?
+   A. It guarantees that all packets will arrive in the correct order.
+   B. It provides robust error control and retransmits lost packets.
+   C. It establishes a dedicated logical connection before sending data.
+   D. Each datagram is an independent entity, treated separately from others.
+
+   Answer: D
+   Explanation: In a connectionless service, each packet is routed independently, and the network has no memory of previous packets between the same hosts.
+
+Q15. What happens to the identical objects (packets) created at the transport and application layers as they travel from source to destination through routers?
+   A. They are changed by every router and link-layer switch in the path.
+   B. They remain unchanged by any intermediate router or link-layer switch.
+   C. They are decapsulated at each router and a new transport header is added.
+   D. They are combined into larger packets by routers to improve efficiency.
+
+   Answer: B
+   Explanation: The text states that the packet created by the transport layer at the source host is the same one received by the transport layer at the destination, as intermediate devices do not operate at this layer.
+
+Q16. A logical connection in protocol layering means that:
+   A. There is a direct physical wire connecting two corresponding layers.
+   B. Two layers can communicate as if they were directly connected, hiding the complexity of lower layers.
+   C. Data can bypass the lower layers to speed up communication.
+   D. The protocol used by each layer must be identical across the entire stack.
+
+   Answer: B
+   Explanation: This concept allows developers to program one layer without worrying about the details of how the layers below it operate.
+
+Q17. Which of the following application-layer protocols is used for accessing the World Wide Web?
+   A. SMTP (Simple Mail Transfer Protocol)
+   B. FTP (File Transfer Protocol)
+   C. DNS (Domain Name System)
+   D. HTTP (Hypertext Transfer Protocol)
+
+   Answer: D
+   Explanation: HTTP is the foundational protocol for data communication on the World Wide Web.
+
+Q18. When the data-link layer encapsulates a datagram, what is the resulting packet called?
+   A. A segment
+   B. A frame
+   C. A user datagram
+   D. A message
+
+   Answer: B
+   Explanation: The data-link layer takes a network-layer datagram and adds its own header to create a frame for transmission across a link.
+
+Q19. What is the primary function of the data-link layer?
+   A. To convert bits into electrical or optical signals.
+   B. To provide services to the end-user through application programs.
+   C. To move a datagram across a single link.
+   D. To provide end-to-end reliable data transfer between processes.
+
+   Answer: C
+   Explanation: The data-link layer is responsible for the hop-to-hop delivery of packets, managing access to and transmission over a physical link.
+
+Q20. Which layer of the TCP/IP model is responsible for routing a datagram from the source computer to the destination computer across multiple networks?
+   A. Application Layer
+   B. Transport Layer
+   C. Network Layer
+   D. Data-Link Layer
+
+   Answer: C
+   Explanation: The network layer's main responsibility is host-to-host delivery, which includes routing the packet through intermediate routers.
+
+Q21. According to the 'second principle' of protocol layering, what must be true about the objects under a specific layer at both the sender and receiver sites?
+   A. They must be encrypted.
+   B. They must be identical.
+   C. They must contain source and destination addresses.
+   D. They must perform opposite tasks.
+
+   Answer: B
+   Explanation: This principle states that the object passed to a layer on the sending side must be of the same format as the object passed from the corresponding layer on the receiving side (e.g., a ciphertext letter).
+
+Q22. Why does the physical layer not require addresses in the TCP/IP addressing scheme?
+   A. Because the addresses are handled by the transmission medium.
+   B. Because the data-link layer handles all physical addressing.
+   C. Because the unit of data at the physical layer, a bit, cannot have an address.
+   D. Because physical layer protocols are globally standardized and don't need them.
+
+   Answer: C
+   Explanation: The text states that the physical layer's unit of data is a bit, which is too fundamental a unit to carry addressing information.
+
+Q23. TCP is described as a connection-oriented protocol. What is the first thing TCP does before transferring data?
+   A. It sends the data immediately as a user datagram.
+   B. It queries the DNS to find the destination address.
+   C. It establishes a logical connection between transport layers.
+   D. It fragments the message into frames.
+
+   Answer: C
+   Explanation: Being connection-oriented means TCP must first complete a handshake process to establish a reliable, logical connection or 'pipe' before data transfer begins.
+
+Q24. A router connects three different links. How many network and data-link layers is it involved with?
+   A. One network layer and one data-link layer.
+   B. Three network layers and three data-link layers.
+   C. One network layer and three data-link layers.
+   D. Three network layers and one data-link layer.
+
+   Answer: C
+   Explanation: The router has a single network-layer function but must interface with the specific data-link and physical layer protocols for each of the three links it connects.
+
+Q25. What is demultiplexing at the destination host?
+   A. The process of combining packets from multiple applications into a single stream.
+   B. The process of delivering an incoming packet to the correct higher-layer protocol.
+   C. The process of removing headers from a packet as it moves up the stack.
+   D. The process of checking a received frame for errors.
+
+   Answer: B
+   Explanation: At the destination, a protocol like IP must decide whether to deliver its payload to TCP or UDP based on header information, which is demultiplexing.
+
+Q26. The text explains that if Maria decides to do the job of the first layer (mailing the letter) herself instead of using a robot, the system still works. This illustrates which advantage of protocol layering?
+   A. Modularity
+   B. Separation of services from implementation
+   C. Bidirectional communication
+   D. Logical connection
+
+   Answer: B
+   Explanation: This principle means that as long as a layer provides the required services to the layer above it, the specific way it accomplishes its tasks (its implementation) doesn't matter.
+debugger eval code:48:11
+

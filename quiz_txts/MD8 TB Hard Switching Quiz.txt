@@ -1,0 +1,235 @@
+Q1. In a three-stage space-division switch with $N=120$ inputs, designed using the Clos criteria for non-blocking operation, the input lines are divided into groups of $n=10$. What is the minimum number of middle-stage switches ($k$) required?
+   A. 10
+   B. 20
+   C. 19
+   D. 12
+
+   Answer: C
+   Explanation: This value is derived from the Clos criteria formula $k \ge 2n - 1$, which ensures there is always a path available for a connection.
+
+Q2. What is the total number of crosspoints required for a three-stage $200 \times 200$ switch where $N=200$, the number of middle-stage crossbars is $k=5$, and each of the first-stage groups has $n=20$ lines?
+   A. 40,000
+   B. 2,500
+   C. 4,500
+   D. 2,000
+
+   Answer: C
+   Explanation: This result is achieved by correctly applying the formula for total crosspoints in a three-stage switch, which is $2Nk + k(N/n)^2$.
+
+Q3. Which of the following best describes the fundamental reason why datagram networks are considered 'connectionless'?
+   A. Packets do not require a destination address in their header.
+   B. The switches (routers) do not maintain any information about a connection state.
+   C. No setup or teardown phases are used, so connections are instantaneous.
+   D. All packets belonging to a single message must follow the same path.
+
+   Answer: B
+   Explanation: The term 'connectionless' refers to the fact that each packet is handled independently without the switches needing to remember a pre-established path or connection.
+
+Q4. In the setup phase of a virtual-circuit network, how does a switch determine the 'outgoing VCI' value for its switching table entry?
+   A. It is assigned by the source system in the initial setup request frame.
+   B. The switch generates a random VCI and sends it to the next switch.
+   C. It is received in an acknowledgment frame from the subsequent switch or destination.
+   D. It is calculated based on the global destination address.
+
+   Answer: C
+   Explanation: The outgoing VCI for one switch is the incoming VCI chosen by the next switch in the path, and this information is passed backward via an acknowledgment.
+
+Q5. What is the primary function of the 'Time-Slot Interchange' (TSI) component in a time-division switch?
+   A. To combine multiple input signals into a single stream using crosspoints.
+   B. To physically connect an input line to an output line for the duration of a call.
+   C. To filter packets based on their destination address.
+   D. To change the order of time slots within a TDM frame.
+
+   Answer: D
+   Explanation: The TSI uses RAM to store incoming time slots and then sends them out in a different, controlled order to route the data to the correct output line.
+
+Q6. A key advantage of a multistage switch over a single crossbar switch is the reduced number of crosspoints. What is a primary disadvantage introduced by this design?
+   A. Increased propagation delay due to more physical components.
+   B. Blocking, where a connection cannot be made because no path is available.
+   C. Inability to handle digital signals.
+   D. The requirement for end-to-end addressing during data transfer.
+
+   Answer: B
+   Explanation: By sharing middle-stage crosspoints, it's possible for all available paths between an input and an output to be occupied, even if the output itself is free.
+
+Q7. In a Banyan switch, how is a packet's route determined at each stage of the switch?
+   A. By the packet's source address.
+   B. By a sequentially corresponding bit of the output port's binary address.
+   C. By the input port number where the packet arrived.
+   D. By a value looked up in a central routing table.
+
+   Answer: B
+   Explanation: Each stage uses one bit from the destination address to make its routing choice; the first stage uses the first bit, the second stage uses the second bit, and so on.
+
+Q8. Which component of a packet switch is responsible for decapsulating a packet from a frame and performing error detection?
+   A. The switching fabric
+   B. The routing processor
+   C. The output port
+   D. The input port
+
+   Answer: D
+   Explanation: An input port handles the physical and data-link layer functions upon packet arrival, which includes frame processing.
+
+Q9. What is the primary role of the Batcher switch when used in a Batcher-banyan switch configuration?
+   A. To route packets based on the bits of their destination address.
+   B. To queue packets if their intended output port is busy.
+   C. To sort incoming packets based on their destination port.
+   D. To convert packets from one protocol to another.
+
+   Answer: C
+   Explanation: The Batcher switch pre-sorts the packets, which helps to resolve potential internal collisions within the subsequent Banyan switch.
+
+Q10. According to the source material, switching at the data-link layer is typically implemented using which approach?
+   A. Circuit switching
+   B. Datagram packet switching
+   C. Virtual-circuit packet switching
+   D. Message switching
+
+   Answer: C
+   Explanation: The textbook specifies that packet switching at the data-link layer is normally done using a virtual-circuit approach, as seen in switched WANs.
+
+Q11. Why does a circuit-switched network experience minimal delay during the data transfer phase compared to a packet-switched network?
+   A. Because the packets are smaller and can be processed faster.
+   B. Because resources like channels and switch processing time are dedicated.
+   C. Because it operates at a higher layer of the TCP/IP model.
+   D. Because it uses global addressing for every piece of data.
+
+   Answer: B
+   Explanation: The pre-allocation of a dedicated path during the setup phase means data flows without waiting or queuing at intermediate switches.
+
+Q12. What is a significant difference in how addresses are used in datagram networks versus virtual-circuit networks during data transfer?
+   A. Datagrams use no address, while virtual-circuits use a VCI.
+   B. Datagrams use a global, end-to-end address, while virtual-circuits use a local VCI.
+   C. Both use a global, end-to-end address that remains unchanged.
+   D. Datagrams use a local address, while virtual-circuits use a global address.
+
+   Answer: B
+   Explanation: This correctly identifies that a datagram's destination address remains constant, whereas a VCI changes from switch to switch.
+
+Q13. A Time-Space-Time (TST) switch is designed to combine the advantages of both space-division and time-division switching. What is the main purpose of the central space-division switch in a TST architecture?
+   A. To store the time slots in RAM before they are reordered.
+   B. To connect the outputs of the first-stage TSIs to the inputs of the third-stage TSIs.
+   C. To eliminate the need for setup and teardown phases.
+   D. To reduce the total number of crosspoints to zero.
+
+   Answer: B
+   Explanation: This allows data from any input group (handled by one TSI) to be routed to any output group (handled by another TSI), providing full connectivity.
+
+Q14. In a datagram network, what does a switch's routing table use as the primary key to look up the correct output port for an incoming packet?
+   A. The source address of the packet.
+   B. A combination of the input port and a virtual circuit identifier.
+   C. The destination address of the packet.
+   D. The sequence number of the packet within its message.
+
+   Answer: C
+   Explanation: Each router in a datagram network makes an independent decision for each packet based solely on its final destination address.
+
+Q15. If a non-blocking three-stage switch is designed according to the Clos criteria, what is the relationship between the number of crosspoints and the number of inputs ($N$)?
+   A. The number of crosspoints is proportional to $N^2$.
+   B. The number of crosspoints is proportional to $N \log_2 N$.
+   C. The number of crosspoints is proportional to $N^{3/2}$.
+   D. The number of crosspoints is proportional to $N$.
+
+   Answer: C
+   Explanation: The text explicitly states that for a switch optimized with the Clos criteria, the minimum number of crosspoints is proportional to $N^{3/2}$.
+
+Q16. Which of these communication scenarios is LEAST efficient over a circuit-switched network?
+   A. A live, high-definition video conference between two sites.
+   B. A traditional telephone call between two people.
+   C. A user browsing a series of web pages, with pauses for reading.
+   D. A large file transfer operating at the maximum line speed.
+
+   Answer: C
+   Explanation: This activity is 'bursty,' with long periods of inactivity where the dedicated resources would be idle and wasted.
+
+Q17. What is the consequence of resource allocation being 'on demand' in a packet-switched network?
+   A. All packets are guaranteed to arrive with a uniform, minimal delay.
+   B. The network can achieve higher overall efficiency by sharing resources.
+   C. A setup phase is required to request resources before data transfer.
+   D. Packets can never be lost or dropped due to lack of resources.
+
+   Answer: B
+   Explanation: Resources that are idle for one connection can be immediately used by another, leading to better utilization of network capacity.
+
+Q18. In a virtual-circuit network, all packets for a given source-destination pair follow the same path. However, the text notes they may still arrive with different delays. Under what condition does this occur?
+   A. This can only happen if there is a routing error in one of the switches.
+   B. When the packets are of variable size.
+   C. When resource allocation is on demand.
+   D. This is not possible; all packets on the same path have the same delay.
+
+   Answer: C
+   Explanation: If resources are not reserved during setup, each packet must compete for link bandwidth and switch processing time, leading to variable waiting times.
+
+Q19. How many stages and how many microswitches per stage are there in a Banyan switch designed for 64 inputs and 64 outputs?
+   A. 6 stages, with 32 microswitches per stage.
+   B. 8 stages, with 8 microswitches per stage.
+   C. 6 stages, with 64 microswitches per stage.
+   D. 64 stages, with 6 microswitches per stage.
+
+   Answer: A
+   Explanation: This correctly identifies the number of stages as $\log_2(64) = 6$ and the number of microswitches per stage as $64/2 = 32$.
+
+Q20. Which of the three main switching methods has been largely 'phased out in general communications' but still has conceptual networking applications like email?
+   A. Circuit switching
+   B. Packet switching
+   C. Message switching
+   D. Datagram switching
+
+   Answer: C
+   Explanation: The text identifies message switching as the method that has been phased out but is conceptually similar to store-and-forward systems like email.
+
+Q21. The total delay calculation for a packet in a datagram network includes waiting times ($w_1, w_2$, etc.) at each switch. Why are these waiting times absent from the data transfer delay calculation in a circuit-switched network?
+   A. Circuit switches are inherently faster than packet switches.
+   B. The entire delay is accounted for in the setup phase.
+   C. Resources are reserved, so there is no contention or queuing for packets.
+   D. Data in circuit-switched networks is not subject to propagation delay.
+
+   Answer: C
+   Explanation: Because a dedicated channel is established from end-to-end, data flows without needing to wait for switch resources to become available.
+
+Q22. What is the primary trade-off when choosing a larger value for $k$ (number of middle-stage switches) in a three-stage switch design?
+   A. It decreases the total number of crosspoints but increases the chance of blocking.
+   B. It increases the total number of crosspoints but decreases the chance of blocking.
+   C. It decreases both the number of crosspoints and the chance of blocking.
+   D. It has no effect on blocking, but it increases the number of simultaneous connections.
+
+   Answer: B
+   Explanation: A larger $k$ provides more parallel paths through the switch, reducing the probability that all paths are busy, at the cost of more hardware (crosspoints).
+
+Q23. In an 8x8 Banyan switch, a packet arrives at an input port and is destined for output port 6 (binary 110). At the third and final stage, the microswitch will route the packet based on which bit?
+   A. The high-order bit (1).
+   B. The middle bit (1).
+   C. The low-order bit (0).
+   D. The entire address (110).
+
+   Answer: C
+   Explanation: In a switch with $\log_2(8) = 3$ stages, the third stage makes its decision based on the third (low-order) bit of the destination address.
+
+Q24. A virtual-circuit network is described as a 'cross between a circuit-switched network and a datagram network'. Which characteristic does it share with a circuit-switched network?
+   A. Each packet is treated independently by the switches.
+   B. It uses setup and teardown phases to establish a path.
+   C. Data is transmitted as a continuous, non-packetized flow.
+   D. Resources are allocated on demand with no reservation possible.
+
+   Answer: B
+   Explanation: Like circuit-switching, a path is established before data transfer begins and is torn down afterward, creating the 'virtual circuit'.
+
+Q25. What function is performed by the routing processor that is being moved to the input ports in newer packet switches to improve performance?
+   A. Error detection and correction.
+   B. Encapsulating the packet into a frame.
+   C. Table lookup to determine the output port.
+   D. Queuing packets before they enter the switching fabric.
+
+   Answer: C
+   Explanation: Performing the routing table search at the input port allows for faster, parallel processing and speeds up the switching decision.
+
+Q26. In a circuit-switched network using FDM, what is reserved during the setup phase to create a dedicated path?
+   A. A specific time slot in each link.
+   B. A specific frequency band (channel) on each link.
+   C. A Virtual-Circuit Identifier (VCI).
+   D. Buffer space in each of the switches.
+
+   Answer: B
+   Explanation: In FDM, the bandwidth of a link is divided into channels, and one of these channels is dedicated to the connection on each segment of the path.
+debugger eval code:48:11
+

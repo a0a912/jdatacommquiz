@@ -1,0 +1,235 @@
+Q1. A communication channel has a bandwidth of 6 MHz. The signal-to-noise ratio is measured to be 31 dB. For a practical data rate of 24 Mbps to be achieved over this channel, what is the minimum number of signal levels (L) that must be used?
+   A. 16
+   B. 8
+   C. 4
+   D. 6
+
+   Answer: B
+   Explanation: Shannon capacity is $10^6 \log_2(1+63) = 6$ Mbps. The target rate is $6 \times (3/4) = 4.5$ Mbps. Using Nyquist, $4.5 = 2 \times 1 \times \log_2(L)$, so $\log_2(L) = 2.25$. Since the number of bits per symbol must be an integer, we need to use 3 bits, which requires $2^3=8$ levels.
+
+Q2. A full-duplex satellite link has a bandwidth of 100 Mbps and a round-trip delay of 480 ms. If the link is to be kept fully occupied with data, what is the size of the 'pipe' in bytes?
+   A. 6,000,000 bytes
+   B. 3,000,000 bytes
+   C. 12,000,000 bytes
+   D. 48,000,000 bytes
+
+   Answer: A
+   Explanation: The bandwidth-delay product for both directions is $2 \times \text{Bandwidth} \times \text{One-Way Delay}$. This is $2 \times (100 \times 10^6 \text{ bps}) \times (0.24 \text{ s}) = 48,000,000$ bits, which is equivalent to 6,000,000 bytes.
+
+Q3. What is the minimum bandwidth required for a low-pass channel to transmit a 4 Mbps digital signal using baseband transmission, if the signal must be approximated using the first, third, and fifth harmonics?
+   A. 2 MHz
+   B. 6 MHz
+   C. 10 MHz
+   D. 4 MHz
+
+   Answer: C
+   Explanation: The highest frequency component needed is the fifth harmonic, which is at $5 \times (N/2) = 5 \times (4 \text{ Mbps}/2) = 10 \text{ MHz}$. The low-pass channel's bandwidth must extend from 0 Hz to this frequency.
+
+Q4. A sine wave signal begins at time 0 at its maximum positive amplitude. What is its phase shift in degrees and radians?
+   A. $90^{\circ}$ or $\frac{\pi}{2}$ radians
+   B. $0^{\circ}$ or 0 radians
+   C. $180^{\circ}$ or $\pi$ radians
+   D. $270^{\circ}$ or $\frac{3\pi}{2}$ radians
+
+   Answer: A
+   Explanation: A 90-degree phase shift corresponds to a cosine wave, which starts at its peak amplitude at time 0.
+
+Q5. A signal with an initial power of 50 mW travels through a 20 km cable with a loss of 0.5 dB/km. It then passes through an amplifier. If the final output power is 5 mW, what was the gain of the amplifier in dB?
+   A. The total loss in the cable is $20 \text{ km} \times -0.5 \text{ dB/km} = -10 \text{ dB}$. The total change in power is $10 \log_{10}(5/50) = 10 \log_{10}(0.1) = -10 \text{ dB}$. Therefore, the amplifier's gain must be 0 dB.
+   B. +10 dB
+   C. -10 dB
+   D. +7 dB
+
+   Answer: A
+   Explanation: The total loss in the cable is $20 \text{ km} \times -0.5 \text{ dB/km} = -10 \text{ dB}$. The total change in power from start to finish is $10 \log_{10}(5/50) = 10 \log_{10}(0.1) = -10 \text{ dB}$. Since the total change equals the cable loss, the amplifier must have provided 0 dB of gain.
+
+Q6. A periodic composite signal is constructed from sine waves with frequencies that are integer multiples of a fundamental frequency, $f$. If the frequency domain plot shows discrete spikes, what can be definitively concluded about the signal?
+   A. The signal is periodic.
+   B. The signal is nonperiodic.
+   C. The signal has infinite bandwidth.
+   D. The signal is a simple sine wave.
+
+   Answer: A
+   Explanation: According to Fourier analysis, a periodic composite signal can be decomposed into a series of simple sine waves with discrete frequencies (harmonics), which appear as spikes in the frequency domain.
+
+Q7. A 12 MB image file is transmitted over a 2,500 km fiber optic link with a bandwidth of 40 Mbps. The propagation speed is $2.5 \times 10^8$ m/s. Calculate the total latency, ignoring queuing and processing delays. Which component is the dominant factor?
+   A. Transmission time is dominant; total latency is ~2.41 seconds.
+   B. Propagation time is dominant; total latency is ~2.41 seconds.
+   C. Transmission time is dominant; total latency is ~0.01 seconds.
+   D. Propagation time is dominant; total latency is ~2.4 seconds.
+
+   Answer: A
+   Explanation: Propagation time is $0.01$ s. Transmission time is $(12 \times 10^6 \times 8) / (40 \times 10^6) = 2.4$ s. The transmission time is significantly larger, and the total latency is their sum.
+
+Q8. A digital signal has 16 levels. According to the principles outlined in the text, how many bits are needed per level to represent the data?
+   A. 4
+   B. 16
+   C. 2
+   D. 8
+
+   Answer: A
+   Explanation: The number of bits required per signal level is calculated as $\log_2(L)$, where L is the number of levels. In this case, $\log_2(16) = 4$.
+
+Q9. Why is a single-frequency sine wave generally not useful for data communications?
+   A. It can only represent a constant state, carrying no changing information.
+   B. It has an infinitely wide bandwidth, which is impractical.
+   C. It is always a nonperiodic signal.
+   D. It is highly susceptible to all forms of noise.
+
+   Answer: A
+   Explanation: A continuous, unchanging sine wave represents a steady tone or carrier, but to convey data (information), the signal's properties must change over time, which requires a composite signal made of many frequencies.
+
+Q10. A signal's power is reduced to one-quarter of its original value after traveling through a medium. What is the attenuation in decibels (dB)?
+   A. -3 dB
+   B. -6 dB
+   C. -9 dB
+   D. -10 dB
+
+   Answer: B
+   Explanation: The attenuation is calculated as $10 \log_{10}(P_2/P_1) = 10 \log_{10}(0.25) \approx 10(-0.602) \approx -6 \text{ dB}$. Each -3 dB represents a halving of power, so two halvings (a quarter) is -6 dB.
+
+Q11. Which of the following scenarios best describes the need for broadband transmission (modulation)?
+   A. Sending computer data over a telephone line designed for analog voice.
+   B. Connecting two computers directly with a dedicated coaxial cable in a LAN.
+   C. Transmitting a signal between a CPU and memory inside a computer.
+   D. Sending a simple alarm signal using a single frequency.
+
+   Answer: A
+   Explanation: Telephone lines are bandpass channels. To send a digital signal, which has components starting at 0 Hz, it must be modulated onto an analog carrier signal that fits within the channel's available frequency range.
+
+Q12. If a periodic signal is decomposed into five sine waves with frequencies of 200, 600, 1000, 1400, and 1800 Hz, what is its bandwidth?
+   A. 1800 Hz
+   B. 2000 Hz
+   C. 1600 Hz
+   D. 5000 Hz
+
+   Answer: C
+   Explanation: The bandwidth of a composite signal is the difference between the highest and lowest frequencies it contains. Here, it is $1800 \text{ Hz} - 200 \text{ Hz} = 1600 \text{ Hz}$.
+
+Q13. A signal travels through a medium where different frequency components travel at slightly different speeds, causing them to arrive at the receiver out of phase with each other. This phenomenon is known as:
+   A. Distortion
+   B. Attenuation
+   C. Noise
+   D. Jitter
+
+   Answer: A
+   Explanation: This is the precise definition of distortion, where the signal changes its form or shape because its constituent frequencies experience different delays, altering their phase relationship.
+
+Q14. What is the theoretical maximum data rate of a 4 kHz telephone line with a signal-to-noise ratio (SNR) of 2047?
+   A. 88 kbps
+   B. 44 kbps
+   C. 32 kbps
+   D. 22 kbps
+
+   Answer: B
+   Explanation: Using the Shannon Capacity formula: $C = B \times \log_2(1 + SNR) = 4000 \times \log_2(1 + 2047) = 4000 \times \log_2(2048) = 4000 \times 11 = 44,000$ bps or 44 kbps.
+
+Q15. A network link has a stated bandwidth of 100 Mbps, but due to network congestion and device limitations, it can only pass an average of 20,000 frames per minute, with each frame carrying an average of 15,000 bits. What are the bandwidth and throughput of this network?
+   A. Bandwidth is 100 Mbps; Throughput is 5 Mbps.
+   B. Bandwidth is 5 Mbps; Throughput is 100 Mbps.
+   C. Bandwidth is 100 Mbps; Throughput is 300 Mbps.
+   D. Bandwidth and Throughput are both 100 Mbps.
+
+   Answer: A
+   Explanation: Bandwidth is the potential capacity (100 Mbps). Throughput is the actual measured rate: $(20,000 \text{ frames/min} \times 15,000 \text{ bits/frame}) / 60 \text{ s/min} = 5,000,000$ bps or 5 Mbps.
+
+Q16. What is the relationship between the period and frequency of a periodic signal?
+   A. They are directly proportional.
+   B. They are inverses of each other.
+   C. They are unrelated characteristics of a signal.
+   D. They are equal only when the phase is 0.
+
+   Answer: B
+   Explanation: Period (T) is the time for one cycle, and frequency (f) is the number of cycles per second. Their relationship is defined by the formulas $T = 1/f$ and $f = 1/T$.
+
+Q17. A nonperiodic composite signal, such as human voice, is decomposed using Fourier analysis. What will its frequency-domain representation look like?
+   A. A continuous curve representing a range of frequencies.
+   B. A series of discrete vertical spikes at harmonic frequencies.
+   C. A single spike at the signal's fundamental frequency.
+   D. A horizontal line at a constant amplitude.
+
+   Answer: A
+   Explanation: A nonperiodic signal is considered to be a combination of an infinite number of simple sine waves with continuous frequencies, which results in a continuous spectrum.
+
+Q18. What is the bit length (the distance one bit occupies on the medium) for a signal being transmitted at 5 Mbps in a cable where the propagation speed is $2 \times 10^8$ m/s?
+   A. 40 meters
+   B. 25 meters
+   C. 0.025 meters
+   D. 50 meters
+
+   Answer: A
+   Explanation: First, find the duration of one bit: $1 / (5 \times 10^6 \text{ bps}) = 0.2 \times 10^{-6}$ s. Then, bit length = propagation speed × bit duration = $(2 \times 10^8 \text{ m/s}) \times (0.2 \times 10^{-6} \text{ s}) = 40$ meters.
+
+Q19. According to the text, what are the two 'extreme' cases for a signal's frequency, and what do they represent?
+   A. A frequency of zero represents a signal that does not change; an infinite frequency represents an instantaneous change.
+   B. A frequency of 1 Hz represents the slowest possible change; a frequency of 1 THz represents the fastest possible change.
+   C. A frequency of zero represents silence; an infinite frequency represents maximum volume.
+   D. A frequency of zero represents a digital signal; an infinite frequency represents an analog signal.
+
+   Answer: A
+   Explanation: A constant DC voltage never completes a cycle, so its frequency is 0 Hz. An instantaneous change (like a vertical line in the time domain) has a period of zero, and since frequency is the inverse of period, its frequency is infinite.
+
+Q20. Why is it stated that baseband transmission of a perfect digital signal requires a low-pass channel with an infinite bandwidth?
+   A. Because a digital signal is a composite of frequencies from zero to infinity.
+   B. To prevent attenuation of the signal over long distances.
+   C. To allow for multiple digital signals to be sent simultaneously.
+   D. Because digital signals can only travel through low-pass channels.
+
+   Answer: A
+   Explanation: The sharp corners and vertical lines of an ideal digital signal require an infinite series of harmonics (sine waves) for their perfect representation, according to Fourier analysis. This combination of frequencies spans from 0 Hz to infinity.
+
+Q21. If the power we use at home in Europe has a frequency of 50 Hz, what is the period of its sine wave?
+   A. 16.6 ms
+   B. 20 ms
+   C. 50 ms
+   D. 0.02 ms
+
+   Answer: B
+   Explanation: The period is the inverse of the frequency: $T = 1/f = 1/50 \text{ Hz} = 0.02$ seconds, which is equal to 20 milliseconds.
+
+Q22. Consider a noiseless channel with a bandwidth of 25 kHz. If we need to send data at a rate of 200 kbps, how many signal levels are required?
+   A. 8
+   B. 16
+   C. 4
+   D. 32
+
+   Answer: B
+   Explanation: Using the Nyquist bit rate formula: $200,000 = 2 \times 25,000 \times \log_2(L)$. This simplifies to $200 = 50 \times \log_2(L)$, so $\log_2(L) = 4$. Therefore, $L = 2^4 = 16$ levels.
+
+Q23. What is the primary cause of 'crosstalk' in a transmission medium?
+   A. The effect of one wire acting as a sending antenna and an adjacent wire as a receiving antenna.
+   B. The random motion of electrons in a wire creating an extra signal.
+   C. A sudden spike of energy from sources like power lines or lightning.
+   D. Energy loss from the signal overcoming the resistance of the medium.
+
+   Answer: A
+   Explanation: This is the definition of crosstalk, where electromagnetic fields from one wire induce an unwanted signal in a nearby wire.
+
+Q24. A signal's wavelength is 0.5 micrometers in a fiber-optic cable. If the frequency of the signal is $4 \times 10^{14}$ Hz, what is the propagation speed of the signal within the cable?
+   A. $3.0 \times 10^8$ m/s
+   B. $2.0 \times 10^8$ m/s
+   C. $8.0 \times 10^{20}$ m/s
+   D. $1.25 \times 10^{-21}$ m/s
+
+   Answer: B
+   Explanation: Propagation speed is calculated as wavelength times frequency: $c = \lambda \times f = (0.5 \times 10^{-6} \text{ m}) \times (4 \times 10^{14} \text{ Hz}) = 2.0 \times 10^8$ m/s.
+
+Q25. The term 'jitter' in network performance refers to what phenomenon?
+   A. The variation in delay experienced by different packets in a data stream.
+   B. The total time it takes for a message to travel from source to destination.
+   C. The loss of signal energy as it travels through a medium.
+   D. The actual measured data rate of a network link.
+
+   Answer: A
+   Explanation: Jitter is specifically the lack of consistency in packet arrival times, which is problematic for real-time applications like video and audio streaming.
+
+Q26. A digitized voice channel requires sampling an analog signal at twice the highest frequency. If a 4 kHz voice signal is sampled and each sample requires 8 bits, what is the resulting bit rate?
+   A. 32 kbps
+   B. 64 kbps
+   C. 8 kbps
+   D. 16 kbps
+
+   Answer: B
+   Explanation: The bit rate is calculated as (2 samples per hertz) × (4000 Hz) × (8 bits per sample), which equals 64,000 bps or 64 kbps.
+debugger eval code:48:11
+

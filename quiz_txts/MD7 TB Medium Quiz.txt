@@ -1,0 +1,235 @@
+Q1. According to the provided text, what is the primary reason for twisting the pairs of copper wires in a twisted-pair cable?
+   A. To reduce the overall diameter of the cable.
+   B. To cancel out the effects of external noise and crosstalk.
+   C. To increase the data rate by allowing for higher frequencies.
+   D. To make the cable more flexible for installation in tight spaces.
+
+   Answer: B
+   Explanation: Twisting ensures that both wires are likely to be affected equally by external interference, allowing the receiver to filter out the noise by taking the difference between the two signals.
+
+Q2. Which of the following guided media types is constructed with a central core conductor, an insulating sheath, an outer metallic conductor, and a plastic cover?
+   A. Shielded Twisted-Pair (STP) cable
+   B. Fiber-optic cable
+   C. Coaxial cable
+   D. Unshielded Twisted-Pair (UTP) cable
+
+   Answer: C
+   Explanation: This layered construction, with the outer conductor acting as both a shield and the second conductor, is the defining characteristic of coaxial cable.
+
+Q3. In fiber-optic transmission, what happens when a light ray traveling through the core strikes the cladding at an angle of incidence greater than the critical angle?
+   A. The light ray is absorbed by the cladding.
+   B. The light ray refracts and bends along the interface.
+   C. The light ray reflects back into the core.
+   D. The light ray passes through the cladding and escapes the cable.
+
+   Answer: C
+   Explanation: This principle, known as total internal reflection, is fundamental to how optical fibers guide light over long distances.
+
+Q4. Which type of wireless communication is characterized by omnidirectional propagation and the ability to penetrate walls, making it suitable for AM/FM radio broadcasting?
+   A. Microwaves
+   B. Radio waves
+   C. Infrared waves
+   D. Cosmic rays
+
+   Answer: B
+   Explanation: Radio waves propagate in all directions from the antenna and their lower frequencies can pass through buildings, which is ideal for broadcasting.
+
+Q5. What is a primary disadvantage of fiber-optic cable compared to copper-based cables like twisted-pair or coaxial?
+   A. It has a much lower bandwidth.
+   B. It is highly susceptible to electromagnetic interference.
+   C. Signal attenuation is significantly higher.
+   D. Installation and maintenance require specialized expertise and can be more costly.
+
+   Answer: D
+   Explanation: The text mentions that the technology is relatively new and requires expertise that is not always available, and the cable and interfaces are more expensive.
+
+Q6. A multimode graded-index fiber is designed to reduce what specific problem found in multimode step-index fiber?
+   A. Signal distortion caused by different light beams arriving at different times.
+   B. Susceptibility to electromagnetic interference from external sources.
+   C. The high cost of manufacturing the glass core.
+   D. The need for a light source to be perfectly aligned with the core.
+
+   Answer: A
+   Explanation: By varying the density of the core, light rays traveling longer paths speed up, allowing them to arrive at the destination closer to the same time as rays taking shorter paths, thus reducing distortion.
+
+Q7. Which of the following describes line-of-sight propagation for unguided media?
+   A. Low-frequency signals travel through the lowest part of the atmosphere, following the Earth's curve.
+   B. High-frequency radio waves are radiated upward and reflected back to Earth by the ionosphere.
+   C. Very high-frequency signals are transmitted in straight lines directly from one antenna to another.
+   D. Signals are broadcast in all directions to be received by any device within range, regardless of obstacles.
+
+   Answer: C
+   Explanation: This method requires that the transmitting and receiving antennas can 'see' each other, and it's used for microwaves and other very high-frequency signals.
+
+Q8. What is the key structural difference between Unshielded Twisted-Pair (UTP) and Shielded Twisted-Pair (STP) cable?
+   A. UTP uses copper conductors, while STP uses aluminum.
+   B. STP has a metal foil or braided-mesh covering that encases the wire pairs.
+   C. UTP cables have more twists per inch than STP cables.
+   D. STP uses an RJ45 connector, while UTP uses a BNC connector.
+
+   Answer: B
+   Explanation: This additional metal casing in STP cable provides extra protection against noise and crosstalk but makes it bulkier and more expensive.
+
+Q9. Microwaves are described as being unidirectional. What is a primary application that leverages this property?
+   A. FM radio broadcasting to a city.
+   B. Paging systems for alerting personnel.
+   C. Unicast communication between cellular towers.
+   D. Cordless phone communication within a house.
+
+   Answer: C
+   Explanation: The unidirectional nature of microwaves allows for focused, point-to-point (unicast) links that do not interfere with other nearby links, which is ideal for cellular networks and satellite communication.
+
+Q10. According to the source material, transmission media are considered to be at which layer of the Internet model?
+   A. Layer 1 (Physical Layer)
+   B. Layer 0
+   C. Layer 2 (Data Link Layer)
+   D. They are not part of the layered model.
+
+   Answer: B
+   Explanation: The text explicitly suggests that because transmission media are below and controlled by the physical layer, they could be considered as belonging to 'layer zero'.
+
+Q11. What is the primary characteristic of infrared waves that makes them suitable for short-range communication like a TV remote, but unsuitable for long-range communication?
+   A. They travel slowly through the air.
+   B. They require a physical medium like a cable.
+   C. They cannot penetrate walls.
+   D. They have a very narrow bandwidth.
+
+   Answer: C
+   Explanation: This property prevents interference between systems in different rooms, which is an advantage for security and local control, but it makes them useless for communicating through obstacles or over long distances.
+
+Q12. In the context of coaxial cables, what do the designations RG-59, RG-58, and RG-11 refer to?
+   A. The maximum data rate the cable can support.
+   B. The type of connector used with the cable.
+   C. A set of standards defined by the Radio Government (RG) that classify cables by their characteristics and use.
+   D. The level of resistance to electromagnetic interference.
+
+   Answer: C
+   Explanation: The text explicitly states that 'Coaxial cables are categorized by their Radio Government (RG) ratings,' with each rating adapted for a specialized function like cable TV or Ethernet.
+
+Q13. Which type of fiber-optic cable uses a core with a much smaller diameter and a highly focused light source to minimize signal distortion over long distances?
+   A. Multimode step-index
+   B. Multimode graded-index
+   C. Single-mode
+   D. Shielded-core fiber
+
+   Answer: C
+   Explanation: Single-mode fiber has a very small core diameter that limits beams to a small range of angles, essentially forcing one primary path. This minimizes distortion and allows for higher bandwidth over longer distances.
+
+Q14. A parabolic dish antenna is used with which type of unguided media to focus signals to a single point?
+   A. Radio waves
+   B. Infrared waves
+   C. Microwaves
+   D. VLF waves
+
+   Answer: C
+   Explanation: The text states that microwaves need unidirectional antennas, and it explicitly describes the parabolic dish as an antenna that funnels waves to a common focus point, which is characteristic of microwave communication.
+
+Q15. Based on the performance graph for UTP cable (Figure 7.6), what is the general relationship between signal frequency and attenuation?
+   A. Attenuation decreases as frequency increases.
+   B. Attenuation sharply increases as frequency increases, especially above 100 kHz.
+   C. Attenuation is constant across all frequencies.
+   D. Attenuation is only affected by the wire gauge, not the frequency.
+
+   Answer: B
+   Explanation: The figure's accompanying text notes that 'with increasing frequency, the attenuation... sharply increases with frequencies above 100 kHz'.
+
+Q16. Which of the following connectors is described as being the same size as an RJ45 and used with fiber-optic cables?
+   A. BNC connector
+   B. SC connector
+   C. ST connector
+   D. MT-RJ connector
+
+   Answer: D
+   Explanation: The text explicitly identifies the MT-RJ as a fiber-optic connector that is the same size as the common RJ45 network connector.
+
+Q17. Why does the performance graph for coaxial cable (Figure 7.9) imply that repeaters are frequently needed for long-distance communication?
+   A. Because the cable has a very narrow bandwidth.
+   B. Because the signal weakens rapidly over distance, as shown by high attenuation.
+   C. Because the cable is highly prone to reflection at connection points.
+   D. Because the signal travels much slower in coaxial cable than in other media.
+
+   Answer: B
+   Explanation: The text notes, 'although coaxial cable has a much higher bandwidth, the signal weakens rapidly and requires the frequent use of repeaters,' which is reflected in the graph's high dB/km values.
+
+Q18. In the electromagnetic spectrum for wireless communication, which band is located between radio waves and light waves?
+   A. Infrared
+   B. Gamma rays
+   C. VHF (Very High Frequency)
+   D. X-rays
+
+   Answer: A
+   Explanation: Figure 7.17 clearly shows the electromagnetic spectrum with Infrared positioned between the Radio wave/Microwave section and the Light wave section.
+
+Q19. Which one of the following is listed as an advantage of fiber-optic cable over metallic cables?
+   A. Lower initial cost for short distances.
+   B. Unidirectional propagation.
+   C. Greater immunity to tapping.
+   D. Requires less specialized installation expertise.
+
+   Answer: C
+   Explanation: The text states that fiber-optic cables are more immune to tapping because they don't create the antenna effects that copper cables do.
+
+Q20. What is the function of the BNC T connector in the context of coaxial cable usage?
+   A. To connect the end of the cable to a device like a TV.
+   B. To prevent the reflection of the signal at the end of the cable.
+   C. To branch out from the main cable for a connection to a computer.
+   D. To join two coaxial cables together to extend their length.
+
+   Answer: C
+   Explanation: The text states that the BNC T connector is 'used in Ethernet networks to branch out to a connection to a computer or other device'.
+
+Q21. Sky propagation is a method where radio waves are reflected by what layer of the atmosphere?
+   A. The troposphere
+   B. The stratosphere
+   C. The ionosphere
+   D. The exosphere
+
+   Answer: C
+   Explanation: The text explicitly states that in sky propagation, 'higher-frequency radio waves radiate upward into the ionosphere... where they are reflected back to earth'.
+
+Q22. What does the term 'gauge' refer to in the context of a twisted-pair cable?
+   A. The number of twists per inch.
+   B. The thickness of the wire.
+   C. The material of the insulation.
+   D. The maximum supported data rate.
+
+   Answer: B
+   Explanation: The text notes, 'gauge is a measure of the thickness of the wire,' and the table below Figure 7.6 shows different gauge numbers corresponding to different diameters.
+
+Q23. The Infrared Data Association (IrDA) has established standards for using infrared signals. What is a typical application of an IrDA port?
+   A. Long-distance communication between cities.
+   B. Connecting a wireless keyboard to a PC.
+   C. Providing cellular phone service.
+   D. Receiving satellite television signals.
+
+   Answer: B
+   Explanation: The text provides this as a specific example, stating that some manufacturers provide an IrDA port 'that allows a wireless keyboard to communicate with a PC'.
+
+Q24. What two media types are combined in the hybrid networks used by some cable TV companies?
+   A. Twisted-pair and coaxial cable
+   B. Coaxial cable and radio waves
+   C. Optical fiber and coaxial cable
+   D. Single-mode fiber and multimode fiber
+
+   Answer: C
+   Explanation: The text explicitly states that some cable TV companies use this combination, where 'Optical fiber provides the backbone structure while coaxial cable provides the connection to the user premises'.
+
+Q25. In the context of light traveling between two substances of different densities, what is the 'critical angle'?
+   A. The angle of incidence that causes the light ray to be completely absorbed.
+   B. The angle of incidence that results in the light bending along the interface between the substances.
+   C. The maximum possible angle of reflection for any given substance.
+   D. The angle at which light travels fastest through a substance.
+
+   Answer: B
+   Explanation: As shown in Figure 7.10, when the angle of incidence equals the critical angle, the ray refracts and travels parallel to the surface boundary.
+
+Q26. Which category of unshielded twisted-pair cable, sometimes called SSTP, involves wrapping each pair in a metallic foil?
+   A. Category 5E
+   B. Category 6
+   C. Category 7
+   D. Category 3
+
+   Answer: C
+   Explanation: Table 7.1 describes Category 7 (SSTP) as having 'Each pair is individually wrapped in a helical metallic foil followed by a metallic foil shield'.
+debugger eval code:48:11
+

@@ -1,0 +1,244 @@
+Q1. In the context of the TCP/IP protocol suite, what is the primary reason for the existence of link-layer addressing in addition to network-layer (IP) addressing?
+   A. IP addresses are not permanent and can change, while link-layer addresses are fixed for each device.
+   B. Link-layer addresses are required to route datagrams across the entire Internet from the source host to the destination host.
+   C. The IP address identifies the final destination, but the link-layer address is needed to move a frame to the next specific node (host or router) within a particular link.
+   D. The data-link layer's error control services depend on link-layer addresses to function correctly, unlike the network layer.
+
+   Answer: C
+   Explanation: This correctly identifies the distinct roles: IP addresses for the end-to-end path and link-layer addresses for the immediate, single-hop delivery.
+
+Q2. When a router receives a frame, it performs decapsulation and encapsulation. Why is this process necessary even if the incoming and outgoing links use the same data-link protocol?
+   A. To change the source and destination IP addresses within the datagram.
+   B. To update the frame's header with the new source and destination link-layer addresses for the next hop.
+   C. To allow the router to perform flow control on the datagram.
+   D. To split the datagram into smaller frames if the next link has a smaller maximum frame size.
+
+   Answer: B
+   Explanation: Even with the same protocol, the frame must be addressed to the specific next node on the next link, which requires changing the link-layer addresses.
+
+Q3. The Address Resolution Protocol (ARP) is used to map an IP address to a link-layer address. Why is it generally inefficient to send the actual data datagram in a broadcast frame to find the destination, instead of using an ARP request first?
+   A. Broadcasting data datagrams is prohibited by all data-link layer protocols.
+   B. Using ARP allows the sending host to cache the mapping, avoiding broadcasts for subsequent packets to the same destination.
+   C. ARP packets are smaller than data datagrams, which reduces network traffic during the broadcast.
+   D. Only the ARP protocol is capable of receiving a unicast reply; a broadcast datagram would not elicit a response.
+
+   Answer: B
+   Explanation: This highlights the core efficiency gain: one initial broadcast for ARP allows many subsequent data packets to be sent via unicast, saving network resources and processing time on other nodes.
+
+Q4. According to the textbook's example, when a datagram travels from Alice to Bob via routers R1 and R2, which of the following address pairs changes at each hop?
+   A. The source IP address and the source link-layer address.
+   B. The destination IP address and the destination link-layer address.
+   C. The source and destination link-layer addresses.
+   D. The source and destination IP addresses.
+
+   Answer: C
+   Explanation: For each link (Alice-to-R1, R1-to-R2, R2-to-Bob), a new frame is created with the link-layer addresses of the sender and receiver on that specific link.
+
+Q5. The data-link layer can be conceptually divided into the Data Link Control (DLC) and Media Access Control (MAC) sublayers. A network link consisting of the shared airwaves for cellular communication would require functionalities from which sublayer(s)?
+   A. Primarily the DLC sublayer, as it handles framing and flow control.
+   B. Primarily the MAC sublayer, as the main challenge is coordinating access among many users.
+   C. Neither, as wireless communication is handled by the physical layer.
+   D. Both the DLC and MAC sublayers.
+
+   Answer: D
+   Explanation: As a broadcast link, it needs the MAC sublayer to manage shared access, and the DLC sublayer for common functions like framing applicable to all link types.
+
+Q6. In an ARP request packet, the 'destination hardware address' field is typically filled with zeros. Why is this the case?
+   A. It signals to the network that this is a request packet, not a reply.
+   B. This value acts as a placeholder because the sender does not yet know the hardware address it is seeking.
+   C. It is a special address that forces the receiving node to check its cache before replying.
+   D. The destination hardware address is instead placed in the data-link frame header.
+
+   Answer: B
+   Explanation: The very purpose of the ARP request is to discover this unknown hardware address, so the field is left empty or set to a null value like all zeros.
+
+Q7. A router has interfaces connected to three different networks. How many link-layer addresses and IP addresses will this router have?
+   A. One IP address and three link-layer addresses.
+   B. One IP address and one link-layer address.
+   C. Three IP addresses and one link-layer address.
+   D. Three IP addresses and three link-layer addresses.
+
+   Answer: D
+   Explanation: Each interface is a connection point to a link and requires its own pair of addresses: an IP address for the network layer and a link-layer address for the data-link layer.
+
+Q8. When router R1 in the Alice-to-Bob example needs to send the datagram to router R2, what information does it look up in its forwarding table, and what is the result?
+   A. It looks up Bob's link-layer address (LB) and finds the next-hop link-layer address (L3).
+   B. It looks up Bob's IP address (NB) and finds the next-hop IP address (N3).
+   C. It looks up Alice's IP address (NA) and finds the outgoing interface's IP address (N2).
+   D. It looks up the incoming link-layer address (LA) and finds the outgoing link-layer address (L3).
+
+   Answer: B
+   Explanation: The router uses the final destination IP address (NB) to determine the IP address of the next router in the path (N3), which it then uses for ARP.
+
+Q9. Which of the following services is generally considered an issue for the network or transport layers rather than the data-link layer, despite potentially affecting links?
+   A. Framing
+   B. Flow Control
+   C. Error Control
+   D. Congestion Control
+
+   Answer: D
+   Explanation: The text states that due to its end-to-end nature, congestion control is typically handled by the network or transport layers, not directly by most data-link protocols.
+
+Q10. What is the key difference between a unicast, multicast, and broadcast link-layer address?
+   A. Unicast is for hosts, multicast is for routers, and broadcast is for switches.
+   B. Unicast is for one-to-one, multicast is for one-to-many, and broadcast is for one-to-all communication on a link.
+   C. Unicast addresses are 48 bits, multicast are 24 bits, and broadcast are 12 bits.
+   D. Unicast is used on point-to-point links, while multicast and broadcast are used on shared links.
+
+   Answer: B
+   Explanation: This correctly defines the communication pattern for each address type: one specific device, a specific group of devices, or every device on the link.
+
+Q11. An ARP reply is sent as a unicast frame. How does the replying node (System B) know the specific link-layer address to send the reply to (System A)?
+   A. It uses the broadcast address, and System A is programmed to accept it.
+   B. It extracts the sender's link-layer and IP addresses from the incoming ARP request packet.
+   C. It performs its own ARP request for System A's IP address.
+   D. It looks up System A's IP address in its own forwarding table to find the link-layer address.
+
+   Answer: B
+   Explanation: The ARP request packet contains the source hardware (link-layer) address of the sender, which the recipient uses as the destination for the unicast reply.
+
+Q12. Communication at the data-link layer is described as node-to-node. In the context of the internet, what constitutes a 'node' and a 'link'?
+   A. A node is an application process, and a link is the transport layer connection between them.
+   B. A node is a TCP/IP protocol suite, and a link is the physical hardware.
+   C. Nodes are end hosts and routers, and links are the networks (LANs and WANs) that connect them.
+   D. Nodes are physical cables and wireless signals, and a link is a router that joins them.
+
+   Answer: C
+   Explanation: This aligns perfectly with the textbook's definition, where devices that process packets are nodes and the communication paths between them are links.
+
+Q13. At which point in the communication path from Alice to Bob does a device need to perform both decapsulation and encapsulation at the data-link layer?
+   A. Only at Alice's computer (the source).
+   B. Only at Bob's computer (the destination).
+   C. At an intermediate router like R1 or R2.
+   D. At all nodes in the path, including the source and destination.
+
+   Answer: C
+   Explanation: A router must decapsulate the frame to read the datagram for a forwarding decision and then encapsulate the datagram into a new frame for the next link.
+
+Q14. What distinguishes a point-to-point link from a broadcast link at the data-link layer?
+   A. Point-to-point links use IP addresses, while broadcast links use MAC addresses.
+   B. A point-to-point link has a dedicated capacity between two devices, whereas a broadcast link's capacity is shared among multiple devices.
+   C. Point-to-point links are always wired, and broadcast links are always wireless.
+   D. Point-to-point links are managed by the DLC sublayer, while broadcast links are managed by the MAC sublayer.
+
+   Answer: B
+   Explanation: This correctly captures the core distinction: dedicated versus shared access to the communication medium.
+
+Q15. According to Figure 9.5, the link-layer address order in the frame header is 'destination-source', while the IP address order in the datagram header is 'source-destination'. What is the implication of this for the frame sent from Router R1 to Router R2?
+   A. The frame header contains L5 then L4, and the datagram header contains N1 then N8.
+   B. The frame header contains L4 then L5, and the datagram header contains N1 then N8.
+   C. The frame header contains L5 then L4, and the datagram header contains N2 then N3.
+   D. The frame header contains L2 then L3, and the datagram header contains N1 then N8.
+
+   Answer: A
+   Explanation: This correctly applies the specified address ordering for Link 2, where L5 is the destination and L4 is the source link-layer address, while the end-to-end IP addresses N1 and N8 remain unchanged.
+
+Q16. If Bob's computer is turned off when router R2 sends an ARP request to find Bob's link-layer address (LB), what will happen?
+   A. Router R2 will receive an ARP reply from another device on the link on Bob's behalf.
+   B. Router R2 will send the frame using the broadcast link-layer address instead.
+   C. Router R2 will not receive an ARP reply, and it will be unable to create and send the frame to Bob.
+   D. Router R2 will use the destination IP address (NB) as the link-layer address.
+
+   Answer: C
+   Explanation: Since Bob's machine cannot respond, the ARP request will time out, and the datagram cannot be delivered across that final link.
+
+Q17. The text mentions that a unicast link-layer address for Ethernet is 48 bits, represented as 12 hexadecimal digits. What is the significance of the second hexadecimal digit in determining if an Ethernet address is multicast?
+   A. It must be an odd number for a multicast address.
+   B. It must be 'F' for a multicast address.
+   C. It has no special significance; any 48-bit address can be multicast.
+   D. It must be an even number for a multicast address.
+
+   Answer: D
+   Explanation: This aligns with the rule described in Example 9.2, which is based on the least significant bit of the first byte (represented by this digit) being set to 1 to indicate a multicast address.
+
+Q18. In the communication example (Figures 9.11-9.14), how does Alice's computer initially determine the IP address of the first-hop router (N1)?
+   A. It sends a broadcast ARP request for the address of 'the default router'.
+   B. The network layer consults its local routing/forwarding table.
+   C. It is provided by Bob's computer in a preliminary handshake.
+   D. It uses the DNS protocol to look up the router's IP address.
+
+   Answer: B
+   Explanation: A host's routing table contains information about its local network and, crucially, the IP address of the default gateway (router) for all non-local traffic.
+
+Q19. Why does the text state that the TCP/IP protocol suite does not define any protocols in the data-link or physical layers?
+   A. Because these layers are considered obsolete in modern networking.
+   B. Because the functions of these layers have been absorbed into the network layer.
+   C. Because TCP/IP is designed to run over many different network technologies, each with its own data-link and physical layer standards.
+   D. Because data-link and physical layer protocols are proprietary and not part of any open standard.
+
+   Answer: C
+   Explanation: This architectural choice allows the Internet (using TCP/IP) to connect a wide variety of underlying networks (like Ethernet, Wi-Fi, etc.) without being tied to a single technology.
+
+Q20. In the ARP packet format (Figure 9.8), what is the purpose of the 'Protocol Type' and 'Hardware Type' fields?
+   A. To specify the version of the ARP protocol being used.
+   B. To allow ARP to be used with different network-layer protocols (like IPv4) and different link-layer technologies (like Ethernet).
+   C. To define the priority of the ARP request on the network.
+   D. To indicate whether the packet is a request or a reply.
+
+   Answer: B
+   Explanation: This correctly identifies their purpose: to make ARP flexible enough to map, for example, IPv4 addresses to Ethernet MAC addresses, or other combinations.
+
+Q21. What would be the most likely consequence if the data-link layer did not provide the 'framing' service?
+   A. The network would become congested with too many small packets.
+   B. The physical layer would be unable to convert data to signals.
+   C. The receiving node would see a continuous stream of bits without any way to discern where one datagram ends and the next begins.
+   D. IP addresses would be unable to route the packets to their final destination.
+
+   Answer: C
+   Explanation: Framing provides the necessary delimiters (like headers and trailers) that allow the receiver to identify and extract individual datagrams from the bitstream.
+
+Q22. In the Alice-to-Bob example, router R2's forwarding table maps Bob's IP address (NB) to Bob's IP address (NB). What does this entry signify?
+   A. That the router has made an error and is in a routing loop.
+   B. That Bob is directly connected to one of the router's interfaces.
+   C. That the router does not know how to reach Bob and will drop the packet.
+   D. That Bob's computer is also acting as a router.
+
+   Answer: B
+   Explanation: When the next hop for a destination is the destination itself, it means the destination is on a local link, and the packet can be delivered directly rather than forwarded to another router.
+
+Q23. Why might a house at a street corner with two gates serve as a good analogy for a router with multiple interfaces and IP addresses?
+   A. Because the house has a single overall address, just like a router has one main IP address.
+   B. Because each gate provides a connection point to a different street (link), and each has an address corresponding to that street.
+   C. Because a person inside the house (the datagram) does not change, but the gate used to exit (the frame) does.
+   D. Because both gates lead to the same destination, just via different paths.
+
+   Answer: B
+   Explanation: This captures the essence of a router: each interface is a connection to a different network (street) and requires a unique address on that network.
+
+Q24. A host sends an ARP request. If the target host is on a different network, who will send the ARP reply?
+   A. The target host itself, after the request is forwarded by the router.
+   B. The router on the sending host's local network.
+   C. No one will reply, and the packet will be dropped.
+   D. All routers on the path to the destination will reply.
+
+   Answer: B
+   Explanation: The sending host will use ARP to find the link-layer address of its default router, and the router will reply with its own link-layer address, not the final destination's.
+
+Q25. The textbook states, 'Communication at the data-link layer is made up of five separate logical connections' for the path shown in Figure 9.1. What does 'logical connection' mean in this context?
+   A. A permanent circuit established between each pair of nodes before data is sent.
+   B. A direct physical wire connecting each pair of adjacent nodes.
+   C. The end-to-end transport layer connection between Alice and Bob.
+   D. The protocol-based interaction for delivering a frame between two adjacent nodes across a single link.
+
+   Answer: D
+   Explanation: Each hop (e.g., Alice-to-R1, R1-to-R2) is a distinct communication instance at the data-link layer, treated as a separate 'connection' for delivering one frame.
+
+Q26. If a data-link protocol does not implement flow control, what is the most likely outcome when a fast sender transmits frames to a slow receiver on the same link?
+   A. The sender will automatically slow down due to physical layer feedback.
+   B. The network layer will request retransmission of all frames.
+   C. The receiver's buffer will overflow, and incoming frames will be dropped.
+   D. The link itself will become congested, preventing any further transmission.
+
+   Answer: C
+   Explanation: Without a mechanism to signal the sender to slow down, the receiver will be overwhelmed and forced to discard frames it cannot process.
+
+Q27. Considering the entire journey from Alice to Bob, where is the information contained in the forwarding table of a router (like R1 or R2) used?
+   A. It is used by the data-link layer to create the frame header.
+   B. It is used by the physical layer to modulate the signal.
+   C. It is used by the network layer to determine the IP address of the next hop.
+   D. It is used by the application layer at the final destination to reassemble the message.
+
+   Answer: C
+   Explanation: After decapsulating the datagram, the router's network layer consults its forwarding table using the destination IP address to decide where to send the datagram next.
+debugger eval code:48:11
+

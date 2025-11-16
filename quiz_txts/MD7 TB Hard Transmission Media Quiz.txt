@@ -1,0 +1,253 @@
+Q1. In a fiber-optic cable, what is the direct consequence of a light ray striking the core-cladding interface at an angle of incidence greater than the critical angle?
+   A. The light ray is absorbed by the cladding material.
+   B. The light ray is refracted and bends along the interface.
+   C. The light ray is reflected back into the core.
+   D. The light ray passes through the cladding and escapes the cable.
+
+   Answer: C
+   Explanation: This phenomenon, known as total internal reflection, is the fundamental principle that traps light within the core, allowing it to propagate over long distances.
+
+Q2. Which of the following best explains why multimode graded-index fiber reduces signal distortion compared to multimode step-index fiber?
+   A. It uses a much smaller core diameter to limit the number of light paths.
+   B. The constant density of the core ensures all light beams travel at the same speed.
+   C. Its core has a varying density that is highest at the center, causing light beams to travel in curved paths of similar travel time.
+   D. It uses a special cladding that reflects light more efficiently than step-index fiber.
+
+   Answer: C
+   Explanation: The gradual decrease in density from the core's center to its edge causes light to speed up in the outer regions, effectively equalizing the travel time for different paths and reducing distortion.
+
+Q3. What is the primary reason for twisting the two conductors in a twisted-pair cable?
+   A. To increase the cable's flexibility and make it easier to install.
+   B. To cancel out the effects of external electromagnetic interference (noise).
+   C. To reduce the amount of copper required, thereby lowering the cost.
+   D. To allow the cable to carry both analog and digital signals simultaneously.
+
+   Answer: B
+   Explanation: Twisting ensures that both wires are, on average, equally exposed to external noise sources, allowing the receiver to eliminate the noise by calculating the difference between the two signals.
+
+Q4. According to the provided material, what dual function does the outer metallic wrapping in a coaxial cable serve?
+   A. It provides structural strength and insulation from heat.
+   B. It acts as a shield against noise and completes the electrical circuit.
+   C. It functions as a ground reference and an antenna for receiving wireless signals.
+   D. It shields against crosstalk and carries a secondary data signal.
+
+   Answer: B
+   Explanation: The metallic wrapping serves as both a barrier to external electromagnetic interference and as the second conductor (ground reference) for the signal.
+
+Q5. Which characteristic of microwaves makes them highly suitable for unicast (one-to-one) communication like in satellite networks?
+   A. Their ability to penetrate walls easily.
+   B. They are omnidirectional, broadcasting signals in all directions.
+   C. They are unidirectional and can be narrowly focused.
+   D. Their reliance on sky propagation to reflect off the ionosphere.
+
+   Answer: C
+   Explanation: This property allows signals to be sent directly from a transmitting antenna to a specific receiving antenna without interfering with other communications.
+
+Q6. The inability of infrared waves to penetrate walls is described as an advantageous characteristic. Why?
+   A. It allows a single infrared system to serve multiple rooms in a building.
+   B. It increases the transmission range to several kilometers.
+   C. It reduces the power consumption of infrared devices.
+   D. It prevents interference between systems in adjacent rooms.
+
+   Answer: D
+   Explanation: Because the signals are contained within a room, you can use an infrared remote or device without affecting a similar device in a neighboring room.
+
+Q7. Based on the performance graphs (Figures 7.6 and 7.9), how does the attenuation of coaxial cable compare to 24-gauge UTP at frequencies above 1 MHz (1000 kHz)?
+   A. The attenuation is significantly lower in coaxial cable.
+   B. The attenuation is much higher in coaxial cable, meaning the signal weakens more rapidly.
+   C. Both cable types exhibit nearly identical attenuation at these frequencies.
+   D. Coaxial cable attenuation decreases after 1 MHz while UTP attenuation continues to increase.
+
+   Answer: B
+   Explanation: Figure 7.9 shows attenuation values for coaxial cable rising to over 10 dB/km at 10 MHz, whereas Figure 7.6 shows 24-gauge UTP attenuation well below that, indicating coaxial signal weakens faster per kilometer despite its higher bandwidth.
+
+Q8. What distinguishes single-mode fiber from multimode fiber?
+   A. Single-mode fiber is made of plastic, while multimode is made of glass.
+   B. Single-mode fiber has a much smaller core diameter and uses a highly focused light source.
+   C. Single-mode fiber uses graded-index propagation, while multimode uses step-index.
+   D. Single-mode fiber is more immune to electromagnetic interference.
+
+   Answer: B
+   Explanation: These two features work together to limit the light to a single, near-horizontal path, which eliminates the distortion caused by multiple paths arriving at different times.
+
+Q9. Which category of unshielded twisted-pair (UTP) cable is also known as SSTP (shielded screen twisted-pair) and features individually wrapped pairs?
+   A. Category 5
+   B. Category 5E
+   C. Category 6
+   D. Category 7
+
+   Answer: D
+   Explanation: Table 7.1 explicitly defines Category 7 as SSTP, where each pair is wrapped in helical metallic foil, followed by an overall shield to greatly decrease crosstalk.
+
+Q10. In the context of unguided media, which propagation method is used for high-frequency radio waves (3-30 MHz) that radiate upward and are reflected back to earth by the ionosphere?
+   A. Ground propagation
+   B. Line-of-sight propagation
+   C. Sky propagation
+   D. Unidirectional propagation
+
+   Answer: C
+   Explanation: This method utilizes the reflective properties of the ionosphere to allow higher-frequency radio waves to travel long distances, as described in the text and Figure 7.18.
+
+Q11. What is a significant disadvantage of fiber-optic cable when compared to metallic cables like twisted-pair or coaxial?
+   A. It has a much lower bandwidth.
+   B. It suffers from greater signal attenuation over distance.
+   C. Installation and maintenance require specialized expertise.
+   D. It is highly susceptible to electromagnetic interference.
+
+   Answer: C
+   Explanation: The text lists this as a key disadvantage, noting that the technology is newer and the necessary skills are not as widespread.
+
+Q12. Which coaxial cable standard, with an impedance of $75 \Omega$, is specified for use in Cable TV networks?
+   A. RG-11
+   B. RG-58
+   C. RG-59
+   D. RG-45
+
+   Answer: C
+   Explanation: Table 7.2 clearly identifies RG-59 as having $75 \Omega$ impedance and its primary use being Cable TV.
+
+Q13. A parabolic dish antenna is used for microwave communications. What is the principle behind its shape?
+   A. It scatters waves in all directions to cover a wide area.
+   B. It reflects incoming parallel waves to a single focal point.
+   C. It absorbs stray signals and noise from the environment.
+   D. It bends the waves using refraction to steer the signal.
+
+   Answer: B
+   Explanation: The geometric property of a parabola is that it collects and concentrates waves at a central focus, which improves signal reception and allows for focused transmission.
+
+Q14. According to the textbook, transmission media is considered to belong to which layer of the Internet model?
+   A. The Physical Layer (Layer 1)
+   B. The Data Link Layer (Layer 2)
+   C. Layer Zero
+   D. The Network Layer (Layer 3)
+
+   Answer: C
+   Explanation: The text explicitly says, 'We could say that transmission media belong to layer zero,' positioned just below the physical layer.
+
+Q15. Which of the following connector types is described as being used for cable TV and employing a push/pull locking system?
+   A. ST (straight-tip) connector
+   B. MT-RJ connector
+   C. BNC connector
+   D. SC (subscriber channel) connector
+
+   Answer: D
+   Explanation: The text specifically identifies the SC connector as being used for cable TV and having a push/pull locking system.
+
+Q16. In the context of light traveling from a more dense to a less dense medium, what happens if the angle of incidence is exactly equal to the critical angle?
+   A. The light reflects back into the denser medium.
+   B. The light passes into the less dense medium without changing direction.
+   C. The light bends and travels along the interface between the two substances.
+   D. The light is completely absorbed at the interface.
+
+   Answer: C
+   Explanation: Figure 7.10 illustrates that when the angle of incidence equals the critical angle, the ray refracts to an angle of 90 degrees, moving along the boundary.
+
+Q17. Why is it stated that fiber-optic cables have 'greater immunity to tapping' than copper cables?
+   A. Because fiber-optic cables are always buried underground.
+   B. Because the light signals are encrypted by default.
+   C. Because copper cables create antenna effects that can be tapped easily, whereas fiber does not.
+   D. Because the Kevlar strands in fiber-optic cables prevent physical access.
+
+   Answer: C
+   Explanation: The text explains that the electromagnetic fields around copper wires can be detected non-invasively, while tapping a fiber cable requires physically intercepting the light, which is more difficult to do without being detected.
+
+Q18. Based on Figure 7.6, what is the relationship between the gauge of a UTP wire and its attenuation?
+   A. A higher gauge number (thinner wire) results in lower attenuation.
+   B. A lower gauge number (thicker wire) results in lower attenuation.
+   C. The gauge of the wire has no effect on its attenuation.
+   D. The relationship depends on the frequency; at low frequencies thinner wire is better, and at high frequencies thicker wire is better.
+
+   Answer: B
+   Explanation: The graph shows the curve for 18-gauge wire is the lowest, indicating it has the least signal loss (attenuation) per kilometer compared to the other gauges shown.
+
+Q19. Which wireless communication medium has a frequency range between 300 GHz and 400 THz and is sponsored by the IrDA for communication between devices like keyboards and PCs?
+   A. Radio Waves
+   B. Microwaves
+   C. Infrared Waves
+   D. Light Waves
+
+   Answer: C
+   Explanation: The text specifies this exact frequency range for infrared waves and mentions the Infrared Data Association (IrDA) and its application for peripherals.
+
+Q20. What is the primary reason that long-distance microwave communication requires a series of towers or repeaters?
+   A. To boost the signal which is heavily absorbed by the atmosphere.
+   B. To overcome the curvature of the Earth for line-of-sight propagation.
+   C. To allow the signal to reflect off the ionosphere.
+   D. To switch the signal between different frequency bands.
+
+   Answer: B
+   Explanation: Microwaves travel in straight lines, so due to the Earth's curve, tall towers or repeaters are needed to maintain a direct, unobstructed path between antennas.
+
+Q21. Which statement accurately describes a key difference between UTP (Unshielded Twisted-Pair) and STP (Shielded Twisted-Pair) cable?
+   A. UTP uses copper conductors while STP uses aluminum.
+   B. STP has a metal foil or braided-mesh covering that UTP lacks.
+   C. UTP is standardized by the EIA into categories, whereas STP is not.
+   D. STP is used for telephone lines, while UTP is used exclusively for LANs.
+
+   Answer: B
+   Explanation: This metal casing is the defining feature of STP, added to provide extra protection against noise and crosstalk.
+
+Q22. A fiber-optic cable is specified as 62.5/125. What do these numbers represent?
+   A. The minimum and maximum data rates in Mbps.
+   B. The inner and outer diameters of the entire cable in millimeters.
+   C. The diameters of the core and cladding, respectively, in micrometers.
+   D. The critical angles for the core and cladding in degrees.
+
+   Answer: C
+   Explanation: The text states that optical fibers are defined by the ratio of the diameter of their core to the diameter of their cladding, expressed in micrometers ($\mu m$).
+
+Q23. What is the function of a BNC terminator in a traditional Ethernet LAN using coaxial cable?
+   A. To connect two segments of cable to extend the network's length.
+   B. To branch the cable out to connect to a computer.
+   C. To prevent the reflection of the signal at the end of the cable.
+   D. To convert the electrical signal to an optical signal.
+
+   Answer: C
+   Explanation: The text explicitly states that the terminator is used at the end of the cable to absorb the signal and prevent it from reflecting back, which would cause interference.
+
+Q24. Which of these applications is NOT listed as a common use for fiber-optic cable in the source material?
+   A. Backbone networks
+   B. Hybrid networks for Cable TV
+   C. Fast Ethernet networks (100Base-FX)
+   D. Paging systems and cordless phones
+
+   Answer: D
+   Explanation: The text lists paging and cordless phones as applications of omnidirectional radio waves, which are a form of unguided media, not guided fiber-optic cable.
+
+Q25. The electromagnetic spectrum used for wireless communication is divided into bands. In which band would you find applications like UHF TV, cellular phones, and paging?
+   A. VHF (very high frequency)
+   B. UHF (ultrahigh frequency)
+   C. HF (high frequency)
+   D. SHF (superhigh frequency)
+
+   Answer: B
+   Explanation: Table 7.4 clearly lists UHF TV, cellular phones, and paging as applications within the UHF band (300 MHz–3 GHz).
+
+Q26. Why can a single coaxial cable carry a much higher frequency range than a twisted-pair cable?
+   A. Because it is thinner and more flexible.
+   B. Because it uses light signals instead of electrical signals.
+   C. Because its construction, with a central core and outer shield, contains the signal better.
+   D. Because the twisting in twisted-pair cable limits its maximum frequency.
+
+   Answer: C
+   Explanation: The text states that the two media are constructed quite differently, and the shielding and concentric design of coax cable make it less susceptible to noise and signal radiation at high frequencies.
+
+Q27. Which of the following is an example of multicasting, a communication mode well-suited for omnidirectional radio waves?
+   A. A cellular phone call between two people.
+   B. A satellite network sending data from an earth station to a specific satellite.
+   C. An FM radio station broadcasting to many listeners.
+   D. An infrared keyboard sending a command to a PC.
+
+   Answer: C
+   Explanation: This is a classic example of multicasting (one sender, many receivers), for which omnidirectional waves that propagate in all directions are ideal.
+
+Q28. What is the purpose of the cladding in a fiber-optic cable?
+   A. To provide strength and protection from physical damage.
+   B. To be less dense than the core, causing reflection of light back into the core.
+   C. To carry a secondary, lower-speed data signal.
+   D. To shield the glass core from electromagnetic interference.
+
+   Answer: B
+   Explanation: The difference in density (and thus refractive index) between the core and the cladding is essential for creating the conditions necessary for total internal reflection.
+debugger eval code:48:11
+

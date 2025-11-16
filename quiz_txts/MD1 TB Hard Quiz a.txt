@@ -1,0 +1,226 @@
+Q1. Which of the following data communication characteristics refers to the variation in packet arrival time, which can negatively impact the quality of streaming video or audio?
+   A. Timeliness
+   B. Accuracy
+   C. Jitter
+   D. Delivery
+
+   Answer: C
+   Explanation: Jitter is the term for uneven delay in the delivery of data packets, such as when video packets sent at a constant rate arrive at irregular intervals.
+
+Q2. In data communications, what is the role of a protocol?
+   A. It is the physical path through which a message travels.
+   B. It is the information or data that is being communicated.
+   C. It represents a set of rules that governs the communication between devices.
+   D. It is the device that sends the data message.
+
+   Answer: C
+   Explanation: A protocol acts as an agreement between devices, defining the rules for formatting, timing, and error control to ensure they can understand each other.
+
+Q3. A communication channel where both stations can transmit and receive data, but not at the same time, is operating in which mode?
+   A. Simplex
+   B. Full-duplex
+   C. Multiplex
+   D. Half-duplex
+
+   Answer: D
+   Explanation: This mode allows two-way communication, but devices must take turns transmitting, similar to how walkie-talkies operate.
+
+Q4. What is a primary disadvantage of a mesh network topology?
+   A. The entire network fails if a single central device goes down.
+   B. It is difficult to isolate faults because all devices share a single cable.
+   C. The amount of cabling and the number of I/O ports required can be prohibitively expensive.
+   D. Unidirectional traffic means a single break in the link can disable the entire network.
+
+   Answer: C
+   Explanation: Because every device has a dedicated point-to-point link to every other device, the installation complexity and hardware costs are very high.
+
+Q5. In which network topology does all communication pass through a central controller, such as a hub or a switch?
+   A. Bus
+   B. Ring
+   C. Mesh
+   D. Star
+
+   Answer: D
+   Explanation: The star topology is defined by its central connection point; devices do not communicate directly with each other but relay messages through the central hub.
+
+Q6. What is the key difference between a LAN (Local Area Network) and a WAN (Wide Area Network)?
+   A. A LAN uses packet-switching, while a WAN uses circuit-switching.
+   B. A LAN connects hosts, is typically privately owned, and covers a limited geographical area, whereas a WAN interconnects networks over a large area and is often leased.
+   C. A LAN must use a bus topology, while a WAN must use a mesh topology.
+   D. A LAN is only for personal use, while a WAN is for business use.
+
+   Answer: B
+   Explanation: These distinctions in size, ownership, and the types of devices connected (hosts vs. connecting devices) are the primary criteria for distinguishing between LANs and WANs.
+
+Q7. How many point-to-point links are needed for a fully connected mesh topology with 8 nodes?
+   A. 56
+   B. 28
+   C. 16
+   D. 8
+
+   Answer: B
+   Explanation: Using the formula `$n(n-1)/2$`, for 8 nodes the calculation is `$8(7)/2 = 28$`.
+
+Q8. Which of the following describes a key characteristic of a packet-switched network?
+   A. It establishes a dedicated, continuous circuit between two end systems for the duration of the communication.
+   B. It is only efficient when working at its full capacity.
+   C. Data is transmitted in discrete blocks, which can be stored and forwarded by routers.
+   D. It guarantees that data packets will arrive without any delay.
+
+   Answer: C
+   Explanation: Packet-switched networks break data into packets that are routed independently, allowing for more efficient use of the network's capacity by sharing it among multiple communications.
+
+Q9. The precursor to the Internet, developed in the late 1960s by the Department of Defense's ARPA, was known as:
+   A. NSFNET
+   B. CSNET
+   C. ARPANET
+   D. MILNET
+
+   Answer: C
+   Explanation: The Advanced Research Projects Agency Network (ARPANET) was the first packet-switched network and the foundation of the modern Internet.
+
+Q10. What was the key innovation Vint Cerf and Bob Kahn introduced in their 'Internetting Project' that allowed dissimilar networks to be linked?
+   A. The Interface Message Processor (IMP)
+   B. The Network Control Protocol (NCP)
+   C. The concept of a gateway to serve as an intermediary device
+   D. The development of the World Wide Web
+
+   Answer: C
+   Explanation: They devised the idea of a gateway (now called a router) to handle the complexities of transferring data between networks with different packet sizes, interfaces, and transmission rates.
+
+Q11. The TCP/IP protocol suite was created by splitting the original Transmission Control Protocol (TCP). What was the primary responsibility assigned to the Internet Protocol (IP) part?
+   A. Handling higher-level functions like segmentation and reassembly of data.
+   B. Ensuring the physical transmission of bits over the wire.
+   C. Handling datagram routing.
+   D. Managing user applications like file transfer and email.
+
+   Answer: C
+   Explanation: The split was designed so IP would be responsible for the core task of routing packets across the internetwork from source to destination.
+
+Q12. What is the status of a Request for Comment (RFC) that is stable, well-understood, and has been implemented successfully by at least two independent groups?
+   A. Proposed Standard
+   B. Internet Standard
+   C. Experimental
+   D. Draft Standard
+
+   Answer: D
+   Explanation: A specification is elevated from Proposed Standard to Draft Standard after it has been shown to be stable and has at least two independent and interoperable implementations.
+
+Q13. Which Internet administration body is a forum of working groups focused on long-term research topics related to Internet protocols, applications, and architecture?
+   A. Internet Engineering Task Force (IETF)
+   B. Internet Architecture Board (IAB)
+   C. Internet Society (ISOC)
+   D. Internet Research Task Force (IRTF)
+
+   Answer: D
+   Explanation: The IRTF is explicitly focused on long-term research, as opposed to the IETF's focus on current engineering and standards issues.
+
+Q14. A keyboard and a monitor are classic examples of devices operating in which data flow mode?
+   A. Simplex
+   B. Half-duplex
+   C. Full-duplex
+   D. Point-to-point
+
+   Answer: A
+   Explanation: Communication is unidirectional: the keyboard only sends data to the computer, and the monitor only receives data from the computer.
+
+Q15. What is a significant advantage of a bus topology in terms of installation?
+   A. It is very robust because of redundant paths.
+   B. It uses less cabling than mesh or star topologies.
+   C. Adding new devices is very easy and does not disrupt the network.
+   D. It provides enhanced security because messages are sent on dedicated lines.
+
+   Answer: B
+   Explanation: A single backbone cable runs the length of the network, and devices connect to it with shorter drop lines, minimizing the total cable length.
+
+Q16. What are backbones and provider networks collectively known as in the context of the Internet's structure?
+   A. Customer Networks
+   B. Peering Points
+   C. Internet Service Providers (ISPs)
+   D. Internetworks
+
+   Answer: C
+   Explanation: Backbones are often called international ISPs, and provider networks are called national or regional ISPs; together they form the infrastructure that provides Internet service.
+
+Q17. In a ring topology, how is a signal passed from a sender to a non-adjacent destination device?
+   A. The signal is broadcast to all devices simultaneously, and only the destination accepts it.
+   B. A central controller forwards the signal directly to the destination.
+   C. The signal is passed from device to device along the ring until it reaches its destination.
+   D. The sender establishes a dedicated point-to-point link directly to the destination.
+
+   Answer: C
+   Explanation: Each device in the ring incorporates a repeater that regenerates the signal and passes it to the next device in the sequence.
+
+Q18. Which technology for accessing the Internet typically allows for simultaneous voice and data communication over the same telephone line?
+   A. Dial-up service
+   B. Cable network service
+   C. DSL Service
+   D. Point-to-point WAN
+
+   Answer: C
+   Explanation: Digital Subscriber Line (DSL) technology operates at higher frequencies on the telephone line than voice calls, allowing both to be used at the same time.
+
+Q19. An RFC labeled as 'Required' indicates that it...
+   A. is useful, but not necessary for minimum conformance.
+   B. describes work related to an experimental situation.
+   C. must be implemented by all Internet systems to achieve minimum conformance.
+   D. is significant from a historical perspective but has been superseded.
+
+   Answer: C
+   Explanation: Protocols like IP and ICMP are labeled as 'Required' because they are fundamental to the operation of the Internet.
+
+Q20. How are numerical data typically represented in data communications?
+   A. Using a character code like Unicode or ASCII.
+   B. By directly converting the number to its binary equivalent.
+   C. As a matrix of pixels representing the shape of the digits.
+   D. As a continuous analog signal.
+
+   Answer: B
+   Explanation: Numbers are represented by bit patterns corresponding to their binary form to simplify and speed up mathematical operations by the computer.
+
+Q21. What is the primary function of a tap in a bus topology?
+   A. To terminate the signal at the end of the cable to prevent reflection.
+   B. To regenerate and boost the signal as it passes along the cable.
+   C. To act as a central controller for all devices on the network.
+   D. To connect a device's drop line to the main backbone cable.
+
+   Answer: D
+   Explanation: A tap is a physical connector that either splices into or punctures the main cable, creating a connection point for a node.
+
+Q22. When two or more networks are connected, they form an...
+   A. internetwork or internet.
+   B. intranet.
+   C. topology.
+   D. protocol suite.
+
+   Answer: A
+   Explanation: An internet (lowercase i) is the generic term for any collection of interconnected networks.
+
+Q23. What is meant by 'real-time transmission' in the context of timeliness?
+   A. The data is delivered to every device on the network at the exact same moment.
+   B. The system delivers data without any errors.
+   C. Data is delivered as it is produced, in order, and without significant delay.
+   D. The system can store data and forward it at a later, more convenient time.
+
+   Answer: C
+   Explanation: This is crucial for applications like streaming video and audio, where data must be processed as it arrives to provide a smooth user experience.
+
+Q24. The development that led to an 'explosion of Internet applications' in the 1990s by adding commercial applications was the invention of the...
+   A. TCP/IP protocol suite.
+   B. ARPANET.
+   C. World Wide Web (WWW).
+   D. Peer-to-peer applications.
+
+   Answer: C
+   Explanation: Invented by Tim Berners-Lee, the Web made the Internet accessible and useful to a non-technical audience, leading to massive commercial and popular growth.
+
+Q25. Which type of connection involves more than two specific devices sharing a single link?
+   A. Point-to-point
+   B. Simplex
+   C. Multipoint
+   D. Duplex
+
+   Answer: C
+   Explanation: Also called multidrop, this connection type allows a single communications channel to be shared by three or more devices.
+debugger eval code:48:11
+
