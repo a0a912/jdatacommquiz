@@ -1,0 +1,261 @@
+
+Q1. What is the primary function of switches within a switched network?
+   A. To permanently connect all devices on the network to each other.
+   B. To create temporary connections between two or more devices linked to the switch.
+   C. To divide messages into smaller packets for transmission.
+   D. To store all network traffic for later analysis and forwarding.
+
+   Answer: B
+   Explanation: The source material defines switches as devices capable of creating these temporary links for one-to-one communication.
+
+
+Q2. In a circuit-switched network, what is the state of network resources during the data transfer phase?
+   A. Resources are allocated on-demand as data arrives at each switch.
+   B. Resources are shared among all active connections on a first-come, first-served basis.
+   C. Resources are reserved and dedicated to the connection for its entire duration.
+   D. Resources are dynamically allocated and released based on traffic volume.
+
+   Answer: C
+   Explanation: The source material emphasizes that in circuit switching, resources are reserved during setup and remain dedicated throughout the data transfer.
+
+
+Q3. Which of the following is a key characteristic of a datagram network?
+   A. All packets of a message must follow the same pre-established path.
+   B. It requires connection setup and teardown phases for every communication.
+   C. Each packet is treated independently and may travel a different path.
+   D. It is typically implemented in the data link layer of the network model.
+
+   Answer: C
+   Explanation: The source explicitly states that in a datagram network, each packet is treated independently, and an example shows packets taking different routes.
+
+
+Q4. A virtual-circuit network is described as a cross between a circuit-switched network and a datagram network. Which feature does it share with circuit-switched networks?
+   A. Data is transmitted as a continuous, unbroken stream.
+   B. It includes setup and teardown phases for communication.
+   C. Resources are allocated strictly on-demand on a first-come, first-served basis.
+   D. The address in the header has end-to-end jurisdiction.
+
+   Answer: B
+   Explanation: The text explicitly lists the presence of setup and teardown phases as a characteristic shared with circuit-switched networks.
+
+
+Q5. According to the source material, why are circuit-switched networks considered inefficient for computer network communication?
+   A. The delay at each switch is too long due to 'store and forward' processing.
+   B. Packets can arrive out of order, requiring reassembly at the destination.
+   C. The connection setup phase requires complex end-to-end addressing.
+   D. Allocated resources remain dedicated even when no data is being sent.
+
+   Answer: D
+   Explanation: The text highlights that a computer can be connected without activity for a long time, depriving other connections of those dedicated resources.
+
+
+Q6. In a datagram network, how does a switch determine where to send an incoming packet?
+   A. It sends the packet to all output ports except the one it came from.
+   B. It checks a routing table using the packet's destination address.
+   C. It follows the path that was established during a connection setup phase.
+   D. It uses a local identifier in the packet header that points to the next switch.
+
+   Answer: B
+   Explanation: The text explicitly states that a switch in a datagram network uses a routing table based on the destination address to find the corresponding output port.
+
+
+Q7. What is the main advantage of a circuit-switched network during the data transfer phase compared to a packet-switched network?
+   A. Higher efficiency in bandwidth utilization.
+   B. Greater flexibility for packets to route around congestion.
+   C. Minimal delay at each switch.
+   D. No need for a connection setup phase before transfer.
+
+   Answer: C
+   Explanation: The text states that during data transfer in a circuit-switched network, data is not delayed at each switch because resources are pre-allocated.
+
+
+Q8. Which statement accurately describes the path of packets in a virtual-circuit network?
+   A. Each packet is routed independently based on network traffic conditions.
+   B. All packets belonging to the same transmission follow the same path.
+   C. The path is determined by the destination address contained within each packet.
+   D. The data is sent as a single, continuous message without being packetized.
+
+   Answer: B
+   Explanation: The source material clearly states that in virtual-circuit switching, all packets follow the same path established during connection setup.
+
+
+Q9. The total delay for a packet in a datagram network includes waiting time at each switch. What is the reason for this waiting time?
+   A. Time is needed to establish a dedicated circuit through the switch.
+   B. The switch must wait for all packets of the message to arrive before forwarding any.
+   C. Resources are allocated on-demand, and a packet may have to wait if the switch is busy.
+   D. The teardown signal from the previous packet must be received before the next can be sent.
+
+   Answer: C
+   Explanation: The text explains that resources are allocated on a first-come, first-served basis, meaning a packet may experience a wait time if other packets are being processed.
+
+
+Q10. At which layer of the network model is datagram switching typically implemented?
+   A. Physical Layer
+   B. Data Link Layer
+   C. Network Layer
+   D. Transport Layer
+
+   Answer: C
+   Explanation: The text explicitly states that datagram switching is normally done at the network layer.
+
+
+Q11. What must be done to a message before it can be transmitted over any packet-switched network?
+   A. It must be encrypted for security.
+   B. A dedicated path for it must be reserved.
+   C. It must be divided into packets of fixed or variable size.
+   D. The destination device must send a signal to release resources.
+
+   Answer: C
+   Explanation: The source material's introduction to packet switching states that the message needs to be divided into packets.
+
+
+Q12. Which of the following scenarios would be most negatively impacted by the characteristics of a datagram network?
+   A. Sending a large file where overall throughput is more important than packet timing.
+   B. Web browsing, which involves short, bursty requests for data.
+   C. A real-time video conference where consistent, low delay for all packets is critical.
+   D. Sending an email message, which is not time-sensitive.
+
+   Answer: C
+   Explanation: The variable delay and potential for out-of-order packets in a datagram network can cause jitter and poor quality in real-time applications.
+
+
+Q13. The three phases of communication in a circuit-switched network are, in order:
+   A. Data Transfer, Connection Setup, Connection Teardown
+   B. Connection Setup, Connection Teardown, Data Transfer
+   C. Connection Setup, Data Transfer, Connection Teardown
+   D. Data Transfer, Resource Reservation, Connection Teardown
+
+   Answer: C
+   Explanation: This sequence correctly reflects the process: first establish the path, then send data, then release the path.
+
+
+Q14. How does resource allocation in a virtual-circuit network differ from a pure datagram network?
+   A. Virtual-circuit networks cannot allocate resources on-demand.
+   B. Datagram networks reserve resources for the entire duration of a message transfer.
+   C. Virtual-circuit networks have the option to reserve resources during the setup phase.
+   D. Datagram networks divide links into channels using FDM or TDM.
+
+   Answer: C
+   Explanation: The text highlights this flexibility: resources can be allocated during setup (like circuit-switched) or on-demand (like datagram).
+
+
+Q15. What does the term 'connectionless' signify in the context of a datagram network?
+   A. The network devices are not physically connected to each other.
+   B. The sender and receiver do not need to be online at the same time.
+   C. The switch does not keep information about the connection state.
+   D. No end-to-end addressing is required to send a packet.
+
+   Answer: C
+   Explanation: The source directly defines connectionless as the switch not keeping state information, treating each packet as a new, independent event.
+
+
+Q16. If a virtual-circuit network reserves resources during setup, how does the delay for each packet during data transfer compare?
+   A. The delay is variable for each packet depending on network congestion.
+   B. The delay is the same for each packet.
+   C. The delay progressively increases with each subsequent packet.
+   D. The first packet has a long delay, but subsequent packets have zero delay.
+
+   Answer: B
+   Explanation: The text notes that if resource reservation is made during setup, the delay for each packet will be the same, as there is no on-demand waiting time.
+
+
+Q17. What is the role of the destination address in the header of a packet within a datagram network?
+   A. It changes at each switch to point to the next hop.
+   B. It is used only by the first switch to determine the entire path.
+   C. It remains the same for the entire journey of the packet.
+   D. It is removed after the first switch and replaced with a local circuit ID.
+
+   Answer: C
+   Explanation: The source explicitly states that the destination address in the header of a datagram packet remains the same during its entire journey.
+
+
+Q18. Which component is NOT part of the total delay calculation for a packet in a circuit-switched network during the data transfer phase?
+   A. Propagation time
+   B. Transmission time
+   C. Waiting time at each switch
+   D. Processing time
+
+   Answer: C
+   Explanation: The source material highlights that because resources are pre-allocated, data is not delayed (does not wait) at each switch during transfer.
+
+
+Q19. In the example of the two remote offices connected by a T1 line, why are some output ports on the switches 'folded back' into the input ports?
+   A. To create a redundant path between the two offices in case the T1 line fails.
+   B. To allow communication between computers within the same office.
+   C. To double the bandwidth available for communication to the other office.
+   D. To comply with the T1 line leasing agreement from the service provider.
+
+   Answer: B
+   Explanation: The solution in the example explicitly states this is done to allow communication between computers in the same office.
+
+
+Q20. The 'store and forward' mechanism in packet switching implies that:
+   A. A switch must receive the entire packet before it can begin transmitting it on the outbound link.
+   B. A switch permanently stores a copy of every packet it forwards for backup purposes.
+   C. The sending computer stores the message and waits for a forward signal from the network.
+   D. The switch forwards the packet header immediately but stores the data payload for later.
+
+   Answer: A
+   Explanation: This is the definition of 'store and forward': the switch stores the full packet in a buffer and then forwards it, introducing delay.
+
+
+Q21. What is a primary similarity between a virtual-circuit network and a datagram network?
+   A. Both require connection setup and teardown phases.
+   B. In both networks, data is transmitted in the form of packets.
+   C. Both guarantee that all packets will follow the same path.
+   D. Both are typically implemented at the network layer.
+
+   Answer: B
+   Explanation: The source lists 'Data are packetized' as a characteristic of virtual-circuit networks, which it shares with datagram networks.
+
+
+Q22. What happens during the 'connection teardown' phase of a circuit-switched network?
+   A. The last data packet is sent with a special flag indicating the end of transmission.
+   B. A signal is sent to each switch in the path to release the dedicated resources.
+   C. The routing tables in the switches are updated to remove the connection entry.
+   D. The switches wait for a timeout period of no activity before automatically closing the connection.
+
+   Answer: B
+   Explanation: The text explicitly states that a signal is sent to each switch to release the resources when one of the entities needs to disconnect.
+
+
+Q23. Which type of switching is most analogous to the traditional public telephone network?
+   A. Datagram packet switching
+   B. Circuit switching
+   C. Virtual-circuit packet switching
+   D. Message switching
+
+   Answer: B
+   Explanation: The source uses the telephone network as an example of circuit switching, where a dedicated circuit is set up for the conversation and then torn down.
+
+
+Q24. In a datagram network, routing tables are described as being dynamic. What does this imply?
+   A. The tables are set once when the switch is powered on and never change.
+   B. The tables are updated periodically to reflect changes in the network.
+   C. The tables are created specifically for each packet and then deleted.
+   D. The tables contain information only about directly connected devices.
+
+   Answer: B
+   Explanation: The source material specifies that 'The routing tables are dynamic and updated periodically,' allowing the network to adapt to changes.
+
+
+Q25. Which of these is a defining difference between how a circuit-switched network and a packet-switched network handle a single communication link?
+   A. Only packet-switched networks use physical links to connect switches.
+   B. Circuit-switched networks divide the link into dedicated channels, while packet-switched networks do not.
+   C. Packet-switched networks have a much higher propagation time on their links.
+   D. Circuit-switched network links can only connect two switches, while packet-switched links can connect many.
+
+   Answer: B
+   Explanation: The text states that in a circuit-switched network, 'each link is divided into n channels' (using FDM or TDM) for dedicated use, a concept absent in packet switching.
+
+
+Q26. What is the consequence of packets taking different paths in a datagram network?
+   A. It guarantees the most efficient use of network resources at all times.
+   B. It ensures that all packets arrive at the destination with identical delay.
+   C. The packets may arrive out of order and with varying delays.
+   D. It simplifies the routing decision at each switch since the path is fixed.
+
+   Answer: C
+   Explanation: The example of four packets from A to X traveling different paths directly illustrates that they can arrive with different delays and potentially out of order.
+debugger eval code:68:11
+

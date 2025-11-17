@@ -1,0 +1,261 @@
+
+Q1. In the context of a constellation diagram, what specific information is conveyed by a point's projection onto the horizontal X-axis?
+   A. The peak amplitude of the quadrature (Q) component of the signal element.
+   B. The peak amplitude of the in-phase (I) component of the signal element.
+   C. The overall phase of the signal element relative to the origin.
+   D. The combined peak signal amplitude of the signal element.
+
+   Answer: B
+   Explanation: The constellation diagram's horizontal axis is defined as representing the carrier that is in-phase.
+
+
+Q2. According to the provided text, what is a primary advantage of Phase Shift Keying (PSK) over Amplitude Shift Keying (ASK)?
+   A. PSK requires less complex hardware for demodulation.
+   B. PSK can transmit data at a significantly higher bit rate.
+   C. PSK is more resistant to noise.
+   D. PSK uses less bandwidth for the same amount of data.
+
+   Answer: C
+   Explanation: The text states that noise is more likely to affect a signal's amplitude than its phase, making PSK less susceptible.
+
+
+Q3. In Frequency Modulation (FM), how does the carrier signal change in response to the modulating analog signal?
+   A. The carrier's frequency varies based on the frequency of the modulating signal.
+   B. The carrier's frequency varies based on the amplitude of the modulating signal.
+   C. The carrier's amplitude varies based on the amplitude of the modulating signal.
+   D. The carrier's phase varies based on the amplitude of the modulating signal.
+
+   Answer: B
+   Explanation: The text specifies that in FM transmission, the frequency of the carrier is modulated to follow the changing amplitude of the modulating signal.
+
+
+Q4. What is the key difference between how Frequency Modulation (FM) and Phase Modulation (PM) are implemented, as described in the text?
+   A. FM uses a voltage-controlled oscillator (VCO), while PM uses a simple multiplier.
+   B. FM requires two carrier signals, while PM only requires one.
+   C. PM implementation includes a derivative component along with a VCO.
+   D. There is no functional difference in their implementation; they are identical.
+
+   Answer: C
+   Explanation: The text states that PM is implemented using a VCO along with a derivative, which distinguishes it from the standard FM implementation.
+
+
+Q5. In a Quadrature Phase Shift Keying (QPSK) constellation diagram described in the source, if the in-phase and quadrature components each have a peak amplitude of 1 V, what is the resultant peak amplitude of a signal element like '11'?
+   A. 1 V
+   B. $\sqrt{2}$ V
+   C. 2 V
+   D. 0 V
+
+   Answer: B
+   Explanation: The combined amplitude is the hypotenuse of a right triangle with sides of 1 V, calculated using Pythagoras' Theorem as $\sqrt{1^2 + 1^2}$.
+
+
+Q6. What distinguishes analog-to-analog conversion from digital-to-analog conversion?
+   A. Analog-to-analog conversion represents digital data using an analog signal.
+   B. Analog-to-analog conversion is only used for baseband transmission.
+   C. Analog-to-analog conversion represents analog data using an analog signal.
+   D. Analog-to-analog conversion changes the characteristics of a digital signal.
+
+   Answer: C
+   Explanation: This process, also known as analog modulation, involves representing a continuous analog information signal with a different analog carrier signal.
+
+
+Q7. In Quadrature Amplitude Modulation (QAM), which two characteristics of a sine wave are altered simultaneously?
+   A. Frequency and Phase
+   B. Amplitude and Frequency
+   C. Amplitude and Phase
+   D. Peak Amplitude and RMS Amplitude
+
+   Answer: C
+   Explanation: The text explicitly introduces QAM as the result of combining ASK (amplitude) and PSK (phase).
+
+
+Q8. According to the source material's description of a Binary Amplitude Shift Keying (BASK) constellation diagram, why are the two points located only on the X-axis?
+   A. Because BASK modulates only the phase of the carrier.
+   B. Because BASK uses both an in-phase and a quadrature carrier.
+   C. Because BASK uses only an in-phase carrier.
+   D. Because BASK represents binary 0 with 0 V amplitude.
+
+   Answer: C
+   Explanation: Since only the in-phase (X-axis) carrier is used and the quadrature (Y-axis) component is zero, all points must lie on the horizontal axis.
+
+
+Q9. What is the fundamental difference in how information is encoded in Frequency Shift Keying (FSK) versus Phase Shift Keying (PSK)?
+   A. FSK varies the carrier's amplitude while PSK varies its frequency.
+   B. FSK varies the carrier's frequency while PSK varies its phase.
+   C. FSK keeps the carrier's frequency constant while PSK varies it.
+   D. FSK varies both amplitude and frequency, while PSK varies only phase.
+
+   Answer: B
+   Explanation: Each technique is named after the characteristic of the carrier signal that is altered to represent digital data.
+
+
+Q10. In Phase Modulation (PM), what property of the modulating analog signal is the instantaneous change in the carrier frequency proportional to?
+   A. The amplitude of the modulating signal.
+   B. The frequency of the modulating signal.
+   C. The derivative of the amplitude of the modulating signal.
+   D. The phase of the modulating signal.
+
+   Answer: C
+   Explanation: The text makes a specific point that in PM, the change in carrier frequency is proportional to the derivative of the modulating signal's amplitude.
+
+
+Q11. What is the primary purpose of a constellation diagram?
+   A. To show the change in a signal's amplitude over time.
+   B. To define the amplitude and phase of a signal element using carrier components.
+   C. To illustrate the frequency spectrum occupied by a modulated signal.
+   D. To compare the bit rates of different modulation schemes.
+
+   Answer: B
+   Explanation: These diagrams are specifically useful for visualizing the amplitude and phase of signal elements, especially when in-phase and quadrature carriers are used.
+
+
+Q12. In Amplitude Modulation (AM), what role does the analog information signal play in relation to the carrier signal?
+   A. It acts as the carrier signal itself.
+   B. It determines the frequency of the carrier signal.
+   C. It serves as the envelope of the carrier signal.
+   D. It has no direct relationship with the carrier signal.
+
+   Answer: C
+   Explanation: The text states that in AM, the modulating signal is the envelope of the carrier, with the carrier's amplitude changing to follow the information.
+
+
+Q13. What is the core concept behind Quadrature Amplitude Modulation (QAM) that allows it to encode more information than simple ASK or PSK?
+   A. It uses a single carrier with multiple, discrete frequency levels.
+   B. It uses two carriers of the same frequency but 90° out-of-phase.
+   C. It varies the frequency and phase of the carrier signal simultaneously.
+   D. It rapidly switches between ASK and PSK modulation schemes.
+
+   Answer: B
+   Explanation: QAM's foundation is the use of an in-phase (I) and a quadrature (Q) carrier, which allows for simultaneous modulation of amplitude on both, effectively creating a two-dimensional signal space.
+
+
+Q14. In the BPSK constellation diagram described, binary 0 and binary 1 are both on the X-axis with amplitudes of -1 V and +1 V respectively. What does this arrangement signify?
+   A. The signal has two different amplitude levels.
+   B. The signal uses two different frequencies.
+   C. The two signal elements are 180° out of phase.
+   D. The signal uses both in-phase and quadrature carriers.
+
+   Answer: C
+   Explanation: Representing signals as equal and opposite values on a single axis indicates a phase shift of 180 degrees between them, which is the principle of Binary PSK.
+
+
+Q15. When is analog-to-analog conversion specifically necessary, according to the text?
+   A. When the original information is digital.
+   B. When the transmission medium is baseband in nature.
+   C. When only a bandpass channel is available.
+   D. When noise immunity is the highest priority.
+
+   Answer: C
+   Explanation: Modulation is required to shift the baseband information signal into the frequency range that the bandpass channel can carry.
+
+
+Q16. Which characteristic of a carrier signal remains constant during Frequency Shift Keying (FSK)?
+   A. Frequency
+   B. Peak amplitude and phase
+   C. Phase
+   D. Peak amplitude
+
+   Answer: B
+   Explanation: The definition of FSK in the text explicitly states that both the peak amplitude and phase remain constant for all signal elements.
+
+
+Q17. What is the fundamental process of digital-to-analog conversion as defined in the source material?
+   A. Representing an analog signal with a stream of digital data.
+   B. Changing a characteristic of an analog signal based on digital data.
+   C. Converting a bandpass signal to a baseband signal for transmission.
+   D. Multiplying two digital signals to create an analog output.
+
+   Answer: B
+   Explanation: The text defines this process as altering a property (amplitude, frequency, or phase) of a continuous analog carrier signal based on discrete digital information.
+
+
+Q18. Which of the following is NOT one of the four pieces of information that can be deduced from a single point on a constellation diagram?
+   A. The frequency of the carrier signal.
+   B. The peak amplitude of the in-phase (I) component.
+   C. The phase of the signal element.
+   D. The peak signal amplitude of the signal element.
+
+   Answer: A
+   Explanation: A constellation diagram represents amplitude and phase at a single carrier frequency; it does not provide information about the frequency value itself.
+
+
+Q19. In the QPSK constellation diagram shown, what is the phase angle for the signal element representing the binary sequence '11'?
+   A. 0°
+   B. 90°
+   C. 135°
+   D. 45°
+
+   Answer: D
+   Explanation: The text specifies that for the '11' signal element, the resulting signal has a phase angle of 45°, located in the first quadrant of the diagram.
+
+
+Q20. Which analog modulation technique is typically implemented using a simple multiplier?
+   A. Frequency Modulation (FM)
+   B. Phase Modulation (PM)
+   C. Quadrature Amplitude Modulation (QAM)
+   D. Amplitude Modulation (AM)
+
+   Answer: D
+   Explanation: The source material explicitly states that AM is normally implemented using a simple multiplier to combine the carrier and modulating signals.
+
+
+Q21. In Amplitude Shift Keying (ASK), which two characteristics of the carrier signal remain constant?
+   A. Amplitude and Frequency
+   B. Frequency and Phase
+   C. Amplitude and Phase
+   D. Only Frequency
+
+   Answer: B
+   Explanation: The definition of ASK specifies that while the amplitude changes, both the frequency and phase are held constant.
+
+
+Q22. What is the defining characteristic of a periodic analog signal, such as a sine wave, according to the text?
+   A. It is comprehensively defined by its bit rate, bandwidth, and noise level.
+   B. It is comprehensively defined by its peak amplitude, frequency, and phase.
+   C. It is comprehensively defined by its voltage, current, and resistance.
+   D. It is comprehensively defined by its modulation type and constellation diagram.
+
+   Answer: B
+   Explanation: The text explicitly states that a sine wave is defined by these three characteristics.
+
+
+Q23. An advantage of PSK over FSK mentioned in the text is that it does not require multiple carrier signals. In what scenario would FSK require multiple carrier signals?
+   A. FSK always requires multiple carrier signals, one for each frequency.
+   B. In multi-level FSK (MFSK), where each frequency represents more than one bit.
+   C. FSK does not require multiple carrier signals; the text is mistaken.
+   D. Only when combined with ASK to create a hybrid modulation.
+
+   Answer: B
+   Explanation: This is a plausible scenario where multiple distinct frequencies are needed. However, the text implies a simpler comparison to PSK, which uses one carrier signal for all its states.
+
+
+Q24. What does a time-domain plot of a signal, as referenced in the text, illustrate?
+   A. The different frequency components present in the signal.
+   B. The relationship between the in-phase and quadrature components.
+   C. The changes in signal amplitude with respect to time.
+   D. The phase shift between two different signals.
+
+   Answer: C
+   Explanation: The text defines the time-domain plot as showing how the signal's amplitude varies over time.
+
+
+Q25. What is the key functional difference between how the modulating signal's amplitude affects the carrier in AM versus FM?
+   A. In AM, it controls carrier amplitude; in FM, it controls carrier phase.
+   B. In both AM and FM, it controls the carrier's amplitude.
+   C. In AM, it controls carrier amplitude; in FM, it controls carrier frequency.
+   D. In AM, it controls carrier frequency; in FM, it controls carrier amplitude.
+
+   Answer: C
+   Explanation: Each modulation scheme uses the information signal's amplitude to vary a different, specific characteristic of the carrier signal.
+
+
+Q26. Which digital-to-analog conversion technique maintains a constant frequency and phase for the carrier signal?
+   A. Frequency Shift Keying (FSK)
+   B. Phase Shift Keying (PSK)
+   C. Amplitude Shift Keying (ASK)
+   D. Quadrature Amplitude Modulation (QAM)
+
+   Answer: C
+   Explanation: The definition of ASK states that both the frequency and phase remain constant while the amplitude is varied.
+debugger eval code:68:11
+

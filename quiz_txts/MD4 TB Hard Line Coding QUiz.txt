@@ -1,0 +1,251 @@
+
+Q1. A digital transmission system uses the MLT-3 line coding scheme. What is the primary reason a continuous stream of '1's creates a periodic signal with a frequency one-fourth of the bit rate, thus reducing the required bandwidth?
+   A. The signal transitions through the level pattern +V, 0, -V, 0, which repeats every four bits.
+   B. Each '1' bit is represented by three distinct signal levels, reducing the signal rate by a factor of four.
+   C. The signal remains at a non-zero voltage for four bit durations before transitioning, which lowers the average frequency.
+   D. A '0' bit is inserted after every three '1' bits to force a lower frequency component into the signal.
+
+   Answer: A
+   Explanation: For a stream of 1s, the MLT-3 rules cause the voltage to cycle through +V, 0, -V, 0, creating a periodic signal where one cycle spans four bit durations, making its fundamental frequency N/4.
+
+
+Q2. In the HDB3 scrambling technique, if the number of non-zero pulses since the last substitution is even and four consecutive zeros are encountered, which substitution pattern is used and why?
+   A. The pattern B00V is used to introduce two non-zero pulses, keeping the cumulative count of non-zero pulses even.
+   B. The pattern 000V is used because it introduces only one non-zero pulse, which is simpler for the receiver to detect.
+   C. The pattern 000VB0VB is used, similar to B8ZS, to ensure maximum synchronization.
+   D. The pattern B00B is used to ensure that the DC component is balanced by having two bipolar pulses.
+
+   Answer: A
+   Explanation: The 'B' (Bipolar) and 'V' (Violation) are both non-zero pulses. Using B00V maintains the even parity of non-zero pulses, which is the core rule of HDB3.
+
+
+Q3. The 4D-PAM5 line coding scheme is used in Gigabit LANs to transmit 1 Gbps over four parallel wires. How is this high data rate achieved on copper cables that can only support a much lower signal rate (e.g., 125 Mbaud)?
+   A. Data is sent over four wires simultaneously, so each wire only needs to carry one-fourth of the total data rate.
+   B. It uses five voltage levels to encode 8 bits per signal element, increasing the data rate by a factor of 8.
+   C. It uses forward error detection to reduce the need for retransmissions, thus increasing the effective throughput to 1 Gbps.
+   D. The scheme has a very low case factor '$c$' in the signal rate formula, allowing for a much higher data rate '$N$' for a given signal rate '$S$'.
+
+   Answer: A
+   Explanation: The '4D' refers to four dimensions (four wires). The 1 Gbps data stream is split into four 250 Mbps streams, and the encoding allows this to be transmitted at 125 Mbaud on each wire.
+
+
+Q4. A bandpass analog signal exists in the frequency range of 100 kHz to 300 kHz. According to the Nyquist theorem, what is the minimum sampling rate required to reliably reproduce this signal?
+   A. 200,000 samples/sec
+   B. 400,000 samples/sec
+   C. 600,000 samples/sec
+   D. 100,000 samples/sec
+
+   Answer: C
+   Explanation: The Nyquist theorem states the sampling rate must be at least twice the highest frequency component ($f_{max}$), which in this case is $2 \times 300$ kHz.
+
+
+Q5. Why is block coding, such as 4B/5B, often used in conjunction with a line coding scheme like NRZ-I?
+   A. To prevent long sequences of zeros, which cause loss of synchronization in NRZ-I.
+   B. To eliminate the DC component inherent in the NRZ-I signal.
+   C. To double the data rate of the NRZ-I transmission.
+   D. To convert the two-level NRZ-I signal into a three-level signal for better noise immunity.
+
+   Answer: A
+   Explanation: NRZ-I's main weakness is a long string of zeros causing no signal transitions, which can lead to clock drift. 4B/5B encoding ensures that the output stream never has more than three consecutive zeros.
+
+
+Q6. What is the relationship between the minimum required bandwidth for a digitized signal ($B_{min}$) and the bandwidth of the original low-pass analog signal ($B_{analog}$), assuming PCM is used?
+   A. The digital signal's bandwidth is the analog bandwidth multiplied by the number of bits per sample ($n_b$).
+   B. The digital signal's bandwidth is half of the analog signal's bandwidth.
+   C. The digital signal's bandwidth is equal to the analog signal's bandwidth.
+   D. The digital signal's bandwidth is the analog bandwidth divided by the number of quantization levels (L).
+
+   Answer: A
+   Explanation: The formula derived is $B_{min} = n_b \times B_{analog}$, reflecting the price paid for digitization in terms of increased bandwidth.
+
+
+Q7. In the context of line coding, if a signal element carries two data elements, what is the value of the ratio 'r' and how does this affect the relationship between data rate (N) and signal rate (S)?
+   A. $r=2$; the signal rate is half the data rate, increasing bandwidth efficiency.
+   B. $r=1/2$; the signal rate is double the data rate, decreasing bandwidth efficiency.
+   C. $r=2$; the signal rate is double the data rate, decreasing bandwidth efficiency.
+   D. $r=1$; the signal rate is equal to the data rate.
+
+   Answer: A
+   Explanation: The ratio r is defined as the number of data elements per signal element. With $r=2$, the formula $S = N/r$ shows the signal rate (baud) is lower than the bit rate, allowing more data to be sent in the same bandwidth.
+
+
+Q8. Which of the following line coding schemes is considered 'biphase' and is characterized by having at least one transition per bit time, ensuring self-synchronization, but at the cost of requiring a higher bandwidth?
+   A. Manchester
+   B. NRZ-I
+   C. AMI
+   D. 2B1Q
+
+   Answer: A
+   Explanation: Manchester encoding has a mandatory transition in the middle of each bit, which is used for clock recovery (self-synchronization), but this doubles the signal rate compared to NRZ.
+
+
+Q9. What is the fundamental difference in the information encoded by Pulse Code Modulation (PCM) versus Delta Modulation (DM)?
+   A. PCM encodes the absolute amplitude value of each sample, while DM encodes the change in amplitude from the previous sample.
+   B. PCM uses uniform quantization steps, while DM uses non-uniform steps.
+   C. PCM is an analog-to-digital technique, while DM is a digital-to-digital technique.
+   D. PCM has a lower bit rate than DM for the same signal quality.
+
+   Answer: A
+   Explanation: PCM quantizes the actual value of the analog signal at each sampling instant, whereas DM determines if the signal has increased or decreased relative to the last step, encoding only the change.
+
+
+Q10. A system needs to transmit real-time, uncompressed video where slight variations in the arrival time of data frames are unacceptable. Which transmission mode is specifically designed for this requirement?
+   A. Asynchronous
+   B. Synchronous
+   C. Isochronous
+   D. Parallel
+
+   Answer: C
+   Explanation: This mode guarantees that data arrives at a fixed, constant rate, ensuring the entire stream of bits is synchronized, which is essential for real-time audio and video.
+
+
+Q11. What problem associated with digital signals do DC components create, and which line coding category is inherently designed to avoid it by using three voltage levels?
+   A. They can cause problems for systems that cannot pass low frequencies; Bipolar schemes avoid this.
+   B. They cause a loss of synchronization; Polar schemes like Manchester avoid this.
+   C. They increase the required bandwidth; Multilevel schemes avoid this.
+   D. They create baseline wandering; Unipolar NRZ avoids this.
+
+   Answer: A
+   Explanation: Very low frequencies (DC components) are blocked by transformers or certain transmission lines. Bipolar schemes like AMI ensure no DC component by balancing positive and negative voltages for '1's and using zero for '0's.
+
+
+Q12. A system is designed to use the 8B6T line coding scheme. What does this designation imply about the encoding process?
+   A. A block of 8 binary bits is converted into a block of 6 signal elements, each of which can have one of three levels.
+   B. A block of 8 bits is encoded using 6 bits, and the signal has three transition rules.
+   C. A block of 6 binary bits is converted into a block of 8 signal elements with three voltage levels.
+   D. 8 bits of data are transmitted in parallel over 6 ternary wires.
+
+   Answer: A
+   Explanation: The notation mBnL means 'm' binary bits are encoded into 'n' signal elements with 'L' levels. Here, 8B means 8 binary bits, and 6T means 6 ternary (3-level) signal elements.
+
+
+Q13. In PCM, the formula for the signal-to-quantization-noise ratio in decibels is given as $SNR_{dB} = 6.02n_b + 1.76$. If a telephone system requires an $SNR_{dB}$ of at least 40 dB, what is the minimum integer number of bits per sample ($n_b$) needed?
+   A. 6 bits
+   B. 7 bits
+   C. 8 bits
+   D. 10 bits
+
+   Answer: B
+   Explanation: Solving for $n_b$ gives $(40 - 1.76) / 6.02 \approx 6.35$. Since the number of bits must be an integer, we must round up to 7 to meet the requirement.
+
+
+Q14. What is a key difference between the NRZ-L and NRZ-I polar line coding schemes regarding their susceptibility to signal polarity inversion?
+   A. NRZ-I is immune to polarity inversion because it depends on the presence or absence of a transition, not the voltage level itself.
+   B. NRZ-L is immune to polarity inversion because a positive level always represents a '1' and a negative level always represents a '0'.
+   C. Both schemes are equally affected by polarity inversion, as they both use two voltage levels.
+   D. Neither scheme is affected by polarity inversion because they are self-synchronizing.
+
+   Answer: A
+   Explanation: In NRZ-I, a transition means one bit value and no transition means the other. If all voltages are flipped, the pattern of transitions remains the same, so the data can still be decoded correctly.
+
+
+Q15. A data stream is encoded using the B8ZS scrambling technique. The last non-zero pulse had a negative voltage. What sequence would replace eight consecutive zeros?
+   A. 000-+0+-
+   B. 000V-B0V-B
+   C. B00V0B00
+   D. 000VB0VB
+
+   Answer: D
+   Explanation: This is the standard B8ZS substitution pattern. The polarity of V (violation) and B (bipolar) is determined relative to the polarity of the last non-zero pulse.
+
+
+Q16. When comparing serial and parallel transmission, what is the primary trade-off?
+   A. Parallel transmission is faster but more expensive and limited to short distances due to the cost and complexity of multiple wires.
+   B. Serial transmission is faster but requires complex parallel-to-serial converters at each end.
+   C. Parallel transmission has better synchronization but is more susceptible to noise.
+   D. Serial transmission is cheaper but cannot be used for high-speed applications.
+
+   Answer: A
+   Explanation: Parallel transmission achieves higher speed by sending n bits at a time, but requires n wires, increasing cost and making it impractical for long distances.
+
+
+Q17. In asynchronous transmission, what is the purpose of the start and stop bits?
+   A. To alert the receiver to the beginning and end of each byte, allowing it to synchronize for the duration of that byte.
+   B. To provide error detection for the byte being transmitted.
+   C. To increase the overall data rate by framing the data.
+   D. To carry timing information for the entire stream of data.
+
+   Answer: A
+   Explanation: Since there can be variable gaps between bytes, the start bit signals the arrival of a new byte, and the stop bit signals its completion, allowing for byte-level synchronization.
+
+
+Q18. What is meant by 'baseline wandering' and which data pattern would cause the most severe case of it in an NRZ-L encoded signal?
+   A. It is a drift in the receiver's reference voltage for decoding bits, caused by a long sequence of 0s or 1s.
+   B. It is a frequency shift in the signal, caused by a lack of transitions in schemes like AMI.
+   C. It is the receiver's clock falling out of sync with the sender's clock, caused by any repetitive data pattern.
+   D. It is the signal power fluctuating randomly due to noise, which is mitigated by biphase schemes.
+
+   Answer: A
+   Explanation: A long string of bits with the same voltage level causes the receiver's calculated average signal power (the baseline) to drift, making it difficult to distinguish between high and low levels.
+
+
+Q19. If a signal has L levels and we assume each level corresponds to one signal element, the maximum data rate can be related by $N_{max} = 2 \times B \times \log_2 L$. How does this formula connect to the one involving the ratio 'r' ($N_{max} = (1/c) \times B \times r$)?
+   A. A signal with L levels can carry $\log_2 L$ bits per signal element, so $r = \log_2 L$. Assuming the average case where $c=1/2$, the formulas become equivalent.
+   B. The two formulas are for different phenomena, with the first (Nyquist) being for channel capacity and the second for line coding efficiency.
+   C. The ratio 'r' is equal to L, and the case factor 'c' is equal to $1/\log_2(L)$, which makes the formulas match.
+   D. The first formula applies only to multilevel schemes, while the second applies only to polar schemes.
+
+   Answer: A
+   Explanation: By setting $r = \log_2 L$ and $c=1/2$, the second formula becomes $N_{max} = (1/(1/2)) \times B \times \log_2 L = 2 \times B \times \log_2 L$, demonstrating their agreement.
+
+
+Q20. What is a major drawback of the Return-to-Zero (RZ) line coding scheme that led to it being replaced by biphase schemes like Manchester?
+   A. It requires two signal changes to encode one bit, which consumes greater bandwidth.
+   B. It has a severe DC component problem when transmitting a long sequence of 1s.
+   C. It cannot provide synchronization because there are no guaranteed transitions.
+   D. It only uses two voltage levels, making it susceptible to noise.
+
+   Answer: A
+   Explanation: RZ requires a transition to encode the bit's value and another transition to return to zero within the bit period, resulting in a higher signal rate and thus wider bandwidth requirement.
+
+
+Q21. The 2B1Q line coding scheme encodes 2 bits into a single signal element with 4 voltage levels. If a system using 2B1Q has a data rate of 1 Mbps, what is its average signal rate (baud rate)?
+   A. 250 kbaud
+   B. 500 kbaud
+   C. 1 Mbaud
+   D. 2 Mbaud
+
+   Answer: B
+   Explanation: In 2B1Q, two data elements (bits) are carried by one signal element, so $r=2$. The signal rate $S_{ave}$ is $N/r$, which is 1 Mbps / 2 = 500 kbaud. The formula listed in the text, $S_{ave} = N/4$, appears to be a typo, as the logic and other examples point to $S=N/r$ where $r=2$.
+
+
+Q22. Why is the process of companding and expanding used in the context of PCM quantization?
+   A. To improve the signal-to-noise ratio for signals where amplitude changes are more frequent at lower levels than higher levels.
+   B. To increase the bit rate of the PCM signal without increasing the bandwidth.
+   C. To simplify the encoding process by ensuring all sample values are integers.
+   D. To eliminate the need for a low-pass filter at the decoder.
+
+   Answer: A
+   Explanation: Companding compresses the signal by giving more quantization levels to the more common lower amplitudes and fewer to the less common higher amplitudes, which is a form of non-uniform quantization that improves overall SNR.
+
+
+Q23. What is the consequence of sampling a 1 kHz sine wave at a rate of 1 kHz (undersampling)?
+   A. The recovered signal will not resemble the original sine wave; it may appear as a constant DC value.
+   B. The recovered signal will be a perfect replica of the original sine wave.
+   C. The recovered signal will have double the frequency of the original sine wave.
+   D. The recovered signal will be a good approximation, but with some quantization error.
+
+   Answer: A
+   Explanation: As shown in Figure 4.24c, sampling at a rate equal to the signal's frequency ($f_s = f$) can result in samples being taken at the same point in every cycle, which fails to capture the wave's oscillation.
+
+
+Q24. If we want to transmit 1000 characters, each encoded as 8 bits, using asynchronous transmission with 1 start bit and 2 stop bits per character, what is the percentage of redundancy (overhead)?
+   A. 37.5%
+   B. 20%
+   C. 27.3%
+   D. 0%
+
+   Answer: A
+   Explanation: Each 8-bit character requires 1 start bit + 8 data bits + 2 stop bits = 11 bits. The overhead is 3 bits for every 8 bits of data. Redundancy = (3 overhead bits / 8 data bits) * 100% = 37.5%.
+
+
+Q25. A system using Bipolar AMI encoding transmits a long sequence of zeros. What is the primary problem this causes?
+   A. Loss of synchronization
+   B. Creation of a DC component
+   C. Baseline wandering
+   D. Increased bandwidth requirement
+
+   Answer: A
+   Explanation: In AMI, a '0' is represented by zero voltage. A long string of zeros results in a flat, unchanging signal, which gives the receiver no transitions to use for synchronizing its clock.
+debugger eval code:68:11
+

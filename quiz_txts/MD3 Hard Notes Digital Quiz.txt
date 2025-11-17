@@ -1,0 +1,261 @@
+
+Q1. In a Bipolar AMI scheme, how would the bit sequence '101101' be represented in terms of voltage levels, assuming the first '1' is represented by a positive voltage?
+   A. Positive, Zero, Negative, Positive, Zero, Negative
+   B. Positive, Zero, Positive, Negative, Zero, Positive
+   C. Positive, Negative, Positive, Negative, Positive, Negative
+   D. Zero, Positive, Zero, Zero, Positive, Zero
+
+   Answer: A
+   Explanation: This sequence correctly shows bit 0 as zero voltage and alternating polarities for consecutive bit 1s.
+
+
+Q2. A digital transmission system requires a minimum quantization signal-to-noise ratio ($SNR_Q$) of 45 dB. Using the formula $SNR_Q = 6.02n_b + 1.76$, what is the minimum number of quantization levels (L) required?
+   A. 128 levels
+   B. 64 levels
+   C. 7 levels
+   D. 146 levels
+
+   Answer: A
+   Explanation: Solving for the number of bits per sample ($n_b \ge 7.18$) requires rounding up to 8 bits, which corresponds to $2^8$ levels.
+
+
+Q3. Which of the following line coding schemes is most susceptible to loss of synchronization when transmitting a long sequence of '0's?
+   A. Polar NRZ-L
+   B. Manchester
+   C. Bipolar AMI
+   D. Differential Manchester
+
+   Answer: A
+   Explanation: A long sequence of zeros (or ones) results in a constant voltage level with no transitions, making it difficult for the receiver to maintain clock synchronization.
+
+
+Q4. An analog signal is sampled using PCM. The maximum frequency is 10 kHz, and each sample is quantized into one of 256 levels. What is the resulting bit rate?
+   A. 160,000 bps
+   B. 80,000 bps
+   C. 2,560,000 bps
+   D. 20,000 bps
+
+   Answer: A
+   Explanation: The sampling rate is $2 \times 10$ kHz = 20,000 samples/sec. The number of bits per sample is $log_2(256) = 8$. The bit rate is $20,000 \times 8$.
+
+
+Q5. Why is it impossible to determine the minimum sampling rate for a band-pass signal with a bandwidth of 200 kHz without more information?
+   A. The Nyquist theorem requires the maximum frequency ($f_{max}$), which cannot be derived from the bandwidth alone.
+   B. Band-pass signals cannot be digitized using Pulse Code Modulation (PCM).
+   C. The sampling rate for a band-pass signal must be exactly twice its bandwidth.
+   D. The bandwidth of 200 kHz is too high for modern sampling technology.
+
+   Answer: A
+   Explanation: Bandwidth is the difference between the highest and lowest frequencies ($f_{max} - f_{min}$), so knowing only the bandwidth doesn't reveal the value of $f_{max}$ itself.
+
+
+Q6. Compare the line coding schemes NRZ-I and Differential Manchester. What is a key similarity in how they determine the signal for the next bit?
+   A. Both use the presence or absence of a transition in the signal level to represent a bit value.
+   B. Both schemes guarantee a signal transition in the middle of each bit period.
+   C. Both represent bit '0' with a positive voltage and bit '1' with a negative voltage.
+   D. Both use three voltage levels (positive, negative, and zero) to encode data.
+
+   Answer: A
+   Explanation: NRZ-I uses a transition for bit '1', while Differential Manchester uses a transition at the start of the bit period for bit '0'. Both rely on a change (or lack thereof) rather than an absolute voltage level.
+
+
+Q7. A sender transmits data at 1.5 Mbps. The receiver's clock is 0.05% faster than the sender's clock. How many extra bits does the receiver's clock sample per second?
+   A. 750
+   B. 75
+   C. 1,500,750
+   D. The receiver samples fewer bits.
+
+   Answer: A
+   Explanation: A 0.05% faster rate on 1,500,000 bps means the receiver expects $1,500,000 \times 0.0005 = 750$ extra bits per second.
+
+
+Q8. In a Pseudoternary line coding scheme, what distinguishes the representation of a '0' from a '1'?
+   A. Bit '1' is represented by zero voltage, while bit '0' alternates between positive and negative voltages.
+   B. Bit '0' is represented by zero voltage, while bit '1' alternates between positive and negative voltages.
+   C. Bit '1' is a positive voltage and bit '0' is a negative voltage.
+   D. Bit '1' causes a transition at the start of the bit interval, while bit '0' does not.
+
+   Answer: A
+   Explanation: This correctly defines the Pseudoternary scheme, which is effectively the inverse of the AMI convention.
+
+
+Q9. Undersampling an analog signal at a rate less than the Nyquist rate ($f_s < 2f_{max}$) can lead to an effect called aliasing. What is the primary consequence of aliasing?
+   A. The reconstructed signal has an incorrect frequency, providing wrong information.
+   B. The reconstructed signal is a perfect but redundant copy of the original signal.
+   C. The signal amplitude is reduced, resulting in a quieter signal.
+   D. All high-frequency components of the signal are completely lost, leaving only silence.
+
+   Answer: A
+   Explanation: Aliasing doesn't just lose information; it creates a new, misleading signal (an alias) with a frequency that was not present in the original.
+
+
+Q10. Which characteristic is shared by Return-to-Zero (RZ), Manchester, and Differential Manchester encoding schemes but is absent in NRZ schemes?
+   A. A signal change during each bit's interval, aiding self-synchronization.
+   B. The use of three distinct voltage levels for signaling.
+   C. The voltage level throughout the bit interval determines the bit's value.
+   D. The absence of a voltage change represents a specific bit value.
+
+   Answer: A
+   Explanation: All three of these schemes include a mid-bit transition (RZ returns to zero, Manchester schemes transition to the opposite level) which provides timing information.
+
+
+Q11. We want to digitize a low-pass audio signal with frequencies up to 22 kHz to achieve an $SNR_Q$ of at least 55 dB. What is the minimum required bit rate?
+   A. 396 kbps
+   B. 352 kbps
+   C. 198 kbps
+   D. 44 kbps
+
+   Answer: A
+   Explanation: The sampling rate is $2 \times 22,000 = 44,000$ Hz. For $SNR_Q \ge 55$ dB, $n_b$ must be at least 8.84, requiring 9 bits/sample. Bit rate is $44,000 \times 9 = 396,000$ bps.
+
+
+Q12. What is the primary purpose of the quantization step in the Pulse Code Modulation (PCM) process?
+   A. To approximate the amplitude of each analog sample to one of a finite set of discrete levels.
+   B. To measure the analog signal's amplitude at specific, discrete points in time.
+   C. To convert the discrete amplitude levels into a binary code word.
+   D. To filter out unwanted frequencies from the original analog signal.
+
+   Answer: A
+   Explanation: Quantization maps the continuous range of sample amplitudes to a limited number of predefined values, which is a necessary step before they can be encoded into binary.
+
+
+Q13. In a unipolar NRZ scheme, the bit stream '10110' is transmitted. Which of the following voltage patterns would represent this stream?
+   A. Positive, Zero, Positive, Positive, Zero
+   B. Positive, Negative, Positive, Positive, Negative
+   C. Positive, Zero, Negative, Positive, Zero
+   D. Transition, No Transition, Transition, No Transition, Transition
+
+   Answer: A
+   Explanation: This pattern correctly maps bit '1' to a positive voltage and bit '0' to a zero voltage, with all voltages on one side of the time axis.
+
+
+Q14. A polar NRZ-I signal is used to transmit data. If the current voltage level is negative, what does a transition to a positive voltage at the start of the next bit interval signify?
+   A. The next bit is a '1'.
+   B. The next bit is a '0'.
+   C. It is the start of a synchronization sequence.
+   D. An error has occurred in the transmission.
+
+   Answer: A
+   Explanation: In NRZ-I, a change in the voltage level, regardless of the direction (positive to negative or negative to positive), represents a bit '1'.
+
+
+Q15. What is the fundamental trade-off introduced by increasing the number of bits per sample ($n_b$) during the quantization process?
+   A. It reduces quantization error but increases the required bit rate.
+   B. It increases quantization error but reduces the required bit rate.
+   C. It reduces both the quantization error and the required bit rate.
+   D. It has no effect on quantization error but increases the bit rate.
+
+   Answer: A
+   Explanation: More bits mean more quantization levels, leading to a more accurate representation (lower error), but also means more data must be transmitted per sample.
+
+
+Q16. Which statement accurately describes the Manchester encoding scheme?
+   A. It combines RZ and NRZ-L, with a voltage transition in the middle of each bit period for both data and clocking.
+   B. It combines RZ and NRZ-I, where a mid-bit transition always occurs but a transition at the start of the period only happens for a bit '0'.
+   C. The signal level remains constant for the duration of the bit, with positive voltage for '1' and negative for '0'.
+   D. The signal returns to zero in the middle of each bit period, regardless of whether the bit is a '1' or '0'.
+
+   Answer: A
+   Explanation: This correctly identifies that Manchester encoding uses a mid-bit transition to encode both the clock signal and the data value (e.g., high-to-low for '0', low-to-high for '1').
+
+
+Q17. For a low-pass signal with a maximum frequency of 4 kHz, what is the effect of sampling at 7,000 samples per second?
+   A. Aliasing will occur because the sampling rate is below the Nyquist rate.
+   B. The original signal can be faithfully reproduced.
+   C. Oversampling occurs, creating redundant data.
+   D. The sampling rate is exactly the Nyquist rate, providing a good approximation.
+
+   Answer: A
+   Explanation: The Nyquist rate is $2 \times 4$ kHz = 8,000 samples/sec. Since 7,000 < 8,000, undersampling occurs, leading to aliasing.
+
+
+Q18. Which of the following line coding schemes uses three voltage levels but represents one of the bit values with a constant zero voltage?
+   A. Bipolar AMI
+   B. Polar RZ
+   C. Unipolar NRZ
+   D. Manchester
+
+   Answer: A
+   Explanation: AMI uses positive and negative voltages for bit '1's (alternating) and a zero voltage level for all bit '0's.
+
+
+Q19. The process of digital-to-digital conversion involves line coding. What is the fundamental task performed by a line coding scheme?
+   A. To convert a sequence of binary bits into a digital signal suitable for transmission.
+   B. To convert an analog waveform into a sequence of binary bits.
+   C. To synchronize the clocks of the sender and receiver using a separate channel.
+   D. To increase the data rate of a transmission without changing the signal.
+
+   Answer: A
+   Explanation: Line coding defines the rules for mapping binary data (0s and 1s) to specific voltage levels or transitions to create a transmittable digital signal.
+
+
+Q20. What is quantization error in the context of PCM?
+   A. The difference between the actual amplitude of a sample and the assigned discrete quantization value.
+   B. An error caused by the receiver's clock being out of sync with the sender's clock.
+   C. The misinterpretation of a signal's frequency due to undersampling.
+   D. Noise introduced into the signal from the physical transmission medium.
+
+   Answer: A
+   Explanation: Since quantization is an approximation, this error represents the loss of precision incurred when mapping a continuous value to a discrete one.
+
+
+Q21. If a line coding scheme is 'self-synchronizing', what does this imply?
+   A. Timing information is embedded within the data signal itself, removing the need for a separate clock.
+   B. The sender and receiver clocks are perfectly matched before transmission begins and never drift.
+   C. The scheme uses three voltage levels (positive, negative, zero) to ensure stability.
+   D. The signal returns to a zero-voltage level after every bit, regardless of its value.
+
+   Answer: A
+   Explanation: Schemes like Manchester include frequent transitions that allow the receiver to align its clock with the incoming data stream on the fly.
+
+
+Q22. The human voice is to be digitized. The frequency range is 0 to 4000 Hz. If the system uses 128 distinct quantization levels, what will the final bit rate be?
+   A. 56,000 bps
+   B. 64,000 bps
+   C. 32,000 bps
+   D. 1,024,000 bps
+
+   Answer: A
+   Explanation: The sampling rate is $2 \times 4000 = 8000$ samples/sec. The number of bits per sample is $log_2(128) = 7$. The bit rate is $8000 \times 7$.
+
+
+Q23. Which of the following scenarios would be best handled by a polar encoding scheme like Manchester over a bipolar scheme like AMI?
+   A. A system where preventing loss of synchronization is a top priority, even with long strings of 0s or 1s.
+   B. A system that requires the use of three distinct voltage levels for error detection.
+   C. A legacy system designed with simpler circuitry that benefits from a zero-voltage resting state.
+   D. A system where minimizing the required bandwidth is the most critical factor.
+
+   Answer: A
+   Explanation: Manchester's mandatory mid-bit transition guarantees synchronization, whereas AMI can suffer from synchronization loss during a long string of 0s.
+
+
+Q24. According to the Nyquist theorem, sampling a signal at exactly twice its highest frequency ($f_s = 2f_{max}$) is sufficient for reconstruction. Why might a system intentionally use oversampling ($f_s > 2f_{max}$)?
+   A. To allow for the use of simpler, less precise filters to isolate the desired frequency band.
+   B. To reduce the quantization error introduced during the next step of PCM.
+   C. To decrease the overall bit rate of the final digital signal.
+   D. To correct for aliasing caused by a previous undersampling error.
+
+   Answer: A
+   Explanation: While not explicitly in this text, oversampling creates a larger 'guard band' in the frequency spectrum, making it easier for practical, real-world filters to remove unwanted frequencies without distorting the desired signal. The text only notes it's 'redundant and unnecessary' from a pure theoretical standpoint.
+
+
+Q25. A digital signal is encoded using Differential Manchester. A sequence of transitions is observed: at the start of bit 1, there is no transition; at the start of bit 2, there is a transition; at the start of bit 3, there is a transition. What is the data sequence?
+   A. 100
+   B. 011
+   C. 110
+   D. 001
+
+   Answer: A
+   Explanation: In Differential Manchester, 'no transition' at the start of the bit period means a '1', and 'a transition' at the start of the period means a '0'.
+
+
+Q26. What is the relationship between the number of quantization levels (L) and the number of bits per sample ($n_b$)?
+   A. $$n_b = \log_2 L$$
+   B. $$L = \log_2 n_b$$
+   C. $$n_b = 2L$$
+   D. $$L = 2n_b$$
+
+   Answer: A
+   Explanation: This formula correctly states that the number of bits required is the base-2 logarithm of the number of unique levels that need to be represented.
+debugger eval code:68:11
+

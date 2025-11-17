@@ -1,0 +1,451 @@
+Q1. A DLC protocol is specified with an FSM. When an event occurs, what two things must the FSM specification define for that event?
+
+A. New timer value and checksum polynomial
+B. List of actions and the next state
+C. Frame size and window size
+D. Interframe space and backoff slots
+
+Answer: B
+Explanation: For each event, the FSM ties it to a set of actions and the next state the protocol enters.
+
+Q2. Which statement best explains the move from character-oriented framing to bit-oriented framing?
+
+A. Character-oriented framing cannot carry binary data at all
+B. Unicode’s 16/32-bit characters can conflict with 8-bit flags used by byte-stuffing
+C. Bit-oriented framing is required for CRC to work
+D. Character-oriented framing lacks sender/receiver addresses
+
+Answer: B
+Explanation: The notes explicitly point to Unicode’s wider characters conflicting with 8-bit flag bytes, pushing designs toward bit-oriented framing.
+
+
+Q3. In bit-oriented framing with flag 01111110, which description matches the stuffing rule given?
+
+A. Insert a 0 after any four 1s
+B. Insert a 0 after any five 1s only if the next bit is 1
+C. Insert a 0 after any five 1s that follow a 0—even if the next bit is 0
+D. Never insert 0s; only drop 1s when needed
+
+Answer: C
+Explanation: The rule described: add an extra 0 whenever five consecutive 1s follow a 0, and still stuff a 0 even if a 0 happens to follow that run.
+
+
+Q4. During character-oriented framing, ESC appears in the data before a byte equal to the flag. What must the receiver do upon seeing ESC?
+
+A. Treat ESC as an end-of-frame
+B. Remove ESC and take the next byte strictly as data
+C. Duplicate the next byte to preserve content
+D. Restart parsing from the previous flag
+
+Answer: B
+Explanation: In byte-stuffing, ESC is removed and the next byte is delivered as data, preventing confusion with the delimiter.
+
+
+Q5. In Stop-and-Wait as described, how many frames/ACKs can be in the channel simultaneously?
+
+A. One frame only; ACKs wait at endpoints
+B. One frame and one acknowledgment at most
+C. Up to a window of four frames plus one ACK
+D. Any number; the channel is fully pipelined
+
+Answer: B
+Explanation: The notes state explicitly that only one data frame and one acknowledgment can be in the channel at a time.
+
+
+Q6. A Stop-and-Wait sender resends a frame after an ACK is lost; the receiver might deliver a duplicate. What simple change fixes this?
+
+A. Bigger timeout
+B. Add sequence numbers (and matching ACK numbers)
+C. Smaller frames
+D. Increase bandwidth
+
+Answer: B
+Explanation: Adding sequence and acknowledgment numbers lets the receiver detect duplicates and prevent double delivery.
+
+
+Q7. Why can two CSMA stations still collide even though both sense an idle channel before transmitting?
+
+A. CRC fails on both frames
+B. Propagation delay means a station can’t sense the very first bit immediately
+C. Because CSMA forbids backoff
+D. Hidden nodes exist only in wired media
+
+Answer: B
+Explanation: The vulnerable time equals the maximum propagation time  Tp; a station may start before it has sensed the other’s first bit.
+
+
+Q8. While transmitting, a station measures the channel energy at “abnormal level.” What should it infer/do?
+
+A. Channel is idle—keep going
+B. Another station is receiving—pause for DIFS
+C. A collision occurred—abort immediately and retry later
+D. Channel is merely busy—finish the frame
+
+Answer: C
+Explanation: CSMA/CD classifies energy: zero (idle), normal (busy), abnormal (collision ≈ twice normal); collisions trigger immediate abort.
+
+Q9. Which sequence best matches CSMA/CA’s collision-avoidance strategies (as outlined here)?
+
+A. RTS/CTS → DIFS wait → transmit without ACKs
+B. Random backoff only; no interframe spacing
+C. IFS defer even if idle → random backoff window → positive ACK (and optional RTS/CTS/NAV)
+D. Sense medium → transmit; if collision retry with fixed delay
+
+Answer: C
+Explanation: The notes list three pillars: defer with IFS, choose a random (binary exponential) slot backoff, and use positive ACKs; RTS/CTS plus NAV may also be used.
+
+Q10. A station sends RTS with a duration field. What should nearby stations do according to the notes?
+
+A. Ignore it unless they are the CTS recipient
+B. Set a NAV timer for the announced duration and defer checking the channel
+C. Immediately send CTS to help relay
+D. Start transmitting after SIFS to “beat” contention
+
+Answer: B
+Explanation: Neighbors “affected by this transmission” create a NAV for the specified duration before they are allowed to check the channel again.
+
+
+Q11. Which statement captures the core of random-access MAC in these notes?
+
+A. One elected station controls access; others request permission
+B. Stations transmit in strict round-robin order
+C. No station is superior; each decides to send based on the medium’s state
+D. Access is granted only after a fixed-time guard
+
+Answer: C
+Explanation: Random-access methods have no superior station; each one competes and decides whether to send depending on whether the medium is idle/busy.
+
+
+Q12. Two stations A and C begin; collision occurs after t2 . Which statement matches the described sequence?
+
+A. A detects first and aborts; C follows later
+B. Both finish their frames, then report collision
+C. C detects and aborts first; A detects and aborts slightly later
+D. Neither aborts; the receiver discards both
+
+Answer: C
+Explanation: The timeline shows C detects and aborts at t3, and A detects and aborts at t4; A transmitted from t1 to t4, C from t2 to t3
+
+Q13. Which benefit most directly enables moving users between workgroups without recabling?
+
+A. VLANs reduce CRC errors
+B. VLANs divide a LAN into logical segments so stations can be reassigned in software
+C. VLANs increase physical port speed
+D. VLANs force a single broadcast domain
+
+Answer: B
+Explanation: VLANs split a switched LAN into logical segments; any station can be logically moved to another VLAN without physical rewiring.
+
+Q14. Your org wants flexibility to group users by attributes beyond where they plug in. Which vendor policy suits best?
+
+A. Port-only membership
+B. MAC-only membership
+C. Combination of interface numbers and MAC addresses
+D. IP-subnet-only membership (layer-3 only)
+
+Answer: C
+Explanation: Some vendors allow combinations (port numbers + MAC addresses) to define VLAN membership for flexible logical groupings.
+
+Q15. Which statement about VLANs and security matches the notes?
+
+A. VLANs eliminate the need for access control lists
+B. Broadcasts in one VLAN are not received by users in other VLANs
+C. VLANs encrypt all traffic by default
+D. VLANs remove the need for switches
+
+Answer: B
+Explanation: Broadcasts are contained within the VLAN, providing an extra measure of security between groups.
+
+
+Q16. A packet crosses three routers between Alice and Bob. At which scope does the data-link layer provide delivery?
+
+A. Host-to-host across the entire path
+B. Node-to-node on each individual link
+C. Process-to-process between apps
+D. End-to-end but only inside a LAN
+
+Answer: B
+Explanation: Chapter 9 defines link-layer delivery as node-to-node; each hop encapsulates into a frame for the next link.
+
+Q17. Even if two adjacent links both use Ethernet, the router still decapsulates and re-encapsulates the datagram. The main reason is:
+
+A. IP headers must be rewritten on every hop
+B. Link-layer addresses are hop-local and change each link
+C. CRCs cannot be reused across switches
+D. Frame size must always change at routers
+
+Answer: B
+Explanation: The book stresses that even when link technology repeats, link-layer addresses are different per link, so frames are rebuilt at each hop
+
+Q18. Which list best matches the services provided by the data-link layer?
+
+A. Framing, flow control, error control (congestion largely not here)
+B. Routing, DNS, NAT
+C. Session management, encryption, name resolution
+D. TCP flow and congestion control
+
+Answer: A
+Explanation: Chapter 9 enumerates framing, flow control, and error control as link-layer services and notes congestion control is usually handled above (network/transport).
+
+Q19. Two friends talk via landline phones vs. mobile phones. Respectively these illustrate:
+
+A. Broadcast then point-to-point
+B. Point-to-point then broadcast
+C. Both broadcast
+D. Both point-to-point
+
+Answer: B
+Explanation: The chapter contrasts point-to-point (traditional home phones) with broadcast (shared air for cellular).
+
+Q20. Which mapping of responsibilities is correct?
+
+A. DLC = access control on shared media; MAC = framing/flow/error
+B. DLC = framing/flow/error (common to all links); MAC = shared-medium access (broadcast links)
+C. DLC = routing; MAC = addressing
+D. DLC = ARP; MAC = IP forwarding
+
+Answer: B
+Explanation: Chapter 9 explicitly divides the data-link layer into DLC (issues common to both link types) and MAC (issues specific to broadcast/shared media).
+
+Q21. As a datagram traverses multiple links, which statement is correct?
+
+A. IP addresses change per link; link-layer addresses stay the same
+B. Both IP and link-layer addresses remain constant
+C. IP addresses remain end-to-end; link-layer addresses change at each hop
+D. Only source IP changes; destination IP stays the same
+
+Answer: C
+Explanation: Frames on each link carry the same IP packet, but link-layer addresses are re-written per link; source/destination IP remain end-to-end.
+
+Q22. Which statement aligns with the chapter’s definitions?
+
+A. Broadcast means “Internet-wide” by definition
+B. Unicast is one-to-one and multicast is one-to-many within a link’s local jurisdiction
+C. Multicast equals broadcast in Ethernet
+D. Broadcast frames are delivered only to routers, not hosts
+
+Answer: B
+Explanation: The chapter defines unicast, multicast, broadcast at the link layer and emphasizes the local (per-link) scope of multicast/broadcast.
+
+
+Q23. How are ARP request and ARP reply delivered on a LAN?
+
+A. Both are broadcast
+B. Request is unicast; reply is broadcast
+C. Request is broadcast; reply is unicast to the requester
+D. Both are unicast
+
+Answer: C
+Explanation: ARP maps IP→link address by broadcasting a request; only the target replies by unicast with its link-layer address.
+
+
+Q24. Host A needs to send 10 datagrams to B within 1 second on a 20-host LAN. Which approach minimizes wasted work for others?
+
+A. Send all 10 as link-layer broadcasts (no ARP)
+B. Use ARP once (1 broadcast + 1 unicast reply), then send 9 unicast frames using the cached mapping
+C. Send 10 ARP requests, then 10 unicast frames
+D. Use IP broadcast only; ARP is unnecessary
+
+Answer: B
+Explanation: The text explains ARP + caching avoids repeated broadcasts and the heavy processing they impose on all other hosts.
+
+Q25. In the chapter’s Alice→R1→R2→Bob walk-through, which change pattern is correct?
+
+A. Both IP and link addresses change at each hop
+B. Only source IP changes; link addresses are constant
+C. Link-layer addresses (src/dst) change on each link; IP src/dst (NA/NB) stay constant end-to-end
+D. Only destination IP changes at each hop
+
+Answer: C
+Explanation: The example shows encapsulation per link with new link-layer addresses while IP src/dst (NA/NB) remain unchanged for the whole journey.
+
+Q26. A router has three physical links. At the data-link layer, how many peer connections (and data-link “instances”) does it conceptually maintain?
+
+A. One, because IP is end-to-end
+B. Two, source and destination only
+C. Three, one per physical link
+D. Zero; the router works only at the network layer
+
+Answer: C
+Explanation: Each router interface participates in a separate link; the text notes a router “actually has three data-link layers because it is connected to three physical links.”
+
+
+Q27. Which statement about link-layer framing is correct per the chapter?
+
+A. Frames always have only a header
+B. Frames may have header and trailer, format varies by protocol
+C. Frames never have a trailer in modern LANs
+D. Frames are identical across all link types
+
+Answer: B
+Explanation: The chapter says a frame “may have both a header and a trailer,” and that formats vary across data-link protocols.
+
+
+Q28. Which claim matches the book’s stance?
+
+A. It’s primarily a data-link responsibility
+B. It’s primarily network/transport, not link, though some WANs differ
+C. It must be implemented at every layer
+D. It belongs in the physical layer
+
+Answer: B
+Explanation: The text: most data-link protocols do not directly use congestion control; generally it’s considered an end-to-end issue at the network/transport layers.
+
+
+Q29. Which ordering is correct inside headers?
+
+A. Both IP and link-layer headers put source before destination
+B. IP headers: destination then source; link-layer: source then destination
+C. IP headers: source then destination; link-layer: destination then source
+D. Both put destination before source
+
+Answer: C
+Explanation: The chapter explicitly contrasts the orders: IP shows source before destination, while link-layer headers show destination before source.
+
+Q30. A router accidentally rewrites the destination IP address in transit. Which outcome best matches the text?
+
+A. It still works; ARP fixes it at the next hop
+B. The packet never reaches the destination
+C. Only performance suffers; delivery is unaffected
+D. Only the source IP can’t be changed
+
+Answer: B
+Explanation: The book warns: if the destination IP changes, the packet never reaches its destination; if the source IP changes, responses/ICMP can’t find the sender.
+
+
+Q31. Which is true about ARP in the TCP/IP suite?
+
+A. It’s a link-layer protocol that resolves MAC to IP
+B. It’s a network-layer auxiliary protocol that maps IP → link-layer address
+C. It belongs to the transport layer
+D. It maps link-layer addresses to DNS names
+
+Answer: B
+Explanation: The chapter places ARP in the network layer, discussed here because it maps an IP address to a link-layer address for framing
+
+
+Q32. On a LAN, an ARP request is sent to discover B’s link-layer address. Who processes it, and who replies?
+
+A. Only B processes and replies
+B. Everyone processes; only the intended recipient replies (unicast)
+C. Everyone processes and everyone replies
+D. Only routers process ARP
+
+Answer: B
+Explanation: ARP requests are broadcast and processed by all on the link, but only the target sends a unicast ARP response.
+
+
+Q33. Which justification for ARP caching matches the text?
+
+A. Caching reduces MTU issues
+B. Caching avoids repeated broadcasts that make all hosts do extra work
+C. Caching is required for IPv6 only
+D. Caching prevents frames from being dropped at switches
+
+Answer: B
+Explanation: The book shows repeated broadcasting forces all other hosts to receive/decapsulate/hand up frames; with ARP + caching, one broadcast is followed by unicasts, cutting work dramatically.
+
+
+Q34. In an ARP packet, which field/value pairing correctly identifies IPv4 as the network-layer protocol?
+
+A. Hardware Type = 1
+B. Protocol Type = 0x0800
+C. Hardware Length = 6
+D. Operation = 0x0002
+
+Answer: B
+Explanation: The chapter states: “Protocol type” defines the network-layer protocol; IPv4 is (0800)16. (Ethernet’s hardware type is 1; other fields depend on context.)
+
+Q35. At Alice’s host, when the network layer passes the datagram and next-hop link address down, where does the data-link layer obtain its own link-layer (source) address to place in the frame?
+
+A. From DNS
+B. From ARP cache
+C. From its interface (local NIC)
+D. From the router’s forwarding table
+
+Answer: C
+Explanation: The figure notes: “Data-link layer gets its own link-layer address (LA) from its interface,” then creates the frame and hands it to the physical layer.
+
+
+Q36. In a bit-oriented framing protocol using the flag 01111110, a sender needs to transmit the bit sequence: 01111110. After bit stuffing, what will actually be transmitted?
+A) 01111110
+B) 011111010
+C) 011111100
+D) 0111110110
+Answer: D) 0111110110
+Explanation: Bit stuffing adds a 0 after every five consecutive 1s that follow a 0. In the sequence 01111110, we have a 0 followed by six 1s. After the fifth 1, we insert a 0, giving us: 0111110110. This prevents the data from being mistaken for the delimiter flag.
+
+Q37. In the Stop-and-Wait protocol, if the propagation delay is 20ms and the transmission time for a frame is 5ms, what percentage of time is the channel actually being utilized (assuming no errors or losses)?
+A) 20%
+B) 25%
+C) 11.1%
+D) 50%
+Answer: C) 11.1%
+Explanation: Total cycle time = transmission time + 2 × propagation delay (for frame to reach destination and ACK to return) = 5ms + 2(20ms) = 45ms. Utilization = (transmission time / total cycle time) × 100 = (5/45) × 100 = 11.1%. This demonstrates why Stop-and-Wait is inefficient for links with high propagation delays.
+
+Q38. Station A and Station C are at opposite ends of a 2km cable. At t=0, Station A begins transmitting. The propagation speed is 2×10⁸ m/s. Station C begins transmitting at t=9μs. Will CSMA detect this as a collision BEFORE Station A finishes its transmission?
+A) Yes, if A's frame transmission time is less than 20μs
+B) Yes, if A's frame transmission time is greater than 19μs
+C) No, the collision will not be detected until after A finishes
+D) It depends on the frame size of Station C
+Answer: B) Yes, if A's frame transmission time is greater than 19μs
+Explanation: Propagation time = 2000m / (2×10⁸ m/s) = 10μs. C starts at 9μs (before A's signal arrives). The collision occurs around 9μs. For A to detect it, the collision signal must propagate back to A, which takes another 10μs, arriving at A at ~19μs. If A is still transmitting at 19μs (frame time > 19μs), it will detect the collision before finishing.
+
+Q39. In CSMA/CD, why must the minimum frame size be related to the round-trip propagation time?
+A) To ensure the sender can finish transmitting before timeout
+B) To guarantee the sender is still transmitting when a collision signal returns
+C) To prevent buffer overflow at the receiver
+D) To maximize channel utilization
+Answer: B) To guarantee the sender is still transmitting when a collision signal returns
+Explanation: If a frame is too short, the sender might finish transmitting before detecting a collision that occurred at the far end of the network. The sender must still be transmitting when the collision signal propagates back. Minimum frame size = 2 × propagation time × bandwidth ensures collision detection.
+
+Q40. In character-oriented framing with byte stuffing, a frame contains the following data after the opening flag: [ESC][FLAG][DATA][ESC][ESC][FLAG]. How many actual data bytes does this represent?
+A) 6 bytes
+B) 4 bytes
+C) 3 bytes
+D) 5 bytes
+Answer: C) 3 bytes
+Explanation: When unstuffing: [ESC][FLAG] → [FLAG] (1 byte); [DATA] → [DATA] (1 byte); [ESC][ESC] → [ESC] (1 byte); [FLAG] marks the end of frame. Total = 3 actual data bytes. The ESC characters are control characters removed during unstuffing.
+
+Q41. In CSMA/CA, Station X has chosen a backoff time of 3 slots and Station Y has chosen 5 slots. The channel becomes idle. Before either can transmit, Station Z (which was already transmitting) sends an RTS frame requiring the channel for 100μs. What happens next?
+A) X transmits after 3 slots
+B) Both X and Y freeze their counters and resume countdown after Z finishes + IFS
+C) Y transmits after 5 slots
+D) Both X and Y reset their backoff timers and choose new random values
+Answer: B) Both X and Y freeze their counters and resume countdown after Z finishes + IFS
+Explanation: In CSMA/CA, when a station detects the channel is busy (via RTS/CTS or direct transmission), it freezes its backoff counter through the NAV timer. After the channel becomes idle again (Z's transmission + IFS), stations resume counting down from where they left off. X would have 3 slots remaining and Y would have 5.
+
+Q42. Which scenario would make CSMA perform WORSE than ALOHA in terms of collision probability?
+A) When propagation delay is zero
+B) When propagation delay equals transmission time
+C) When propagation delay is much greater than transmission time
+D) CSMA always performs better than ALOHA
+Answer: C) When propagation delay is much greater than transmission time
+Explanation: CSMA's advantage depends on stations detecting ongoing transmissions before attempting to send. When propagation delay >> transmission time, the carrier sense information is severely outdated. Many stations might sense an idle channel and transmit simultaneously because the original transmission hasn't reached them yet, effectively making it behave like ALOHA or worse due to the false confidence from sensing.
+
+Q43. A Stop-and-Wait protocol uses sequence numbers 0 and 1. The sender transmits frame 0, which arrives successfully. The ACK for frame 0 is sent but lost. The sender times out and retransmits frame 0. What should the receiver do?
+A) Accept frame 0 and pass it to the network layer
+B) Discard frame 0 and send no ACK
+C) Discard frame 0 but resend ACK 1
+D) Accept frame 0 but send ACK 0
+Answer: C) Discard frame 0 but resend ACK 1
+Explanation: The receiver already received frame 0 and sent ACK 1 (acknowledging frame 0, expecting frame 1). When it receives frame 0 again, it recognizes it as a duplicate (because it's expecting frame 1). It discards the duplicate but resends ACK 1 to inform the sender to move on. This prevents the network layer from receiving duplicate packets.
+
+Q44. In a VLAN configured by MAC addresses, Station A (VLAN 1) is physically connected to Switch Port 3, and Station B (VLAN 2) is on Port 5. The administrator wants to move Station A to VLAN 2. What is required?
+A) Physically move Station A's cable from Port 3 to Port 5
+B) Update the switch's VLAN configuration to associate Station A's MAC address with VLAN 2
+C) Change Station A's MAC address to match VLAN 2's addressing scheme
+D) Create a new physical link between the two VLANs
+Answer: B) Update the switch's VLAN configuration to associate Station A's MAC address with VLAN 2
+Explanation: In MAC address-based VLANs, membership is determined by MAC address, not physical port. Station A can remain on Port 3; only the software configuration needs updating to map its MAC address to VLAN 2. This is the key advantage of VLANs—logical rather than physical reconfiguration.
+
+Q45. Consider a CSMA/CD network where the energy level during a successful transmission is 10 units. During a collision between two stations, the measured energy level is 18 units instead of the expected 20 units. What is the most likely explanation?
+A) One station is transmitting at reduced power
+B) Signal attenuation due to distance between the colliding stations
+C) One of the stations has already detected the collision and aborted
+D) The collision detection circuitry is malfunctioning
+Answer: B) Signal attenuation due to distance between the colliding stations
+Explanation: In theory, two stations transmitting simultaneously would produce 20 units (10 + 10). However, the colliding signals have traveled different distances from their sources to the measurement point. Signal attenuation over distance means both signals are weakened by the time they meet, resulting in less than 20 units. This is realistic network behavior and doesn't indicate malfunction or early abortion (which would show even less energy).
+
+
+

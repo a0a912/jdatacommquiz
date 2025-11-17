@@ -1,0 +1,251 @@
+
+Q1. In a datagram network, if two packets from the same message are sent from source A to destination X, what is the most likely reason they might arrive out of order?
+   A. The packets are processed by switches based on a priority field in their headers.
+   B. Each packet may travel a different path through the network, experiencing different total delays.
+   C. The destination system X reassembles packets in the reverse order they are received.
+   D. A dedicated circuit is established for each packet, and some circuits are slower than others.
+
+   Answer: B
+   Explanation: The material states that each packet is treated independently and may travel different paths, leading to varying delays and potential out-of-order arrival.
+
+
+Q2. What is the primary trade-off between the efficiency of a circuit-switched network and a datagram network, especially for computer-to-computer communication?
+   A. Circuit-switched networks have higher efficiency due to minimal delay, whereas datagram networks are less efficient due to variable delays.
+   B. Datagram networks achieve higher resource efficiency by allocating resources on demand, at the cost of potentially longer and more variable packet delays.
+   C. Circuit-switched networks are more efficient because they do not require complex routing tables, unlike datagram networks.
+   D. Datagram networks are less efficient because they require a setup and teardown phase for each message, consuming extra resources.
+
+   Answer: B
+   Explanation: This correctly identifies that on-demand resource allocation improves efficiency but can lead to queuing delays at switches, which is the core trade-off discussed.
+
+
+Q3. How does addressing in a virtual-circuit network packet header differ fundamentally from addressing in a datagram network packet header?
+   A. Virtual-circuit addresses are end-to-end and remain constant, while datagram addresses change at each switch.
+   B. Virtual-circuit packet addresses have local jurisdiction, identifying the next hop, whereas datagram addresses specify the final end-to-end destination.
+   C. Both network types use identical end-to-end addressing schemes, but virtual-circuits store them in a switch table instead of the header.
+   D. Datagram networks do not use destination addresses in packet headers; they rely solely on the switch's internal routing logic.
+
+   Answer: B
+   Explanation: The source specifies that virtual-circuit addresses only have local jurisdiction, while the destination address in a datagram header remains the same for the entire journey.
+
+
+Q4. Which of the following scenarios would expose the greatest inefficiency of a circuit-switched network?
+   A. A continuous, high-volume video stream between two users.
+   B. A computer connected to a remote server for an interactive session with long pauses between user commands.
+   C. A telephone conversation where both parties talk constantly.
+   D. A network where hundreds of small, independent data packets are sent from many sources to many destinations.
+
+   Answer: B
+   Explanation: The source highlights this exact scenario, where a connection remains active (and resources dedicated) even during long periods of inactivity, making it inefficient.
+
+
+Q5. A virtual-circuit network is described as a 'cross' between a circuit-switched and a datagram network. Which characteristic does it inherit from circuit-switched networks?
+   A. Resources are allocated on a first-come, first-served basis without reservation.
+   B. Each packet is treated independently and can follow a different path to the destination.
+   C. Communication involves setup and teardown phases, and all packets follow the same established path.
+   D. The message is sent as a continuous stream of data over a dedicated physical channel.
+
+   Answer: C
+   Explanation: The presence of setup/teardown phases and a fixed path for all packets are defining features that virtual-circuit networks share with circuit-switched networks.
+
+
+Q6. According to the source, at which layers of the network model are circuit-switching, datagram switching, and virtual-circuit switching typically implemented?
+   A. Physical layer, Data link layer, and Network layer, respectively.
+   B. Network layer, Data link layer, and Physical layer, respectively.
+   C. Physical layer, Network layer, and Data link layer, respectively.
+   D. Data link layer, Network layer, and Transport layer, respectively.
+
+   Answer: C
+   Explanation: The source material notes that circuit-switching is at the physical layer, datagram switching is at the network layer, and virtual-circuit switching is normally at the data link layer.
+
+
+Q7. In the delay calculation for a datagram network, what does the 'Store and Forward' mechanism imply for each switch in the path?
+   A. The switch reads only the packet header, stores the destination address, and immediately forwards the rest of the packet.
+   B. The switch must receive and buffer the entire packet before it can begin transmitting it to the next hop.
+   C. The switch forwards the packet as soon as the destination address is read, reducing latency.
+   D. The switch stores a permanent copy of the packet for routing analysis before forwarding the original.
+
+   Answer: B
+   Explanation: This is the definition of the 'Store and Forward' mechanism, which contributes to the transmission delay at each switch.
+
+
+Q8. Under what specific condition can the delay for each packet in a virtual-circuit network be different, similar to a datagram network?
+   A. When the setup and teardown phases experience high latency.
+   B. When resources are allocated on-demand during the data transfer phase.
+   C. When the packets are sent through different physical links despite following the same virtual path.
+   D. When the network is implemented at the data link layer instead of the network layer.
+
+   Answer: B
+   Explanation: The text explicitly states that if resources are reserved during setup, delay is the same for each packet, but if allocated on-demand, the delay may be different.
+
+
+Q9. Why is the destination address in a datagram's header said to have 'end-to-end' jurisdiction?
+   A. Because the address must be translated by each switch into a local address.
+   B. Because the switch uses it to look up a pre-established end-to-end circuit.
+   C. Because the address identifies the final destination and remains unchanged throughout the packet's entire journey.
+   D. Because it contains the full path of switches the packet must traverse from end to end.
+
+   Answer: C
+   Explanation: The text confirms that this address remains the same during the entire journey, guiding the packet from the source all the way to the final destination.
+
+
+Q10. What is the key function of a switch in a switched network as defined in the source material?
+   A. To create permanent, dedicated connections between any two devices on the network.
+   B. To broadcast all incoming data to every device connected to it.
+   C. To divide messages into smaller packets of a fixed size for transmission.
+   D. To create temporary connections between two or more devices linked to the switch.
+
+   Answer: D
+   Explanation: This matches the definition provided in the text, which emphasizes the role of switches in establishing temporary links to enable communication.
+
+
+Q11. In a circuit-switched network, what is the purpose of the 'connection teardown' phase?
+   A. To verify that all data has been successfully transferred and acknowledged.
+   B. To send a signal to each switch to release the dedicated resources for other connections.
+   C. To update the routing tables in each switch with the information from the completed call.
+   D. To reassemble all the data packets into the original message at the destination.
+
+   Answer: B
+   Explanation: This accurately describes the function of the teardown phase: to free up the channels on each link that were reserved during the setup phase.
+
+
+Q12. Which statement accurately describes the state of routing tables in a datagram network as presented in the material?
+   A. They are static and configured once when the switch is installed.
+   B. They are populated during a connection setup phase and cleared during teardown.
+   C. They are dynamic and updated periodically to reflect network changes.
+   D. They are not used; packets are simply flooded to all output ports except the one they arrived on.
+
+   Answer: C
+   Explanation: This aligns with the text, which notes that routing tables are updated periodically, allowing for adaptive routing.
+
+
+Q13. The total delay for a packet in a circuit-switched network during the data transfer phase is minimal. Why is this the case?
+   A. Because the packets are very small and can be processed almost instantly by the switches.
+   B. Because all resources are allocated in advance, so data is not delayed by waiting at each switch.
+   C. Because circuit-switched networks use faster physical links (like fiber optics) than packet-switched networks.
+   D. Because the switches do not need to read the address, as the path is physically hardwired.
+
+   Answer: B
+   Explanation: The text states that because resources are dedicated, data is not delayed at each switch, which is the key reason for minimal transfer delay.
+
+
+Q14. How are the individual communication channels on a single physical link typically created in a circuit-switched network?
+   A. By assigning a unique virtual circuit identifier (VCI) to each connection.
+   B. By using Frequency Division Multiplexing (FDM) or Time Division Multiplexing (TDM).
+   C. By encapsulating data in frames with different destination MAC addresses.
+   D. By using a first-come, first-served (FCFS) queuing system at each switch.
+
+   Answer: B
+   Explanation: The source material explicitly mentions that links are divided into 'n' channels using FDM or TDM.
+
+
+Q15. What is the primary difference between how a datagram network and a virtual-circuit network handle a multi-packet message?
+   A. The datagram network sends the entire message as one large datagram, while the virtual-circuit network divides it into packets.
+   B. The datagram network requires a connection setup, while the virtual-circuit network is connectionless.
+   C. The datagram network may route each packet differently, while the virtual-circuit network sends all packets along the same pre-established path.
+   D. The datagram network has minimal delay, while the virtual-circuit network has significant waiting time at each switch.
+
+   Answer: C
+   Explanation: This correctly identifies the key difference: independent routing per-packet in datagram networks versus a fixed path for all packets in a virtual-circuit network.
+
+
+Q16. A network is described as 'connectionless'. Based on the source material, what does this imply about the switches within that network?
+   A. The switches are not physically connected to each other.
+   B. The switches do not retain any information about connection states.
+   C. The switches must establish a dedicated path before any data can be transferred.
+   D. The switches forward packets based on local virtual circuit identifiers instead of destination addresses.
+
+   Answer: B
+   Explanation: The text explicitly defines 'connectionless' in this context, stating that the switch does not keep information about the connection state.
+
+
+Q17. What is the role of 'end-to-end addressing' during the connection setup phase of a circuit-switched network?
+   A. It is used by each switch to dynamically update its routing table for the new connection.
+   B. It is included in the header of every data unit to ensure it reaches the correct destination.
+   C. It is required to identify the two end systems so that a dedicated circuit can be established between them.
+   D. It allows the network to divide the message into packets and number them sequentially.
+
+   Answer: C
+   Explanation: The text notes that end-to-end addressing (e.g., telephone numbers) is required for creating the connection between the two systems during the setup phase.
+
+
+Q18. The total delay calculation for a virtual-circuit network includes setup time and teardown time, which are absent from the per-packet delay calculation for a datagram network. Why?
+   A. Because virtual-circuit networks are much slower, requiring these extra time components to be factored in.
+   B. Because datagram networks are connectionless and do not have connection setup or teardown phases.
+   C. Because setup and teardown times in datagram networks are so small they are considered negligible.
+   D. Because the delay formula for datagrams only considers a single switch, while the virtual-circuit formula considers the entire path.
+
+   Answer: B
+   Explanation: This is the core reason. Since datagram networks do not establish a connection beforehand, there are no setup or teardown delays to consider.
+
+
+Q19. In the example of connecting two remote offices with a T1 line, what was the stated purpose of folding back four output ports on each 4x8 switch to become input ports?
+   A. To double the bandwidth available for communication between the two offices.
+   B. To provide a redundant backup path in case the T1 line between offices fails.
+   C. To allow computers within the same office to communicate with each other through the switch.
+   D. To connect the switch to a local router for internet access.
+
+   Answer: C
+   Explanation: The text explicitly states this configuration allows for communication between computers in the same office, effectively using the switch for both local and remote traffic.
+
+
+Q20. Which of these three switching methods is characterized by having no resource reservation whatsoever?
+   A. Circuit switching
+   B. Packet switching (datagram approach)
+   C. Packet switching (virtual-circuit approach)
+   D. Message switching
+
+   Answer: B
+   Explanation: The text explicitly states that in packet switching, there is no resource reservation, and the datagram approach exemplifies this by allocating resources on-demand.
+
+
+Q21. The delay formula for a datagram network is given as a sum of transmission, propagation, and waiting times. What does propagation time represent?
+   A. The time it takes for a switch to process the packet header and consult its routing table.
+   B. The time it takes to push all of the packet's bits onto the link.
+   C. The time a packet spends in a queue at a switch waiting for its turn to be transmitted.
+   D. The time it takes for a bit to travel from one end of a physical link to the other.
+
+   Answer: D
+   Explanation: This is the correct definition of propagation time, which is determined by the distance and the speed of the signal in the medium.
+
+
+Q22. Which statement best explains why packet switching is divided into datagram and virtual-circuit subcategories?
+   A. Because some packet networks are for voice (virtual-circuit) and others are for data (datagram).
+   B. Because they represent a trade-off between the flexibility of connectionless routing and the predictability of a connection-oriented path.
+   C. Because the datagram approach is an older, obsolete technology, and the virtual-circuit approach is the modern replacement.
+   D. Because datagrams are used for small messages and virtual-circuits are required for large messages.
+
+   Answer: B
+   Explanation: This captures the essence of the division: the datagram approach offers flexibility with independent routing, while the virtual-circuit approach offers predictability with a fixed path, blending packet switching with connection-oriented concepts.
+
+
+Q23. In a datagram network, what is the direct consequence of a switch treating each packet 'as though it existed alone'?
+   A. The network can guarantee that all packets will be delivered within a specific time frame.
+   B. The network can provide a highly efficient use of resources because no state is maintained for connections.
+   C. All packets belonging to the same message must follow the exact same path through the network.
+   D. A connection setup phase is required to inform the switches that a new, independent packet stream is starting.
+
+   Answer: B
+   Explanation: By not maintaining connection state, switches are simplified and resources are used purely on demand, which is a major efficiency benefit described in the text.
+
+
+Q24. What is the key difference in resource allocation between a virtual-circuit network that reserves resources at setup versus one that allocates them on-demand?
+   A. On-demand allocation is more efficient but results in uniform packet delay, while reservation at setup is less efficient but has variable delay.
+   B. Reservation at setup guarantees a certain quality of service with uniform delay, while on-demand allocation shares resources and can lead to variable delays.
+   C. Reservation at setup is only possible at the Network Layer, while on-demand allocation is only possible at the Data Link Layer.
+   D. There is no functional difference; both methods ultimately result in all packets following the same path with the same total delay.
+
+   Answer: B
+   Explanation: This correctly summarizes the trade-off: reservation acts like a circuit, guaranteeing resources and predictable delay, while on-demand acts like a datagram network, sharing resources efficiently at the cost of potential queuing delays.
+
+
+Q25. A switched network is defined as a series of 'interlinked nodes called switches'. What problem does this architecture solve?
+   A. The problem of dividing large messages into smaller packets.
+   B. The problem of how to connect multiple devices to enable one-to-one communication.
+   C. The problem of converting analog signals to digital signals for transmission.
+   D. The problem of assigning unique end-to-end addresses to every device in a network.
+
+   Answer: B
+   Explanation: The text introduces switching as the solution to exactly this problem: managing connections between multiple devices.
+debugger eval code:68:11
+

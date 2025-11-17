@@ -1,0 +1,136 @@
+Q1. A packet is traversing an internetwork from a source host to a destination host, passing through three intermediate routers. How many times will the destination link-layer address in the frame header be changed during this journey?
+   A. It will be changed four times.
+   B. It will not be changed at all.
+   C. It will be changed three times.
+   D. It will be changed once at the source.
+
+   Answer: A
+   Explanation: This counts the initial transmission from the source host and each hop between the three routers and the final destination.
+
+Q2. According to the source material, which data-link layer service is also mentioned as being primarily handled by the network and transport layers, but may be used by some wide-area networks?
+   A. Flow Control
+   B. Error Control
+   C. Framing
+   D. Congestion Control
+
+   Answer: D
+   Explanation: The text explicitly states this service is mainly a concern for higher layers but can be found in some data-link layer implementations, particularly for WANs.
+
+Q3. A communication link is shared among several pairs of devices, meaning each device uses only a portion of the medium's capacity. Which data-link sublayer is specifically needed to manage issues arising from this type of link?
+   A. Data Link Control (DLC) sublayer
+   B. Media Access Control (MAC) sublayer
+   C. Network Interface Control (NIC) sublayer
+   D. Logical Link Control (LLC) sublayer
+
+   Answer: B
+   Explanation: The text specifies that the MAC sublayer deals with issues unique to broadcast (shared) links.
+
+Q4. A system transmits data at 5 Mbps over a medium where a noise event lasts for 1/500th of a second. Based on the relationship described in the text, this event would be classified as what type of error?
+   A. A single-bit error, because the duration is very short.
+   B. A burst error, because the noise duration affects multiple bits.
+   C. A parity error, because the number of affected bits is even.
+   D. A checksum error, as it involves a block of data.
+
+   Answer: B
+   Explanation: The calculation reveals that 10,000 bits could be affected, which fits the definition of a burst error (2 or more bits).
+
+Q5. In a block coding scheme, the dataword `10` is encoded as `101` and the dataword `11` is encoded as `110`. If the sender transmits `101` but the receiver receives `110`, what is the outcome?
+   A. An error is detected, and the codeword is discarded.
+   B. The receiver corrects the codeword back to `101`.
+   C. The receiver extracts the incorrect dataword `11` without detecting an error.
+   D. The receiver requests a retransmission from the sender.
+
+   Answer: C
+   Explanation: This scenario illustrates a key weakness: if a transmission error transforms one valid codeword into another valid codeword, the error is undetectable.
+
+Q6. A system uses an even parity-check code where 4-bit datawords are converted to 5-bit codewords. If the dataword `1101` is to be sent, what is the resulting codeword?
+   A. 11010
+   B. 11011
+   C. 01101
+   D. 11101
+
+   Answer: B
+   Explanation: This codeword has four '1's, which is an even number. The parity bit is correctly added to make the total count of '1's even.
+
+Q7. In a parity-check code system, the codeword `10111` is sent. A two-bit error occurs, changing `a_3` and `r_0`, resulting in the received codeword `00110`. How does the receiver interpret this?
+   A. It detects an error because the syndrome is 1.
+   B. It detects an error and requests retransmission.
+   C. It incorrectly accepts the data and creates the dataword `0011`.
+   D. It detects a two-bit error and corrects it.
+
+   Answer: C
+   Explanation: This code cannot detect an even number of errors. The receiver calculates a syndrome of 0 and extracts the corrupted dataword.
+
+Q8. What is the defining characteristic of a cyclic code that is not necessarily true for all linear block codes?
+   A. The XOR of any two valid codewords creates another valid codeword.
+   B. A generator polynomial is used to create the codewords.
+   C. If a codeword is cyclically shifted, the result is another valid codeword.
+   D. A checksum is appended to the dataword to form the codeword.
+
+   Answer: C
+   Explanation: The text explicitly defines this extra property—rotational invariance—as the key differentiator for cyclic codes.
+
+Q9. Using the one's complement checksum method described in the text, what is the final checksum value that the sender calculates and sends for the 4-bit numbers (7, 11, 12, 0, 6)?
+   A. 6
+   B. 36
+   C. 15
+   D. 9
+
+   Answer: D
+   Explanation: The sum is 36, which becomes 6 after the end-around carry. The sender then complements this result (15 - 6) to get the checksum of 9.
+
+Q10. A receiver using the internet checksum method receives a set of data numbers and a checksum. It calculates the one's complement sum of all received items and gets a result of 15 (for 4-bit words). What is the next step, and what does it signify?
+   A. The next step is to complement the result; a value of 0 indicates the message is accepted.
+   B. The next step is to discard the message, as a non-zero sum indicates an error.
+   C. The next step is to send the sum (15) back to the sender as an acknowledgment.
+   D. The next step is to accept the message directly, as the sum of 15 is the success code.
+
+   Answer: A
+   Explanation: The procedure dictates that the receiver sums all data, including the checksum, and if the complemented sum is 0, the data is accepted as valid.
+
+Q11. What is the primary reason that Address Resolution Protocol (ARP) is necessary in a connectionless internetwork like the Internet?
+   A. To determine the best path for a packet to travel from source to destination.
+   B. To translate a destination IP address into the corresponding link-layer address for the next hop.
+   C. To ensure that source and destination IP addresses in a packet are not changed by routers.
+   D. To translate a link-layer address into its corresponding IP address.
+
+   Answer: B
+   Explanation: The text states that moving a frame through a link requires the link-layer address of the next node, which ARP provides by mapping from the known IP address.
+
+Q12. The code scheme {000, 011, 101, 110} is given as an example of a Linear Block Code. What is its minimum distance ($d_{min}$)?
+   A. 1
+   B. 3
+   C. 2
+   D. 0
+
+   Answer: C
+   Explanation: For an LBC, the minimum distance is the number of 1s in the non-zero codeword with the fewest 1s. In this set, the non-zero codewords (011, 101, 110) each have two '1's.
+
+Q13. Which statement accurately contrasts the roles of the Data Link Control (DLC) and Media Access Control (MAC) sublayers as described in the text?
+   A. DLC handles framing for broadcast links, while MAC handles framing for point-to-point links.
+   B. DLC handles issues common to both point-to-point and broadcast links, while MAC addresses issues specific only to broadcast links.
+   C. MAC is responsible for error control, while DLC is responsible for flow control.
+   D. MAC controls access to the physical layer, while DLC controls access to the network layer.
+
+   Answer: B
+   Explanation: This directly reflects the definitions provided in the text, where DLC is general-purpose and MAC is specialized for shared media.
+
+Q14. The concept of 'redundancy' is central to error detection. In block coding where a $k$-bit dataword is converted to an $n$-bit codeword, how are the redundant bits quantified?
+   A. The redundant bits are represented by $k$.
+   B. The redundant bits are represented by the code rate $k/n$.
+   C. The number of redundant bits is $r = n - k$.
+   D. The redundant bits are represented by $n$.
+
+   Answer: C
+   Explanation: The text defines the codeword length $n$ as the sum of the dataword length $k$ and the redundant bits $r$, so rearranging gives $r = n - k$.
+
+Q15. A Linear Block Code can detect up to $s$ errors if its minimum Hamming distance ($d_{min}$) satisfies a certain condition. What is this condition?
+   A. $d_{min} \ge s - 1$
+   B. $d_{min} \ge 2s$
+   C. $d_{min} \ge s + 1$
+   D. $d_{min} = s$
+
+   Answer: C
+   Explanation: For a code to guarantee detection of up to $s$ errors, the minimum distance must be at least one greater than the number of errors.
+debugger eval code:48:11
+

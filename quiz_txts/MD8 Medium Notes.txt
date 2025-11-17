@@ -1,0 +1,181 @@
+Q1. In the context of the data-link layer, what is the primary role of the 'framing' service?
+   A. To manage the rate of data transmission to prevent overwhelming the receiver.
+   B. To detect and correct bits that have been altered during transmission.
+   C. To encapsulate a packet from the network layer into a data-link layer data unit.
+   D. To select the optimal path for a packet to travel through the internetwork.
+
+   Answer: C
+   Explanation: Framing involves creating a data-link layer unit (a frame) by adding a header and trailer to the network layer packet before transmission.
+
+Q2. Which of the following addresses is expected to change at every router hop as a packet travels from a source to a destination host?
+   A. The source IP address
+   B. The destination IP address
+   C. The link-layer (MAC) address
+   D. The transport layer port number
+
+   Answer: C
+   Explanation: The link-layer address is used for node-to-node delivery on a specific link and is updated by each router to specify the next hop.
+
+Q3. What is the primary function of the Address Resolution Protocol (ARP)?
+   A. To translate a domain name (like www.example.com) into an IP address.
+   B. To find the link-layer address corresponding to a known IP address on the same local network.
+   C. To assign a dynamic IP address to a host when it joins a network.
+   D. To determine the best route for a packet across multiple networks.
+
+   Answer: B
+   Explanation: ARP is used by a node to discover the MAC address of another node on the same link when it only knows the target's IP address.
+
+Q4. The data-link layer is conceptually divided into two sublayers: Data Link Control (DLC) and Media Access Control (MAC). The MAC sublayer is specifically needed for which type of link?
+   A. Point-to-point links
+   B. Broadcast links
+   C. All link types
+   D. Virtual links
+
+   Answer: B
+   Explanation: Broadcast links are shared among multiple devices, requiring a control mechanism (MAC) to coordinate who can transmit at any given time.
+
+Q5. According to the source material, why is a burst error more likely to occur than a single-bit error?
+   A. Because transmission speeds are relatively slow.
+   B. Because the duration of noise is typically longer than the duration of one bit.
+   C. Because single-bit errors are almost always corrected automatically by the hardware.
+   D. Because interference tends to change bits from 0 to 1 but not 1 to 0.
+
+   Answer: B
+   Explanation: A single noise event lasting for a fraction of a second can corrupt a large sequence of bits when data is sent at high speeds.
+
+Q6. What is the central concept that enables the detection or correction of errors in data transmission?
+   A. Encryption
+   B. Compression
+   C. Redundancy
+   D. Modulation
+
+   Answer: C
+   Explanation: By sending extra bits along with the original data, the receiver has additional information to check for and potentially fix inconsistencies.
+
+Q7. In block coding, an error will go undetected if the transmitted codeword is corrupted in such a way that it becomes what?
+   A. An exact copy of the original dataword.
+   B. A codeword with an inverted set of bits.
+   C. Another valid codeword in the code's list.
+   D. A codeword containing only a single-bit error.
+
+   Answer: C
+   Explanation: If the corruption transforms one valid codeword into another, the receiver has no way of knowing an error occurred and will incorrectly extract the data.
+
+Q8. What is the defining characteristic of a Linear Block Code (LBC)?
+   A. The exclusive OR (XOR) of any two valid codewords creates another valid codeword.
+   B. Each codeword must have an even number of 1s.
+   C. Cyclically shifting the bits of a codeword results in another valid codeword.
+   D. The number of redundant bits must be equal to the number of data bits.
+
+   Answer: A
+   Explanation: This property is the formal definition provided in the text for a Linear Block Code.
+
+Q9. A simple parity-check code is designed to detect single-bit errors. What is its primary limitation?
+   A. It cannot detect any errors if the parity bit itself is corrupted.
+   B. It can only be used with datawords that are 4 bits long.
+   C. It is unable to detect a burst error affecting an odd number of bits.
+   D. It cannot detect an error that flips an even number of bits.
+
+   Answer: D
+   Explanation: Flipping two bits (or any even number) will result in the same parity as the original, making the error invisible to this scheme.
+
+Q10. What additional property distinguishes cyclic codes from other linear block codes?
+   A. They use a generator polynomial for encoding and decoding.
+   B. If a codeword is cyclically shifted, the result is another valid codeword.
+   C. They can correct more errors than they can detect.
+   D. They always add exactly one redundant bit to the dataword.
+
+   Answer: B
+   Explanation: This is the specific 'extra property' mentioned in the text that defines a code as cyclic.
+
+Q11. In the Internet protocol suite, the checksum technique for error detection is most commonly implemented at which two layers?
+   A. Physical and Data-Link Layers
+   B. Data-Link and Network Layers
+   C. Network and Transport Layers
+   D. Application and Transport Layers
+
+   Answer: C
+   Explanation: The source explicitly states that the checksum technique is mostly used at the network and transport layers in the Internet.
+
+Q12. When using the Internet checksum algorithm, what is the final operation the sender performs on the one's complement sum of the data segments to create the checksum value?
+   A. It performs an 'end-around carry' on the sum.
+   B. It sends the calculated sum directly with the data.
+   C. It complements the sum.
+   D. It appends the sum to the last data segment.
+
+   Answer: C
+   Explanation: The sender calculates the one's complement sum of the data, and then takes the one's complement of that result to get the checksum to be sent.
+
+Q13. If a receiver using the Internet checksum algorithm sums all the received data segments along with the received checksum and finds that the one's complement of the final sum is 0, what does this signify?
+   A. A single-bit error has been detected.
+   B. The message must be retransmitted.
+   C. The checksum value itself was corrupted.
+   D. The message is assumed to be free of errors and is accepted.
+
+   Answer: D
+   Explanation: The sender sends the complement of the sum. The receiver adds this to its own sum of the data; if the result is a field of all 1s (whose complement is 0), the check passes.
+
+Q14. A network where the communication link's capacity is shared among several pairs of devices is known as what type of link?
+   A. A point-to-point link
+   B. A broadcast link
+   C. A dedicated link
+   D. A DLC link
+
+   Answer: B
+   Explanation: The defining characteristic of a broadcast link is that the capacity is shared, requiring a protocol to manage access.
+
+Q15. In block coding, if datawords have $k$ bits and codewords have $n$ bits, where $n = k + r$, what does the variable $r$ represent?
+   A. The rate of the code.
+   B. The number of valid codewords.
+   C. The number of redundant bits added.
+   D. The number of data bits.
+
+   Answer: C
+   Explanation: The total length of the codeword ($n$) is the sum of the original data bits ($k$) and the extra bits ($r$) added for error control.
+
+Q16. The divisor used in the Cyclic Redundancy Check (CRC) algorithm is also known by what name?
+   A. The syndrome
+   B. The generator polynomial
+   C. The codeword
+   D. The parity bit
+
+   Answer: B
+   Explanation: The text explicitly states that the divisor in a cyclic code is normally called the generator polynomial or simply the generator.
+
+Q17. According to the provided text, which layers are primarily responsible for congestion control?
+   A. Data-link and Physical layers
+   B. Application and Transport layers
+   C. Network and Transport layers
+   D. Data-link layer only
+
+   Answer: C
+   Explanation: The source material explicitly states that congestion control is mainly handled by the network and transport layers.
+
+Q18. How is the minimum distance ($d_{min}$) of a Linear Block Code (LBC) determined?
+   A. By finding the number of 1s in the non-zero valid codeword with the smallest number of 1s.
+   B. By calculating the XOR sum of all valid codewords in the code scheme.
+   C. By counting the total number of redundant bits ($r$) in a codeword.
+   D. By finding the longest sequence of consecutive 1s in any valid codeword.
+
+   Answer: A
+   Explanation: This matches the definition provided in the text for calculating the minimum distance, a key parameter for a code's error-detecting capability.
+
+Q19. According to the text, the Address Resolution Protocol (ARP) is defined as an auxiliary protocol within which layer?
+   A. Data-link layer
+   B. Network layer
+   C. Transport layer
+   D. Physical layer
+
+   Answer: B
+   Explanation: The text specifies that ARP is an auxiliary protocol defined in the network layer that maps IP addresses for the data-link layer.
+
+Q20. What is the primary objective of flow control at the data-link layer?
+   A. To ensure data integrity by detecting corrupted frames.
+   B. To prevent a fast sender from overwhelming a slow receiver.
+   C. To manage access to a shared communication medium.
+   D. To reduce overall network congestion by rerouting traffic.
+
+   Answer: B
+   Explanation: Flow control is a mechanism to match the sender's transmission rate to the receiver's processing rate to avoid buffer overflow.
+debugger eval code:48:11
+

@@ -1,0 +1,192 @@
+Q1. Which item below is primarily handled by other layers (even if some WANs may touch it), while the rest are canonical data-link services?
+
+A. Framing
+B. Flow control
+C. Error control
+D. Congestion control
+
+Answer: D
+
+Explanation: Framing, flow, and error control are called out as link-layer services; congestion control is mainly handled by the network/transport layers (only some WANs touch it).
+
+Q2. On a shared Ethernet segment with many stations contending for access, which sublayer’s responsibilities are most directly in play?
+
+A. DLC only
+B. MAC only
+C. DLC and MAC equally
+D. Neither; this is a network-layer concern
+
+Answer: B
+
+Explanation: The MAC sublayer deals with issues specific to broadcast (shared) links; DLC covers issues common to both link types. Contention on a shared medium is a MAC concern.
+
+Q3. As an IP packet traverses multiple links from source to destination, which addressing behavior is correct?
+
+A. Both IP and link-layer (MAC) addresses change on each hop
+B. IP addresses change but link-layer addresses don’t
+C. Link-layer addresses change per hop, while IP addresses remain the same
+D. Neither IP nor link-layer addresses change
+
+Answer: C
+
+Explanation: Frames are re-encapsulated per link with new link-layer addresses; the IP addresses in the packet are not changed.
+
+Q4. A host knows the destination’s IP and wants to send on a local Ethernet. What specific information does it still need, and how is it obtained?
+
+A. The switch port via STP
+B. The next IP router via ICMP Redirect
+C. The destination’s link-layer (MAC) address via ARP
+D. The VLAN ID via DHCP
+
+Answer: C
+
+Explanation: ARP maps an IP address to the corresponding link-layer address so the frame can be delivered on the local link.
+
+Q5. A noise burst lasts 1/100 second. Which statement best captures its impact at different data rates?
+
+A. It flips roughly the same number of bits at 1 kbps and 1 Mbps
+B. It impacts far more bits at 1 Mbps than at 1 kbps
+C. It impacts far fewer bits at 1 Mbps than at 1 kbps
+D. Bit impact is unrelated to data rate
+
+Answer: B
+
+Explanation: With higher data rate, the same noise duration spans many more bits (e.g., ~10 bits at 1 kbps vs ~10,000 at 1 Mbps).
+
+Q6. You design a block code with dataword length k=4 and add r=3 redundancy bits. Which is the correct code rate and implication?
+
+A. k/n=4/7; 3 extra bits per codeword carry redundancy for detection/correction
+B. k/n=3/4; redundancy is 25%
+C. k/n=7/4; redundancy exceeds payload
+D. k/n=1/3; two-thirds are redundancy
+
+Answer: A
+
+Explanation: In block coding, n=k+r and the code rate is k/n. Here n=7, so k/n=4/7. Those r bits are the redundancy enabling detection/correction.
+
+Q7. Which test below confirms that a code is a linear block code (LBC)?
+
+A. The XOR of any two valid codewords yields another valid codeword
+B. The Hamming distance between all codewords is identical
+C. The parity of all codewords is even
+D. The generator polynomial has degree ≥ 2
+
+Answer: A
+
+Explanation: By definition, in an LBC the XOR (sum over GF(2)) of two valid codewords is also a valid codeword.
+
+Q8. In an even parity (n=k+1) scheme, the receiver gets a frame where only the parity bit flipped during transmission; the data bits remain intact. What happens?
+
+A. Data are accepted; parity bit errors are ignored
+B. Data are rejected; parity detects a single-bit error but cannot locate it
+C. Data are accepted; overall parity is still even
+D. Data are corrected via parity’s syndrome
+
+Answer: B
+
+Explanation: With a single-bit error (even if it’s only the parity bit), the syndrome is non-zero and the frame is rejected; parity doesn’t locate which bit flipped. Also, parity cannot detect an even number of bit errors.
+
+Q9. In CRC encoding/decoding, the special bit pattern used for the polynomial division is called the:
+
+A. Divisor matrix
+B. Syndrome vector
+C. Generator polynomial (the generator)
+D. Hamming kernel
+
+Answer: C
+
+Explanation: The divisor used in CRC is normally called the generator polynomial—“the generator.”
+
+
+Q10. Why does the Internet checksum use one’s-complement arithmetic with an end-around carry?
+
+A. It guarantees correction, not just detection
+B. It compresses sums into a fixed word size (e.g., 16-bit), enabling simple end-around carry and complement for a detectable checksum
+C. It avoids adding zeros
+D. It eliminates burst errors
+
+Answer: B
+
+Explanation: The notes show converting a larger binary sum to a fixed length via end-around carry (one’s complement arithmetic), then complementing to form the checksum (traditionally 16-bit).
+
+
+Q11. A network administrator notices that packets between two hosts are taking different paths through the internet. At which layer is the path determination made, and why must link-layer addresses change at each hop while IP addresses remain constant?
+A) Network layer; link-layer addresses are hop-specific while IP addresses identify end-to-end hosts
+B) Data-link layer; IP addresses are logical while link-layer addresses are physical
+C) Transport layer; link-layer addresses ensure reliable delivery within each link
+D) Physical layer; link-layer addresses control the transmission medium at each hop
+Answer: A
+Explanation: Path determination occurs at the network layer using IP addresses. The IP addresses define the source and destination endpoints and remain unchanged throughout the journey. However, link-layer (MAC) addresses must change at every hop because they identify the next node on each specific link. Each router strips off the old frame, examines the IP address, determines the next hop, and encapsulates the packet in a new frame with appropriate link-layer addresses for that specific link.
+
+Q 12. A system uses a parity-check code with dmin = 2. During transmission, three bits are corrupted in a codeword. What will happen at the receiver?
+A) The error will be detected because dmin = 2 can detect up to 3-bit errors
+B) The error will be detected because an odd number of bit errors makes the parity incorrect
+C) The error will go undetected because parity-check can only detect single-bit errors
+D) The error will be corrected because dmin = 2 allows correction of 1-bit errors
+Answer: B
+Explanation: With dmin = 2, parity-check codes can detect any odd number of bit errors. When three bits flip (an odd number), the parity will become incorrect, and the syndrome will be 1, indicating an error. However, the code cannot identify which bits are corrupted or correct them. The key insight is that parity checks detect odd-numbered errors but fail to detect even-numbered errors (like 2 or 4 bit flips) because the parity would appear correct.
+
+Q13. In a CRC implementation, the receiver performs division and gets a non-zero remainder. However, the network administrator insists the channel has very low error rates. What is the MOST likely explanation?
+A) A burst error occurred despite the low error rate
+B) The generator polynomial was incorrectly configured at one end
+C) Single-bit errors are accumulating over time
+D) The CRC cannot detect errors in low error-rate channels
+Answer: B
+Explanation: If the generator polynomial (divisor) is different at the sender and receiver, the CRC check will consistently fail even with no transmission errors. This is a configuration issue, not a channel error. While burst errors can occur (option A), the "MOST likely" explanation when there's a consistent failure in a "very low error rate" environment points to a systematic configuration problem rather than random transmission errors.
+
+Q14. A transmission system sends data at 10 Gbps. A noise burst lasts for 1/1000 second. Approximately how many bits could be affected, and what type of error is this?
+A) 10 bits; single-bit error
+B) 10,000 bits; burst error
+C) 10 million bits; burst error
+D) 1 million bits; single-bit error
+Answer: C
+Explanation: At 10 Gbps = 10 × 10^9 bits per second, in 1/1000 second = 0.001 seconds, the number of bits transmitted is: 10 × 10^9 × 0.001 = 10 × 10^6 = 10 million bits. This is clearly a burst error because multiple consecutive bits are affected. This demonstrates why burst errors are more likely at higher data rates—the same duration of noise affects exponentially more bits as data rates increase.
+
+Q15. A linear block code has valid codewords: 00000, 01011, 10101, 11110. What is the dmin, and what error detection/correction capability does this code have?
+A) dmin = 2; can detect 1-bit errors only
+B) dmin = 3; can detect up to 2-bit errors OR correct 1-bit errors
+C) dmin = 3; can detect 2-bit errors AND correct 1-bit errors simultaneously
+D) dmin = 4; can correct up to 2-bit errors
+Answer: B
+Explanation: The dmin is found by counting 1s in the nonzero codeword with the fewest 1s. Looking at: 01011 (three 1s), 10101 (three 1s), 11110 (four 1s), the minimum is 3. With dmin = 3, the code can detect up to (dmin - 1) = 2 bit errors OR correct up to ⌊(dmin - 1)/2⌋ = 1 bit error. The "OR" is critical—you cannot simultaneously use the full detection and correction capability; you must choose one mode. Option C incorrectly suggests both can happen simultaneously.
+
+Q 16.Why does the data-link layer need to be divided into DLC and MAC sublayers rather than handling all functionality in a single layer?
+A) DLC handles wireless links while MAC handles wired links
+B) DLC manages error control while MAC manages flow control
+C) DLC handles issues common to all links while MAC handles broadcast-specific issues
+D) DLC operates at the sender while MAC operates at the receiver
+Answer: C
+Explanation: The sublayer division is based on link types, not functions or directionality. The DLC (Data Link Control) sublayer deals with issues common to both point-to-point and broadcast links (like framing, flow control, error control). The MAC (Media Access Control) sublayer deals only with issues specific to broadcast links where multiple devices share the medium and need coordination for medium access. This architectural separation makes the design more modular and efficient.
+
+Q 17. A checksum is calculated for the data (7, 11, 12, 0, 6) using 4-bit one's complement arithmetic. The sender transmits (7, 11, 12, 0, 6, 9). During transmission, the value 11 becomes 13. What will the receiver calculate?
+A) Checksum = 0, message accepted
+B) Checksum = 2, message rejected
+C) Checksum = 9, message accepted
+D) Checksum = 11, message rejected
+Answer: B
+Explanation: The receiver gets (7, 13, 12, 0, 6, 9). Adding in one's complement: 7+13+12+0+6+9 = 47. In 4-bit one's complement, 47 (decimal) = 101111 (binary). Performing end-around carry: 10 + 1111 = 10001, then 1 + 0001 = 0010 = 2. Complementing: 15 - 2 = 13. Since the calculated checksum is not 0, the message is rejected. The error (11→13, a difference of 2) was successfully detected by the checksum algorithm.
+
+Q18.
+ARP operates at the network layer but provides information to the data-link layer. Why is this design necessary rather than having the data-link layer handle address resolution itself?
+A) The data-link layer cannot process IP addresses
+B) Link-layer addresses change per hop while IP addresses are end-to-end, requiring network layer context
+C) ARP needs access to routing tables that only exist at the network layer
+D) The data-link layer hardware cannot store address mapping tables
+Answer: B
+Explanation: ARP bridges the conceptual gap between network-layer (IP) addressing and link-layer (MAC) addressing. The data-link layer operates on a hop-by-hop basis and only knows about the current link, while IP addresses represent end-to-end communication across multiple links. ARP is placed at the network layer because it needs to understand the IP addressing scheme and the broader network topology to map IP addresses to the appropriate link-layer addresses for each hop. The data-link layer itself is focused solely on node-to-node communication on a single link.
+
+Q19. Consider a cyclic code where 1011000 is a valid codeword. Which of the following properties MUST also be true based on the definition of cyclic codes?
+A) 0101100 is a valid codeword
+B) 1011000 XOR with any other valid codeword produces a valid codeword
+C) The code can correct at least one bit error
+D) Both A and B must be true
+Answer: D
+Explanation: Cyclic codes have two key properties: (1) cyclic shifting produces valid codewords—cyclically left-shifting 1011000 gives 0110001, and right-shifting gives 0101100 (option A is true); (2) cyclic codes are linear block codes, meaning XOR of two valid codewords produces another valid codeword (option B is true). Option C is not necessarily true—being cyclic doesn't automatically guarantee error correction capability; that depends on the specific dmin of the code. Both A and B must be true for a cyclic code.
+
+Q20. A network uses point-to-point links between routers and broadcast links for the LANs. If flow control issues arise, where in the protocol stack would you expect the problem to be addressed, and why might the solution differ between link types?
+A) Physical layer for both; broadcast links need stronger signals
+B) Data-link layer for both; but broadcast links additionally need MAC coordination
+C) Network layer for point-to-point; data-link layer for broadcast
+D) Transport layer for both; flow control is end-to-end
+Answer: B
+Explanation: Flow control (managing the rate of frame transmission to prevent buffer overflow) is a data-link layer service for both point-to-point and broadcast links—this is handled by the DLC sublayer. However, broadcast links have the additional complexity of medium sharing among multiple devices, which requires MAC sublayer coordination to manage channel access. The Q tests understanding that: (1) flow control is a DLC function common to all link types, (2) broadcast links need additional MAC-layer services, and (3) while transport layer does end-to-end flow control, the Q specifically asks about link-level issues between adjacent nodes.

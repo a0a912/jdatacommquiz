@@ -1,0 +1,251 @@
+
+Q1. Which line coding category is characterized by using three distinct voltage levels: positive, negative, and zero?
+   A. Bipolar
+   B. Unipolar
+   C. Polar
+   D. Return-to-Zero (RZ)
+
+   Answer: A
+   Explanation: Bipolar schemes, such as AMI and Pseudoternary, utilize positive, negative, and zero voltage levels to represent binary data.
+
+
+Q2. In the context of polar schemes, what distinguishes NRZ-Invert (NRZ-I) from NRZ-Level (NRZ-L)?
+   A. NRZ-I uses a change or lack of change in voltage to represent a bit, while NRZ-L uses the voltage level itself.
+   B. NRZ-L uses three voltage levels, while NRZ-I uses only two.
+   C. NRZ-I is self-synchronizing, while NRZ-L is not.
+   D. NRZ-L represents bit '1' with a positive voltage, while NRZ-I represents bit '1' with a negative voltage.
+
+   Answer: A
+   Explanation: This correctly identifies the core difference: NRZ-I is based on voltage transitions, whereas NRZ-L is based on the static voltage level during the bit period.
+
+
+Q3. A data transmission system operates at 5 Mbps. If the receiver's clock runs 0.5% faster than the sender's clock, how many extra bits per second does the receiver attempt to read?
+   A. 25,000 bps
+   B. 5,000 bps
+   C. 5,025,000 bps
+   D. 2,500 bps
+
+   Answer: A
+   Explanation: This is calculated as 0.5% of 5,000,000 bps ($5,000,000 \times 0.005 = 25,000$).
+
+
+Q4. What is the primary advantage of using a Return-to-Zero (RZ) scheme over a Non-Return-to-Zero (NRZ) scheme?
+   A. It includes timing information within the signal.
+   B. It requires less bandwidth.
+   C. It is simpler to implement.
+   D. It uses only positive voltages.
+
+   Answer: A
+   Explanation: RZ schemes are self-synchronizing because the signal changes during each bit, which helps the receiver maintain clock synchronization.
+
+
+Q5. According to the Nyquist theorem, what is the minimum sampling rate required to accurately digitize a low-pass signal with a bandwidth of 75 kHz?
+   A. 150,000 samples/sec
+   B. 75,000 samples/sec
+   C. 37,500 samples/sec
+   D. 300,000 samples/sec
+
+   Answer: A
+   Explanation: The minimum sampling rate must be at least twice the maximum frequency ($f_{max}$), which is 75 kHz for this low-pass signal ($2 \times 75,000 = 150,000$).
+
+
+Q6. What is the consequence of sampling an analog signal at a rate less than the Nyquist rate?
+   A. Aliasing
+   B. Quantization error
+   C. Increased bit rate
+   D. Signal redundancy
+
+   Answer: A
+   Explanation: Undersampling (sampling below the Nyquist rate) causes aliasing, where the reconstructed signal has incorrect, lower-frequency components.
+
+
+Q7. A PCM system needs to achieve a quantizing signal-to-noise ratio ($SNR_Q$) of at least 35 dB. What is the minimum number of bits per sample ($n_b$) required?
+   A. 6 bits
+   B. 5 bits
+   C. 7 bits
+   D. 4 bits
+
+   Answer: A
+   Explanation: Using the formula $35 \le 6.02n_b + 1.76$, solving for $n_b$ gives $n_b \ge 5.52$. Since bits must be an integer, the minimum is 6 bits.
+
+
+Q8. In the Pseudoternary line coding scheme, which bit is represented by a zero voltage level?
+   A. Bit 1
+   B. Bit 0
+   C. Both bit 0 and bit 1
+   D. Neither bit 0 nor bit 1
+
+   Answer: A
+   Explanation: Pseudoternary is a variation of AMI where bit 1 is represented by zero voltage, and bit 0 alternates between positive and negative voltages.
+
+
+Q9. We want to digitize an audio signal with a maximum frequency of 20 kHz. If each sample is quantized into 1024 levels, what is the resulting bit rate?
+   A. 400,000 bps
+   B. 200,000 bps
+   C. 40,000 bps
+   D. 800,000 bps
+
+   Answer: A
+   Explanation: The sampling rate is $2 \times 20 \text{ kHz} = 40,000$ samples/sec. The number of bits per sample is $\log_2(1024) = 10$. The bit rate is $40,000 \times 10 = 400,000$ bps.
+
+
+Q10. Why is it impossible to determine the minimum sampling rate for a band-pass signal given only its bandwidth of 200 kHz?
+   A. The maximum frequency ($f_{max}$) of the signal is unknown.
+   B. The Nyquist theorem only applies to low-pass signals.
+   C. The bandwidth is too high for sampling.
+   D. The signal-to-noise ratio is not provided.
+
+   Answer: A
+   Explanation: The Nyquist theorem for low-pass signals relies on the absolute maximum frequency, which cannot be determined from the bandwidth of a band-pass signal alone (e.g., a 200 kHz bandwidth could be from 100-300 kHz or 1000-1200 kHz).
+
+
+Q11. Which line coding scheme combines the concepts of Return-to-Zero (RZ) and NRZ-Level (NRZ-L) by having a mandatory transition in the middle of each bit period?
+   A. Manchester
+   B. Differential Manchester
+   C. Alternate Mark Inversion (AMI)
+   D. Unipolar NRZ
+
+   Answer: A
+   Explanation: Manchester encoding is defined by a mid-bit transition which serves for both clocking and data representation, combining the level-based aspect of NRZ-L with the timing of RZ.
+
+
+Q12. In the Pulse Code Modulation (PCM) process, what is the purpose of the 'quantization' step?
+   A. To assign a discrete numerical value to each sampled amplitude.
+   B. To convert the analog signal into a series of discrete time samples.
+   C. To convert the discrete numerical values into a binary bit stream.
+   D. To remove high-frequency noise from the signal before conversion.
+
+   Answer: A
+   Explanation: Quantization takes the continuous range of sampled amplitudes and maps each one to a value from a finite set of discrete levels.
+
+
+Q13. The process of converting a sequence of bits into a digital signal for transmission is known as:
+   A. Line coding
+   B. Pulse Code Modulation (PCM)
+   C. Quantization
+   D. Sampling
+
+   Answer: A
+   Explanation: The source material explicitly defines line coding as the process of converting digital data (a sequence of bits) to digital signals.
+
+
+Q14. If a PCM system uses 6 bits per sample, how many distinct quantization levels can it represent?
+   A. 64
+   B. 32
+   C. 128
+   D. 12
+
+   Answer: A
+   Explanation: The number of levels (L) is related to the number of bits per sample ($n_b$) by the formula $L = 2^{n_b}$. Therefore, $L = 2^6 = 64$.
+
+
+Q15. What characteristic defines a Unipolar line coding scheme?
+   A. All voltage levels are on one side of the time axis.
+   B. Voltage levels alternate between positive and negative for each bit.
+   C. A transition occurs in the middle of every bit.
+   D. Three distinct voltage levels are used.
+
+   Answer: A
+   Explanation: In a unipolar scheme, the voltages used are either all positive or all negative, plus a zero level.
+
+
+Q16. Which of the following is NOT a category of line coding schemes mentioned in the source material?
+   A. Multiplex
+   B. Unipolar
+   C. Polar
+   D. Bipolar
+
+   Answer: A
+   Explanation: Multiplexing is a technique for combining multiple signals for transmission over a shared medium; it is not a category of line coding.
+
+
+Q17. In Differential Manchester encoding, what determines the representation of the next bit?
+   A. The presence or absence of a transition at the beginning of the bit interval.
+   B. The direction of the transition in the middle of the bit interval.
+   C. The voltage level (positive or negative) during the first half of the bit.
+   D. The return to a zero voltage level in the middle of the bit.
+
+   Answer: A
+   Explanation: This scheme combines RZ and NRZ-I; a transition at the start of the bit signals a 0, while no transition signals a 1. The mid-bit transition is for clocking only.
+
+
+Q18. A signal is sampled 8,000 times per second, and each sample is represented by a 10-bit code word. What is the bit rate of the resulting digital signal?
+   A. 80,000 bps
+   B. 8,000 bps
+   C. 10,000 bps
+   D. 800 bps
+
+   Answer: A
+   Explanation: The bit rate is the product of the sampling rate ($f_s$) and the number of bits per sample ($n_b$), so $8,000 \times 10 = 80,000$ bps.
+
+
+Q19. Oversampling a signal (sampling at a rate greater than $2 \times f_{max}$) is described as:
+   A. Redundant and unnecessary, but creates a good approximation.
+   B. The cause of aliasing and information loss.
+   C. The most efficient method for analog-to-digital conversion.
+   D. Impossible to perform with modern equipment.
+
+   Answer: A
+   Explanation: The text states that oversampling can create the same approximation as sampling at the Nyquist rate but is redundant and unnecessary.
+
+
+Q20. What is the primary source of 'quantization error' in the PCM process?
+   A. The approximation of an infinite number of analog amplitude values to a finite set of discrete levels.
+   B. The mismatch between the sender and receiver clocks during transmission.
+   C. Sampling the analog signal at a rate lower than the Nyquist rate.
+   D. The conversion of the binary code words into a digital signal using line coding.
+
+   Answer: A
+   Explanation: Quantization is an approximation process, and the difference between the actual analog amplitude and the chosen discrete level is the quantization error.
+
+
+Q21. The Non-Return-to-Zero (NRZ) name indicates that the signal:
+   A. Does not return to zero in the middle of a bit period.
+   B. Never uses the zero voltage level.
+   C. Is not suitable for digital transmission.
+   D. Alternates polarity for every bit.
+
+   Answer: A
+   Explanation: Unlike RZ (Return-to-Zero) schemes, the signal level in NRZ remains constant throughout the duration of a bit.
+
+
+Q22. What does the formula `Bit rate` = $f_s \times n_b$ calculate?
+   A. The total number of bits transmitted per second after an analog signal is digitized.
+   B. The minimum required sampling rate for a signal.
+   C. The signal-to-noise ratio due to quantization.
+   D. The number of quantization levels in a PCM system.
+
+   Answer: A
+   Explanation: This formula correctly multiplies the sampling rate ($f_s$, samples per second) by the number of bits per sample ($n_b$) to find the total bit rate.
+
+
+Q23. In Alternate Mark Inversion (AMI), how is the bit sequence `01101` represented?
+   A. Zero, Positive Voltage, Negative Voltage, Zero, Positive Voltage
+   B. Zero, Positive Voltage, Positive Voltage, Zero, Positive Voltage
+   C. Positive Voltage, Zero, Zero, Positive Voltage, Zero
+   D. Alternating Positive/Negative Voltage, Zero, Alternating Voltage, Zero, Alternating Voltage
+
+   Answer: A
+   Explanation: Bit '0' is represented by zero voltage. Bit '1' (a 'mark') is represented by alternating polarity, starting with positive, then negative, then positive again.
+
+
+Q24. The three processes of a Pulse Code Modulation (PCM) encoder are performed in which order?
+   A. Sampling, Quantizing, Encoding
+   B. Encoding, Quantizing, Sampling
+   C. Quantizing, Sampling, Encoding
+   D. Sampling, Encoding, Quantizing
+
+   Answer: A
+   Explanation: The source material explicitly lists these three steps in this sequence for the PCM encoding process.
+
+
+Q25. What is the calculated quantizing signal-to-noise ratio ($SNR_Q$) for a system that uses 8 bits per sample?
+   A. Approximately 49.92 dB
+   B. Approximately 43.90 dB
+   C. 64 dB
+   D. 8 dB
+
+   Answer: A
+   Explanation: Using the formula $SNR_Q = 6.02n_b + 1.76$, we get $SNR_Q = (6.02 \times 8) + 1.76 = 48.16 + 1.76 = 49.92$ dB.
+debugger eval code:68:11
+
